@@ -26,12 +26,12 @@ public:
     void affiche(std::ostream &os) const;
 
     // Play
-    void jouer() const override
+    void jouer(std::ostream &out = std::cout) const override
     {
-        std::string commande = "start " + getNomFichier();
-        system(commande.data());
+    out << "Opening photo: " << getNomFichier() << std::endl;
+    std::string commande = "start " + getNomFichier()+" &";
+    system(commande.data());
     }
-
 protected:
     // Protected constructor: creation only via MediaManager
     Photo(const std::string &nom, const std::string &nomFichier, double lat, double lon) : MultimediaObject(nom, nomFichier), latitude(lat), longitude(lon) {}

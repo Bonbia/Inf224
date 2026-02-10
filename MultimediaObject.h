@@ -36,7 +36,7 @@ public:
     void affiche(std::ostream &os) const;
 
     // Play
-    virtual void jouer() const = 0;
+    virtual void jouer(std::ostream &out = std::cout) const = 0;
 };
 
 #endif // MULTIMEDIAOBJECT_H

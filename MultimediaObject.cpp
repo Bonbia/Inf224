@@ -39,7 +39,6 @@ void MultimediaObject::affiche(std::ostream &os) const
 {
     os << "Nom : " << nom << " | Fichier : " << nomFichier;
 }
-
-void MultimediaObject::jouer() const
+void MultimediaObject::jouer(std::ostream &out) const
 {
 }

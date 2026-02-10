@@ -25,10 +25,11 @@ public:
     void affiche(std::ostream &os) const;
 
     // Play
-    void jouer() const override
-    {
-        std::string commande = "start " + getNomFichier();
-        system(commande.data());
+    void jouer(std::ostream &out = std::cout) const override
+{
+    out << "Playing video: " << getNomFichier() << " (Duration: " << Duree << "s)" << std::endl;
+    std::string commande = "mpv " + getNomFichier()+" &";
+    system(commande.data());
     }
 
 protected:

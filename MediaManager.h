@@ -28,12 +28,11 @@ public:
     GroupePtr createGroupe(const std::string &name);
 
     // Lookup / display
-    void displayObject(const std::string &name) const;
-    void displayGroupe(const std::string &name) const;
+    void displayObject(const std::string &name, std::ostream &out = std::cout) const;
+    void displayGroupe(const std::string &name, std::ostream &out = std::cout) const;
 
     // Play
-    void playObject(const std::string &name) const;
-
+    void playObject(const std::string &name, std::ostream &out = std::cout) const;    
     // Remove
     bool removeObject(const std::string &name);
     bool removeGroupe(const std::string &name);

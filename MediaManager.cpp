@@ -33,7 +33,7 @@ GroupePtr MediaManager::createGroupe(const std::string &name)
 }
 
 // Display object
-void MediaManager::displayObject(const std::string &name) const
+void MediaManager::displayObject(const std::string &name, std::ostream &out) const
 {
     auto it = objects.find(name);
     if (it == objects.end())
@@ -41,12 +41,12 @@ void MediaManager::displayObject(const std::string &name) const
         std::cout << "Objet '" << name << "' introuvable." << std::endl;
         return;
     }
-    it->second->affiche(std::cout);
-    std::cout << std::endl;
+    it->second->affiche(out);
+    out << std::endl;
 }
 
 // Display groupe
-void MediaManager::displayGroupe(const std::string &name) const
+void MediaManager::displayGroupe(const std::string &name, std::ostream &out) const
 {
     auto it = groups.find(name);
     if (it == groups.end())
@@ -59,15 +59,15 @@ void MediaManager::displayGroupe(const std::string &name) const
 }
 
 // Play object
-void MediaManager::playObject(const std::string &name) const
+void MediaManager::playObject(const std::string &name, std::ostream &out) const
 {
     auto it = objects.find(name);
     if (it == objects.end())
     {
-        std::cout << "Objet '" << name << "' introuvable." << std::endl;
+        out << "Objet '" << name << "' introuvable." << std::endl;
         return;
     }
-    it->second->jouer();
+    it->second->jouer(out);
 }
 
 // Remove object

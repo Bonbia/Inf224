@@ -31,7 +31,7 @@ int main()
     manager.displayGroupe("Mes Medias");
 
     // Jouer la vidéo (exemple)
-    // manager.playObject("Video1");
+    manager.playObject("Photo1");
 
     p1.reset();
 
