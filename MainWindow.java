@@ -3,35 +3,57 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class MainWindow extends JFrame {
-    private JTextArea textArea;
-    private JButton searchButton, playButton, quitButton;
+    private JTextArea textArea;    // Affichage des réponses
+    private JTextField textField; // Saisie du nom de l'objet
+    private Client client;        // La logique réseau
 
     public MainWindow() {
-        // Configuration de la fenêtre
-        setTitle("Télécommande Multimédia");
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        // 1. Initialisation du réseau
+        try {
+            client = new Client("localhost", 3331);
+        } catch (Exception e) {
+            System.err.println("Erreur: Serveur C++ introuvable !");
+        }
 
-        // Zone de texte avec scroll
+        // 2. Création de l'interface
         textArea = new JTextArea(10, 40);
-        JScrollPane scrollPane = new JScrollPane(textArea);
-        add(scrollPane, BorderLayout.CENTER);
+        textField = new JTextField(20);
+        JButton searchBtn = new JButton("SEARCH");
+        JButton playBtn = new JButton("PLAY");
 
-        // Panneau des boutons
-        JPanel buttonPanel = new JPanel();
-        searchButton = new JButton("Rechercher");
-        playButton = new JButton("Jouer");
-        quitButton = new JButton("Quitter");
+        // 3. Action pour le bouton SEARCH
+        searchBtn.addActionListener(e -> {
+            String name = textField.getText();
+            envoyerCommande("SEARCH " + name);
+        });
 
-        buttonPanel.add(searchButton);
-        buttonPanel.add(playButton);
-        buttonPanel.add(quitButton);
-        add(buttonPanel, BorderLayout.SOUTH);
+        // 4. Action pour le bouton PLAY
+        playBtn.addActionListener(e -> {
+            String name = textField.getText();
+            envoyerCommande("PLAY " + name);
+        });
 
-        // Actions des boutons
-        quitButton.addActionListener(e -> System.exit(0));
-        
-        pack(); // Ajuste la taille automatiquement
+        // Mise en page (Layout)
+        JPanel panel = new JPanel();
+        panel.add(new JLabel("Nom:"));
+        panel.add(textField);
+        panel.add(searchBtn);
+        panel.add(playBtn);
+
+        add(new JScrollPane(textArea), BorderLayout.CENTER);
+        add(panel, BorderLayout.SOUTH);
+
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        pack();
         setVisible(true);
+    }
+
+    // Méthode pour envoyer la commande et afficher la réponse
+    private void envoyerCommande(String command) {
+        if (client == null) return;
+        String response = client.send(command); // On envoie au serveur C++
+        textArea.append("Envoi: " + command + "\n");
+        textArea.append("Réponse: " + response + "\n\n");
     }
 
     public static void main(String[] args) {
