@@ -1,0 +1,7 @@
+MultimediaObject.o: MultimediaObject.cpp MultimediaObject.h
+main.o: main.cpp Photo.h MultimediaObject.h Video.h MediaManager.h Film.h \
+ Groupe.h
+Photo.o: Photo.cpp Photo.h MultimediaObject.h
+Video.o: Video.cpp Video.h MultimediaObject.h
+MediaManager.o: MediaManager.cpp MediaManager.h MultimediaObject.h \
+ Photo.h Video.h Film.h Groupe.h
