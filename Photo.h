@@ -29,7 +29,7 @@ public:
     void jouer(std::ostream &out = std::cout) const override
     {
         out << "Opening photo: " << getNomFichier() << std::endl;
-        std::string commande = "start " + getNomFichier() + " &";
+        std::string commande = "explorer.exe " + getNomFichier() + " &";
         system(commande.data());
     }
 
