@@ -64,6 +64,10 @@ public class MainWindow extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         pack();
         setVisible(true);
+        ImageIcon img = new ImageIcon("Logo.jpg");
+    
+        // Application de l'icône à la fenêtre
+        this.setIconImage(img.getImage());
     }
 
     /**
