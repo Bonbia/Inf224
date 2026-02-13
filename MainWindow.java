@@ -2,6 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.File; // Nécessaire pour manipuler le fichier sélectionné
+import javax.swing.filechooser.FileNameExtensionFilter;
+
 
 public class MainWindow extends JFrame {
     private JTextArea textArea;
@@ -67,22 +69,41 @@ public class MainWindow extends JFrame {
     }
 
     private void initializeActions() {
-        // Nouvelle action : Sélection de fichier
+        // Action pour l'ajout de fichier avec filtres
         addFileAction = new AbstractAction("AJOUTER") {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFileChooser chooser = new JFileChooser();
-                // On ouvre la boîte de dialogue
+                
+                // 1. Création des filtres
+                FileNameExtensionFilter imageFilter = new FileNameExtensionFilter(
+                    "Images (JPG, PNG, GIF)", "jpg", "jpeg", "png", "gif");
+                
+                FileNameExtensionFilter videoFilter = new FileNameExtensionFilter(
+                    "Vidéos (MP4, AVI, MKV)", "mp4", "avi", "mkv");
+
+                // 2. Ajout des filtres au sélecteur
+                chooser.addChoosableFileFilter(imageFilter);
+                chooser.addChoosableFileFilter(videoFilter);
+                
+                // Optionnel : Forcer l'utilisateur à choisir un filtre (pas de "Tous les fichiers")
+                chooser.setAcceptAllFileFilterUsed(false);
+                
+                // Par défaut, on sélectionne le filtre vidéo
+                chooser.setFileFilter(videoFilter);
+
                 int returnVal = chooser.showOpenDialog(MainWindow.this);
                 
                 if (returnVal == JFileChooser.APPROVE_OPTION) {
                     File file = chooser.getSelectedFile();
-                    // On met à jour le champ de texte avec le nom du fichier
                     textField.setText(file.getName());
                     textArea.append("Fichier sélectionné : " + file.getAbsolutePath() + "\n");
                 }
             }
         };
+
+        // ... (vos autres actions SEARCH, PLAY, exitAction restent identiques)
+    
 
         searchAction = new AbstractAction("SEARCH") {
             @Override
