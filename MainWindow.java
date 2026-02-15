@@ -71,38 +71,43 @@ public class MainWindow extends JFrame {
     private void initializeActions() {
         // Action pour l'ajout de fichier avec filtres
         addFileAction = new AbstractAction("AJOUTER") {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JFileChooser chooser = new JFileChooser();
-                
-                // 1. Création des filtres
-                FileNameExtensionFilter imageFilter = new FileNameExtensionFilter(
-                    "Images (JPG, PNG, GIF)", "jpg", "jpeg", "png", "gif");
-                
-                FileNameExtensionFilter videoFilter = new FileNameExtensionFilter(
-                    "Vidéos (MP4, AVI, MKV)", "mp4", "avi", "mkv");
+        @Override
+        public void actionPerformed(ActionEvent e) {
+        String desktopPath = System.getProperty("user.home") + File.separator + "Desktop";
+        File desktopDir = new File(desktopPath);
 
-                // 2. Ajout des filtres au sélecteur
-                chooser.addChoosableFileFilter(imageFilter);
-                chooser.addChoosableFileFilter(videoFilter);
-                
-                // Optionnel : Forcer l'utilisateur à choisir un filtre (pas de "Tous les fichiers")
-                chooser.setAcceptAllFileFilterUsed(false);
-                
-                // Par défaut, on sélectionne le filtre vidéo
-                chooser.setFileFilter(videoFilter);
+        // Vérification de sécurité
+        if (!desktopDir.exists() || !desktopDir.canRead()) {
+            // Si le bureau est inaccessible, on se rabat sur le dossier "Home" de l'utilisateur
+            desktopDir = new File(System.getProperty("user.home"));
+            textArea.append("Note : Accès au Bureau refusé ou impossible. Redirection vers le dossier utilisateur.\n");
+        }
 
-                int returnVal = chooser.showOpenDialog(MainWindow.this);
-                
-                if (returnVal == JFileChooser.APPROVE_OPTION) {
-                    File file = chooser.getSelectedFile();
-                    textField.setText(file.getName());
-                    textArea.append("Fichier sélectionné : " + file.getAbsolutePath() + "\n");
-                }
-            }
-        };
+        JFileChooser chooser = new JFileChooser(desktopDir);
+        // ... (suite de votre configuration de filtres)
+    
+        // --- Configuration des filtres (comme précédemment) ---
+        FileNameExtensionFilter imageFilter = new FileNameExtensionFilter(
+            "Images (JPG, PNG, GIF)", "jpg", "jpeg", "png", "gif");
+        FileNameExtensionFilter videoFilter = new FileNameExtensionFilter(
+            "Vidéos (MP4, AVI, MKV)", "mp4", "avi", "mkv");
 
-        // ... (vos autres actions SEARCH, PLAY, exitAction restent identiques)
+        chooser.addChoosableFileFilter(imageFilter);
+        chooser.addChoosableFileFilter(videoFilter);
+        chooser.setAcceptAllFileFilterUsed(false);
+        chooser.setFileFilter(videoFilter);
+
+        // 3. Affichage
+        int returnVal = chooser.showOpenDialog(MainWindow.this);
+        
+        if (returnVal == JFileChooser.APPROVE_OPTION) {
+            File file = chooser.getSelectedFile();
+            textField.setText(file.getName());
+            textArea.append("Fichier sélectionné : " + file.getAbsolutePath() + "\n");
+        }
+    }
+    };
+
     
 
         searchAction = new AbstractAction("SEARCH") {
