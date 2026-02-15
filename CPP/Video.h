@@ -70,7 +70,7 @@ public:
     void jouer(std::ostream &out = std::cout) const override
     {
         out << "Playing video: " << getNomFichier() << " (Duration: " << Duree << "s)" << std::endl;
-        std::string commande = "explorer.exe " + getNomFichier() + " &";
+        std::string commande = "mpv " + getNomFichier() + " &";
         system(commande.data());
     }
 

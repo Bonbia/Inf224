@@ -89,7 +89,7 @@ public:
     void jouer(std::ostream &out = std::cout) const override
     {
         out << "Opening photo: " << getNomFichier() << std::endl;
-        std::string commande = "explorer.exe " + getNomFichier() + " &"; // Commande pour ouvrir la photo avec l'application par défaut sur Windows mettre un imagej ou un xdg-open
+        std::string commande = "imagej " + getNomFichier() + " &"; // Commande pour ouvrir la photo avec l'application par défaut sur Windows mettre un imagej ou un xdg-open
         system(commande.data());
     }
 
