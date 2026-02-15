@@ -14,6 +14,7 @@ public class MainWindow extends JFrame {
     private Action playAction;
     private Action exitAction;
     private Action addFileAction; // Nouvelle action pour l'ajout de fichier
+    private Action quitAction;
 
     public MainWindow() {
         System.setProperty("apple.laf.useScreenMenuBar", "true");
@@ -43,12 +44,13 @@ public class MainWindow extends JFrame {
         menu.add(new JMenuItem(exitAction));
         menuBar.add(menu);
         setJMenuBar(menuBar);
-
+        menu.add(new JMenuItem(quitAction)); // Dans le JMenu
         // --- Barre d'Outils ---
         JToolBar toolBar = new JToolBar();
         toolBar.add(addFileAction); // Ajout à la barre d'outils
         toolBar.add(searchAction);
         toolBar.add(playAction);
+        toolBar.add(quitAction); // Ajout de quitAction à la barre d'outils
         add(toolBar, BorderLayout.NORTH);
 
         // --- Panneau de contrôle ---
@@ -108,7 +110,18 @@ public class MainWindow extends JFrame {
     }
     };
 
-    
+        quitAction = new AbstractAction("QUIT SERVEUR") {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            // Envoyer la commande au serveur C++
+            envoyerCommande("QUIT");
+            
+            // Laisser un petit délai pour que le message parte, puis fermer Java
+            Timer timer = new Timer(500, event -> System.exit(0));
+            timer.setRepeats(false);
+            timer.start();
+        }
+    };
 
         searchAction = new AbstractAction("SEARCH") {
             @Override

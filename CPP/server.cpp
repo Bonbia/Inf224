@@ -42,6 +42,10 @@ int main(int argc, char* argv[])
         myManager->playObject(name, resStream);
         response = resStream.str();
         }
+        else if (command == "QUIT") {
+        response = "Closing server...";
+        return false; // Retourner false ferme la connexion/le serveur
+        }
         else {
             response = "Unknown command: " + command;
         }
