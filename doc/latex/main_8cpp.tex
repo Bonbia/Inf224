@@ -1,0 +1,87 @@
+\doxysection{main.\+cpp File Reference}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{main.cpp@{main.cpp}}
+
+
+Programme principal de démonstration du gestionnaire multimédia.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include "{}Photo.\+h"{}}\newline
+{\ttfamily \#include "{}Video.\+h"{}}\newline
+{\ttfamily \#include "{}Media\+Manager.\+h"{}}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include "{}Groupe.\+h"{}}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include "{}Multimedia\+Object.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Point d\textquotesingle{}entrée du programme. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Programme principal de démonstration du gestionnaire multimédia. 
+
+\begin{DoxyAuthor}{Author}
+Telecom Paristech 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2018-\/2024
+\end{DoxyDate}
+Ce programme démontre l\textquotesingle{}utilisation du système de gestion multimédia \+:
+\begin{DoxyItemize}
+\item Création de photos avec coordonnées GPS
+\item Création de vidéos avec durée
+\item Création de groupes pour organiser les objets
+\item Affichage et lecture des objets 
+\end{DoxyItemize}
+
+Definition in file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Point d\textquotesingle{}entrée du programme. 
+
+Crée un gestionnaire multimédia et démontre ses fonctionnalités \+:
+\begin{DoxyEnumerate}
+\item Création d\textquotesingle{}une photographie
+\item Création d\textquotesingle{}une vidéo
+\item Création d\textquotesingle{}un groupe
+\item Ajout des objets au groupe
+\item Affichage des objets
+\item Lecture des objets
+\end{DoxyEnumerate}
+
+\begin{DoxyReturn}{Returns}
+0 en cas de succès
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Les destructeurs s\textquotesingle{}exécutent automatiquement à la fin du programme 
+\end{DoxyNote}
+Création d\textquotesingle{}une photographie avec coordonnées GPS
+
+Création d\textquotesingle{}une vidéo avec durée de 120 secondes
+
+Création d\textquotesingle{}un groupe pour organiser les objets
+
+Ajout des objets au groupe
+
+Tests de gestion mémoire \+: libération d\textquotesingle{}un objet
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00040}{40}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{MediaManager_8cpp_source_l00028}{Media\+Manager\+::create\+Groupe()}}, \mbox{\hyperlink{MediaManager_8cpp_source_l00004}{Media\+Manager\+::create\+Photo()}}, \mbox{\hyperlink{MediaManager_8cpp_source_l00012}{Media\+Manager\+::create\+Video()}}, \mbox{\hyperlink{MediaManager_8cpp_source_l00049}{Media\+Manager\+::display\+Groupe()}}, \mbox{\hyperlink{MediaManager_8cpp_source_l00036}{Media\+Manager\+::display\+Object()}}, and \mbox{\hyperlink{MediaManager_8cpp_source_l00062}{Media\+Manager\+::play\+Object()}}.
+

@@ -1,0 +1,98 @@
+\doxysection{Client.\+java}
+\hypertarget{Client_8java_source}{}\label{Client_8java_source}\index{Client.java@{Client.java}}
+\mbox{\hyperlink{Client_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00012}00012\ \textcolor{keyword}{import}\ java.io.*;}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00013}00013\ \textcolor{keyword}{import}\ java.net.*;}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00030}\mbox{\hyperlink{classClient}{00030}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classClient}{Client}}\ \{}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00034}\mbox{\hyperlink{classClient_a726d54cbc7e555b2cba9cb7fb63ed6b4}{00034}}\ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keyword}{final}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{classClient_a726d54cbc7e555b2cba9cb7fb63ed6b4}{serialVersionUID}}\ =\ 1L;}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00039}\mbox{\hyperlink{classClient_a302a618e988386463ceefd31bbfd4792}{00039}}\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{final}\ String\ \mbox{\hyperlink{classClient_a302a618e988386463ceefd31bbfd4792}{DEFAULT\_HOST}}\ =\ \textcolor{stringliteral}{"{}localhost"{}};}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00044}\mbox{\hyperlink{classClient_afd263578070034213b6042e18e90a5c4}{00044}}\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{final}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classClient_afd263578070034213b6042e18e90a5c4}{DEFAULT\_PORT}}\ =\ 3331;}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00049}\mbox{\hyperlink{classClient_ada8883642b4e572e515d7965d2ae60f2}{00049}}\ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{classSocket}{Socket}}\ \mbox{\hyperlink{classClient_ada8883642b4e572e515d7965d2ae60f2}{sock}};}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00054}\mbox{\hyperlink{classClient_a2444414fd925ffa72107d443d968c6f7}{00054}}\ \ \ \textcolor{keyword}{private}\ BufferedReader\ \mbox{\hyperlink{classClient_a2444414fd925ffa72107d443d968c6f7}{input}};}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00059}\mbox{\hyperlink{classClient_a887c058363e5433882a9c2532196b7e3}{00059}}\ \ \ \textcolor{keyword}{private}\ BufferedWriter\ \mbox{\hyperlink{classClient_a887c058363e5433882a9c2532196b7e3}{output}};}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00076}\mbox{\hyperlink{classClient_ac9fec818083d641b633a8e4a75d981a7}{00076}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classClient_ac9fec818083d641b633a8e4a75d981a7}{main}}(String\ argv[])\ \{}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00077}00077\ \ \ \ \ String\ host\ =\ \mbox{\hyperlink{classClient_a302a618e988386463ceefd31bbfd4792}{DEFAULT\_HOST}};}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00078}00078\ \ \ \ \ \textcolor{keywordtype}{int}\ port\ =\ \mbox{\hyperlink{classClient_afd263578070034213b6042e18e90a5c4}{DEFAULT\_PORT}};}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00079}00079\ \ \ \ \ \textcolor{keywordflow}{if}\ (argv.length\ >=\ 1)}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00080}00080\ \ \ \ \ \ \ host\ =\ argv[0];}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00081}00081\ \ \ \ \ \textcolor{keywordflow}{if}\ (argv.length\ >=\ 2)}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00082}00082\ \ \ \ \ \ \ port\ =\ Integer.parseInt(argv[1]);}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00084}00084\ \ \ \ \ \mbox{\hyperlink{classClient}{Client}}\ client\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00086}00086\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00087}00087\ \ \ \ \ \ \ client\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classClient}{Client}}(host,\ port);}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00088}00088\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (Exception\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00089}00089\ \ \ \ \ \ \ System.err.println(\textcolor{stringliteral}{"{}Client:\ Couldn't\ connect\ to\ "{}}\ +\ host\ +\ \textcolor{stringliteral}{"{}:"{}}\ +\ port);}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00090}00090\ \ \ \ \ \ \ System.exit(1);}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00091}00091\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00093}00093\ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Client\ connected\ to\ "{}}\ +\ host\ +\ \textcolor{stringliteral}{"{}:"{}}\ +\ port);}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00095}00095\ \ \ \ \ \textcolor{comment}{//\ pour\ lire\ depuis\ la\ console}}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00096}00096\ \ \ \ \ BufferedReader\ cin\ =\ \textcolor{keyword}{new}\ BufferedReader(\textcolor{keyword}{new}\ InputStreamReader(System.in));}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00098}00098\ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00099}00099\ \ \ \ \ \ \ System.out.print(\textcolor{stringliteral}{"{}Request:\ "{}});}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00100}00100\ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00101}00101\ \ \ \ \ \ \ \ \ String\ request\ =\ cin.readLine();}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00102}00102\ \ \ \ \ \ \ \ \ String\ response\ =\ client.\mbox{\hyperlink{classClient_ab26831c395da92b5893066f9ce7963a4}{send}}(request);}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00103}00103\ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Response:\ "{}}\ +\ response);}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00104}00104\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (java.io.IOException\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00105}00105\ \ \ \ \ \ \ \ \ System.err.println(\textcolor{stringliteral}{"{}Client:\ IO\ error"{}});}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00106}00106\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00107}00107\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00108}00108\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00109}00109\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00124}\mbox{\hyperlink{classClient_a163113b9c3fda23dcdc750db9278afbe}{00124}}\ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classClient_a163113b9c3fda23dcdc750db9278afbe}{Client}}(String\ host,\ \textcolor{keywordtype}{int}\ port)\ \textcolor{keywordflow}{throws}\ UnknownHostException,\ IOException\ \{}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00125}00125\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00126}00126\ \ \ \ \ \ \ \mbox{\hyperlink{classClient_ada8883642b4e572e515d7965d2ae60f2}{sock}}\ =\ \textcolor{keyword}{new}\ java.net.\mbox{\hyperlink{classSocket_acd3cb39bc957be2f34c91b9e262e1cec}{Socket}}(host,\ port);}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00127}00127\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (java.net.UnknownHostException\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00128}00128\ \ \ \ \ \ \ System.err.println(\textcolor{stringliteral}{"{}Client:\ Couldn't\ find\ host\ "{}}\ +\ host\ +\ \textcolor{stringliteral}{"{}:"{}}\ +\ port);}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00129}00129\ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ e;}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00130}00130\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (java.io.IOException\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00131}00131\ \ \ \ \ \ \ System.err.println(\textcolor{stringliteral}{"{}Client:\ Couldn't\ reach\ host\ "{}}\ +\ host\ +\ \textcolor{stringliteral}{"{}:"{}}\ +\ port);}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00132}00132\ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ e;}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00133}00133\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00135}00135\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00136}00136\ \ \ \ \ \ \ \mbox{\hyperlink{classClient_a2444414fd925ffa72107d443d968c6f7}{input}}\ =\ \textcolor{keyword}{new}\ BufferedReader(\textcolor{keyword}{new}\ InputStreamReader(\mbox{\hyperlink{classClient_ada8883642b4e572e515d7965d2ae60f2}{sock}}.getInputStream()));}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00137}00137\ \ \ \ \ \ \ \mbox{\hyperlink{classClient_a887c058363e5433882a9c2532196b7e3}{output}}\ =\ \textcolor{keyword}{new}\ BufferedWriter(\textcolor{keyword}{new}\ OutputStreamWriter(\mbox{\hyperlink{classClient_ada8883642b4e572e515d7965d2ae60f2}{sock}}.getOutputStream()));}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00138}00138\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (java.io.IOException\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00139}00139\ \ \ \ \ \ \ System.err.println(\textcolor{stringliteral}{"{}Client:\ Couldn't\ open\ input\ or\ output\ streams"{}});}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00140}00140\ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ e;}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00141}00141\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00142}00142\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00143}00143\ }
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00159}\mbox{\hyperlink{classClient_ab26831c395da92b5893066f9ce7963a4}{00159}}\ \ \ \textcolor{keyword}{public}\ String\ \mbox{\hyperlink{classClient_ab26831c395da92b5893066f9ce7963a4}{send}}(String\ request)\ \{}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00160}00160\ \ \ \ \ \textcolor{comment}{//\ Envoyer\ la\ requete\ au\ serveur}}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00161}00161\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00162}00162\ \ \ \ \ \ \ request\ +=\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};\ \textcolor{comment}{//\ ajouter\ le\ separateur\ de\ lignes}}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00163}00163\ \ \ \ \ \ \ \mbox{\hyperlink{classClient_a887c058363e5433882a9c2532196b7e3}{output}}.write(request,\ 0,\ request.length());}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00164}00164\ \ \ \ \ \ \ \mbox{\hyperlink{classClient_a887c058363e5433882a9c2532196b7e3}{output}}.flush();}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00165}00165\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (java.io.IOException\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00166}00166\ \ \ \ \ \ \ System.err.println(\textcolor{stringliteral}{"{}Client:\ Couldn't\ send\ message:\ "{}}\ +\ e);}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00167}00167\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00168}00168\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00169}00169\ }
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00170}00170\ \ \ \ \ \textcolor{comment}{//\ Recuperer\ le\ resultat\ envoye\ par\ le\ serveur}}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00171}00171\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00172}00172\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classClient_a2444414fd925ffa72107d443d968c6f7}{input}}.readLine();}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00173}00173\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (java.io.IOException\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00174}00174\ \ \ \ \ \ \ System.err.println(\textcolor{stringliteral}{"{}Client:\ Couldn't\ receive\ message:\ "{}}\ +\ e);}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00175}00175\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00176}00176\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00177}00177\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Client_8java_source_l00178}00178\ \}}
+
+\end{DoxyCode}

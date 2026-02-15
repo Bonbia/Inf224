@@ -1,0 +1,223 @@
+# Doxyfile - Configuration pour la génération de documentation Doxygen
+# Projet: Gestionnaire Multimédia
+# Version: 1.0
+# Créé: 2024
+
+#---------------------------------------------------------------------------
+# Informations du projet
+#---------------------------------------------------------------------------
+
+PROJECT_NAME = "Gestionnaire Multimedia"
+PROJECT_NUMBER = 1.0
+PROJECT_BRIEF = "Système de gestion d'objets multimédias (photos, vidéos, films) avec interface client Java et serveur C++"
+PROJECT_LOGO = 
+
+# Dossier de sortie
+OUTPUT_DIRECTORY = ./doc
+
+#---------------------------------------------------------------------------
+# Chemins et fichiers sources
+#---------------------------------------------------------------------------
+
+# Dossiers sources
+INPUT = CPP Java
+RECURSIVE = YES
+
+# Extensions de fichiers à documenter
+FILE_PATTERNS = *.h *.cpp *.java *.md
+
+# Dossiers à ignorer
+EXCLUDE_PATTERNS = */build/* \
+                   */.git/* \
+                   */depend-* \
+                   */obj/*
+
+# Fichiers à exclure
+EXCLUDE = 
+
+# Utiliser Markdown dans la documentation
+USE_MARKDOWN = YES
+MARKDOWN_SUPPORT = YES
+
+#---------------------------------------------------------------------------
+# Configuration de la génération
+#---------------------------------------------------------------------------
+
+# Format de sortie HTML
+GENERATE_HTML = YES
+HTML_OUTPUT = html
+HTML_FILE_EXTENSION = .html
+
+# Format de sortie LaTeX/PDF
+GENERATE_LATEX = YES
+LATEX_OUTPUT = latex
+
+# Format de sortie Man pages
+GENERATE_MAN = NO
+MAN_OUTPUT = man
+
+# Format RTF
+GENERATE_RTF = NO
+
+# Format XML
+GENERATE_XML = NO
+
+# Auto-générer la table des matières
+AUTO_TOCTREE = YES
+
+#---------------------------------------------------------------------------
+# Options de documentation
+#---------------------------------------------------------------------------
+
+# Documenter les membres privés
+EXTRACT_PRIVATE = YES
+
+# Documenter les fonctions statiques
+EXTRACT_STATIC = YES
+
+# Documenter les classes/structures vides
+HIDE_EMPTY_CLASSES = NO
+
+# Extraire tous les membres
+EXTRACT_ALL = YES
+
+# Extraire le nom de paquet/classe
+EXTRACT_PACKAGE = YES
+
+# Extraire LOCAL_CLASSES
+EXTRACT_LOCAL_CLASSES = YES
+
+# Extraire ANONYMOUS namespaces
+EXTRACT_ANON_NSPACES = NO
+
+# Afficher les noms complets des classes
+FULL_PATH_NAMES = NO
+
+# Activer les recherches
+SEARCHENGINE = YES
+SERVER_BASED_SEARCH = NO
+
+#---------------------------------------------------------------------------
+# Configuration de l'analyse
+#---------------------------------------------------------------------------
+
+# Support C++
+ENABLE_PREPROCESSING = YES
+PREDEFINED = 
+
+# Support Java
+EXTENSION_MAPPING = java=Java cpp=C++ h=C++
+
+# Format des commentaires
+MULTILINE_CPP_IS_BRIEF = YES
+JAVADOC_AUTOBRIEF = YES
+
+# Reconnaître les commentaires //< et /*!<
+QT_AUTOBRIEF = YES
+
+#---------------------------------------------------------------------------
+# Options graphiques
+#---------------------------------------------------------------------------
+
+# Diagrammes UML
+CLASS_DIAGRAMS = YES
+HAVE_DOT = NO  # Mettre YES si Graphviz est installé
+
+# Collaboration graphs
+COLLABORATION_GRAPH = NO
+
+# Graphiques d'inclusion
+INCLUDE_GRAPH = NO
+INCLUDED_BY_GRAPH = NO
+
+# Graphiques d'appels
+CALL_GRAPH = NO
+CALLER_GRAPH = NO
+
+# Graphiques de dépendances
+DEPENDENCY_GRAPH = NO
+DIRECTORY_GRAPH = YES
+
+#---------------------------------------------------------------------------
+# Affichage du code source
+#---------------------------------------------------------------------------
+
+# Afficher le code source
+SOURCE_BROWSER = YES
+
+# Faire des liens vers le code source
+REFERENCES_RELATION = YES
+REFERENCES_LINK_SOURCE = YES
+
+# Mettre en évidence la syntaxe
+HIGHLIGHT_CODE = YES
+
+# Numéroter les lignes
+LINE_NUMBERS = YES
+
+#---------------------------------------------------------------------------
+# Options d'apparence
+#---------------------------------------------------------------------------
+
+# Couleurs HTML
+HTML_COLORSTYLE = AUTO
+
+# Génération d'un index
+GENERATE_TREEVIEW = YES
+TREEVIEW_WIDTH = 250
+
+# Thème CSS
+HTML_EXTRA_STYLESHEET = 
+
+# Favicon et logo
+HTML_FAVICON = 
+
+# Activer les mathématiques
+USE_MATHJAX = NO
+
+#---------------------------------------------------------------------------
+# Options d'entrée/sortie supplémentaires
+#---------------------------------------------------------------------------
+
+# Fichiers d'input supplémentaires
+MAIN_PROJECT_DOC = ./README.md
+
+# Images
+IMAGE_PATH = 
+
+# Support des notes
+GENERATE_TODOLIST = YES
+GENERATE_TESTLIST = YES
+GENERATE_BUGLIST = YES
+GENERATE_DEPRECATEDLIST = YES
+
+# Génération des dépendances
+GENERATE_DEPEND = NO
+
+# Nettoyer la sortie
+CLEAN_UP_WHEN_DONE = NO
+
+#---------------------------------------------------------------------------
+# Configuration LaTeX
+#---------------------------------------------------------------------------
+
+# Générer un PDF
+PDF_HYPERLINKS = YES
+USE_PDFLATEX = YES
+
+# Taille du papier
+PAPER_TYPE = a4wide
+
+#---------------------------------------------------------------------------
+# Avertissements
+#---------------------------------------------------------------------------
+
+# Afficher les avertissements
+QUIET = NO
+WARNINGS = YES
+WARN_IF_UNDOCUMENTED = YES
+WARN_IF_DOC_IS_EMPTY = YES
+WARN_NO_PARAMDOC = NO
+
+# Format des messages d'erreur
+WARN_FORMAT = "$file:$line: $text"

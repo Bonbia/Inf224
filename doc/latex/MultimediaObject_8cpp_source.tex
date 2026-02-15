@@ -1,0 +1,45 @@
+\doxysection{Multimedia\+Object.\+cpp}
+\hypertarget{MultimediaObject_8cpp_source}{}\label{MultimediaObject_8cpp_source}\index{MultimediaObject.cpp@{MultimediaObject.cpp}}
+\mbox{\hyperlink{MultimediaObject_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{MultimediaObject_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{MultimediaObject_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{MultimediaObject_8h}{MultimediaObject.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{MultimediaObject_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{MultimediaObject_8cpp_source_l00015}\mbox{\hyperlink{classMultimediaObject_a136f86f6b45b1e74b20a5d6cc36b36e8}{00015}}\ \mbox{\hyperlink{classMultimediaObject_a136f86f6b45b1e74b20a5d6cc36b36e8}{MultimediaObject::MultimediaObject}}()\ :\ nom(\textcolor{stringliteral}{"{}"{}}),\ nomFichier(\textcolor{stringliteral}{"{}"{}})\ \{\}}
+\DoxyCodeLine{\Hypertarget{MultimediaObject_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{MultimediaObject_8cpp_source_l00023}\mbox{\hyperlink{classMultimediaObject_a96057a963775e5b12b8b2ee366d8c087}{00023}}\ \mbox{\hyperlink{classMultimediaObject_a136f86f6b45b1e74b20a5d6cc36b36e8}{MultimediaObject::MultimediaObject}}(\textcolor{keyword}{const}\ std::string\ \&nom,\ \textcolor{keyword}{const}\ std::string\ \&nomFichier)\ :\ nom(nom),\ nomFichier(nomFichier)\ \{\}}
+\DoxyCodeLine{\Hypertarget{MultimediaObject_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{MultimediaObject_8cpp_source_l00030}\mbox{\hyperlink{classMultimediaObject_ae7f09f13f345d904b1a690e98ef77ce8}{00030}}\ \mbox{\hyperlink{classMultimediaObject_ae7f09f13f345d904b1a690e98ef77ce8}{MultimediaObject::\string~MultimediaObject}}()}
+\DoxyCodeLine{\Hypertarget{MultimediaObject_8cpp_source_l00031}00031\ \{}
+\DoxyCodeLine{\Hypertarget{MultimediaObject_8cpp_source_l00032}00032\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Objet\ "{}}\ <<\ \mbox{\hyperlink{classMultimediaObject_a94609b6077c9c4a908a892b78539c50b}{nom}}\ <<\ \textcolor{stringliteral}{"{}\ detruit."{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{MultimediaObject_8cpp_source_l00033}00033\ \}}
+\DoxyCodeLine{\Hypertarget{MultimediaObject_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{MultimediaObject_8cpp_source_l00040}\mbox{\hyperlink{classMultimediaObject_a4b2aba750ff79dcd6ff5f4afe803bd0a}{00040}}\ std::string\ \mbox{\hyperlink{classMultimediaObject_a4b2aba750ff79dcd6ff5f4afe803bd0a}{MultimediaObject::getNom}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{MultimediaObject_8cpp_source_l00041}00041\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{MultimediaObject_8cpp_source_l00042}00042\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classMultimediaObject_a94609b6077c9c4a908a892b78539c50b}{nom}};}
+\DoxyCodeLine{\Hypertarget{MultimediaObject_8cpp_source_l00043}00043\ \}}
+\DoxyCodeLine{\Hypertarget{MultimediaObject_8cpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{MultimediaObject_8cpp_source_l00050}\mbox{\hyperlink{classMultimediaObject_a0026c6c54d3160becf762d60c6e58fa7}{00050}}\ std::string\ \mbox{\hyperlink{classMultimediaObject_a0026c6c54d3160becf762d60c6e58fa7}{MultimediaObject::getNomFichier}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{MultimediaObject_8cpp_source_l00051}00051\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{MultimediaObject_8cpp_source_l00052}00052\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classMultimediaObject_a2fdb8df4c8bef5ca3c6155f88a75822a}{nomFichier}};}
+\DoxyCodeLine{\Hypertarget{MultimediaObject_8cpp_source_l00053}00053\ \}}
+\DoxyCodeLine{\Hypertarget{MultimediaObject_8cpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{MultimediaObject_8cpp_source_l00060}\mbox{\hyperlink{classMultimediaObject_ac746ee5c763779a98a04b8abe30dd2d3}{00060}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMultimediaObject_ac746ee5c763779a98a04b8abe30dd2d3}{MultimediaObject::setNom}}(\textcolor{keyword}{const}\ std::string\ newNom)}
+\DoxyCodeLine{\Hypertarget{MultimediaObject_8cpp_source_l00061}00061\ \{}
+\DoxyCodeLine{\Hypertarget{MultimediaObject_8cpp_source_l00062}00062\ \ \ \ \ \mbox{\hyperlink{classMultimediaObject_a94609b6077c9c4a908a892b78539c50b}{nom}}\ =\ newNom;}
+\DoxyCodeLine{\Hypertarget{MultimediaObject_8cpp_source_l00063}00063\ \}}
+\DoxyCodeLine{\Hypertarget{MultimediaObject_8cpp_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{MultimediaObject_8cpp_source_l00070}\mbox{\hyperlink{classMultimediaObject_a52acf95a18530b1046e10a69eaa8db9d}{00070}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMultimediaObject_a52acf95a18530b1046e10a69eaa8db9d}{MultimediaObject::setNomFichier}}(\textcolor{keyword}{const}\ std::string\ newNomFichier)}
+\DoxyCodeLine{\Hypertarget{MultimediaObject_8cpp_source_l00071}00071\ \{}
+\DoxyCodeLine{\Hypertarget{MultimediaObject_8cpp_source_l00072}00072\ \ \ \ \ \mbox{\hyperlink{classMultimediaObject_a2fdb8df4c8bef5ca3c6155f88a75822a}{nomFichier}}\ =\ newNomFichier;}
+\DoxyCodeLine{\Hypertarget{MultimediaObject_8cpp_source_l00073}00073\ \}}
+\DoxyCodeLine{\Hypertarget{MultimediaObject_8cpp_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{MultimediaObject_8cpp_source_l00082}\mbox{\hyperlink{classMultimediaObject_a3a0df7ef2b64cbaee8734378b7a77fd7}{00082}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMultimediaObject_a3a0df7ef2b64cbaee8734378b7a77fd7}{MultimediaObject::affiche}}(std::ostream\ \&os)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{MultimediaObject_8cpp_source_l00083}00083\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{MultimediaObject_8cpp_source_l00084}00084\ \ \ \ \ os\ <<\ \textcolor{stringliteral}{"{}Nom\ :\ "{}}\ <<\ \mbox{\hyperlink{classMultimediaObject_a94609b6077c9c4a908a892b78539c50b}{nom}}\ <<\ \textcolor{stringliteral}{"{}\ |\ Fichier\ :\ "{}}\ <<\ \mbox{\hyperlink{classMultimediaObject_a2fdb8df4c8bef5ca3c6155f88a75822a}{nomFichier}};}
+\DoxyCodeLine{\Hypertarget{MultimediaObject_8cpp_source_l00085}00085\ \}}
+\DoxyCodeLine{\Hypertarget{MultimediaObject_8cpp_source_l00086}\mbox{\hyperlink{classMultimediaObject_aa5f27d85f4e1620f50a57f54c73e90b0}{00086}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMultimediaObject_aa5f27d85f4e1620f50a57f54c73e90b0}{MultimediaObject::jouer}}(std::ostream\ \&out)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{MultimediaObject_8cpp_source_l00087}00087\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{MultimediaObject_8cpp_source_l00088}00088\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['send_0',['send',['../classClient.html#ab26831c395da92b5893066f9ce7963a4',1,'Client.send()'],['../classSocket.html#aadd260f15afadf0c31fa3dcf88d0ea49',1,'Socket::send(const SOCKDATA *buf, size_t len, int flags=0)']]],
+  ['sendto_1',['sendTo',['../classSocket.html#aef5c4ba848f475f117b89bac531ac150',1,'Socket']]],
+  ['serversocket_2',['serversocket',['../classServerSocket.html#a2b3098589541243241ca25495155186c',1,'ServerSocket::ServerSocket()'],['../classServerSocket.html#a4ba3346c88fb74117c7b0d4d0e3e4005',1,'ServerSocket::ServerSocket(const ServerSocket &amp;)=delete']]],
+  ['setaddress_3',['setAddress',['../classSocket.html#afa64e345564506760728d2b545fcbe0c',1,'Socket']]],
+  ['setchapitres_4',['setChapitres',['../classFilm.html#a0cec79fce8bb7535f1a4dab5f6777a11',1,'Film']]],
+  ['setduree_5',['setDuree',['../classVideo.html#ab9245713b9db1251f535d832c23b124b',1,'Video']]],
+  ['setlatitude_6',['setLatitude',['../classPhoto.html#a94319fce6b17eef205d25a15b44f3439',1,'Photo']]],
+  ['setlocaladdress_7',['setLocalAddress',['../classSocket.html#ae65efac394eb49594cbb5b2db957e056',1,'Socket']]],
+  ['setlongitude_8',['setLongitude',['../classPhoto.html#a110586b178177c87da549b6de6d85fb5',1,'Photo']]],
+  ['setnom_9',['setNom',['../classMultimediaObject.html#ac746ee5c763779a98a04b8abe30dd2d3',1,'MultimediaObject']]],
+  ['setnomfichier_10',['setNomFichier',['../classMultimediaObject.html#a52acf95a18530b1046e10a69eaa8db9d',1,'MultimediaObject']]],
+  ['setreadseparator_11',['setReadSeparator',['../classSocketBuffer.html#aca9ca0b2defa3b9e08bbbe6abafe3f16',1,'SocketBuffer']]],
+  ['setreceivebuffersize_12',['setreceivebuffersize',['../classSocket.html#a06ff0dd6837c9f51948df655fc2713cd',1,'Socket::setReceiveBufferSize()'],['../classServerSocket.html#ab34154bc6114c638ae02f5e018121099',1,'ServerSocket::setReceiveBufferSize()']]],
+  ['setreuseaddress_13',['setreuseaddress',['../classSocket.html#ab02b997fa7e251d596116e95c9ccaf97',1,'Socket::setReuseAddress()'],['../classServerSocket.html#ae60d7cc31ad535e5d3cac42e38b8ec98',1,'ServerSocket::setReuseAddress()']]],
+  ['setsendbuffersize_14',['setSendBufferSize',['../classSocket.html#afc49ad6cc259a0006ca13bb22fdd7383',1,'Socket']]],
+  ['setsolinger_15',['setSoLinger',['../classSocket.html#a41cc1caae51e3e83e16ce2c20689ed03',1,'Socket']]],
+  ['setsotimeout_16',['setsotimeout',['../classSocket.html#ad65a22ec40902e2c0a98c5d4ac885f99',1,'Socket::setSoTimeout()'],['../classServerSocket.html#aedb9144c9c375fcb14ac47bcb9d2eb17',1,'ServerSocket::setSoTimeout()']]],
+  ['settcpnodelay_17',['settcpnodelay',['../classSocket.html#a7bc0110f3bedbb18f26b05ece01553fa',1,'Socket::setTcpNoDelay()'],['../classServerSocket.html#a9e5e1ee852ba26156c757a0086b780fe',1,'ServerSocket::setTcpNoDelay()']]],
+  ['setwriteseparator_18',['setWriteSeparator',['../classSocketBuffer.html#a165d87f2460de769fb09d84a46a793a4',1,'SocketBuffer']]],
+  ['shutdowninput_19',['shutdownInput',['../classSocket.html#a417b47af24de10184192de00d9112589',1,'Socket']]],
+  ['shutdownoutput_20',['shutdownOutput',['../classSocket.html#a650128aee2581e6695c6812d8afe14b5',1,'Socket']]],
+  ['socket_21',['socket',['../classSocket.html#acd3cb39bc957be2f34c91b9e262e1cec',1,'Socket::Socket()'],['../classSocketBuffer.html#ace5301cb9f4b36153759d72cfc7e7969',1,'SocketBuffer::socket()'],['../classSocket.html#aae1f09b930bb7118172baa0abb15543e',1,'Socket::Socket(const Socket &amp;)=delete'],['../classSocket.html#a8e3f095dfe84d6599761c4ca54900487',1,'Socket::Socket(int type, SOCKET sockfd)']]],
+  ['socketbuffer_22',['socketbuffer',['../classSocketBuffer.html#ac5989bcaf64234947934c7106af1cf38',1,'SocketBuffer::SocketBuffer(Socket *, size_t inputSize=8192, size_t ouputSize=8192)'],['../classSocketBuffer.html#a739a80a7bb5d2603d8d0d9a88293bad8',1,'SocketBuffer::SocketBuffer(Socket &amp;, size_t inputSize=8192, size_t ouputSize=8192)'],['../classSocketBuffer.html#aa88689ce663aa53a0907834e149a55fb',1,'SocketBuffer::SocketBuffer(const SocketBuffer &amp;)=delete']]],
+  ['socketcnx_23',['SocketCnx',['../classSocketCnx.html#acd004e809a99928860ffa94cbde99ae1',1,'SocketCnx']]],
+  ['startup_24',['startup',['../classSocket.html#a1a662407744738aa56d1ccb6d7be26eb',1,'Socket']]]
+];

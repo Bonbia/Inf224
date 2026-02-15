@@ -1,0 +1,133 @@
+\doxysection{Film.\+h}
+\hypertarget{Film_8h_source}{}\label{Film_8h_source}\index{Film.h@{Film.h}}
+\mbox{\hyperlink{Film_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00011}00011\ \textcolor{preprocessor}{\#ifndef\ FILM\_H}}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00012}00012\ \textcolor{preprocessor}{\#define\ FILM\_H}}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Video_8h}{Video.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00015}00015\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00016}00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMediaManager}{MediaManager}};\ \textcolor{comment}{//\ forward\ declaration}}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00026}\mbox{\hyperlink{classFilm}{00026}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classFilm}{Film}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classVideo}{Video}}}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00027}00027\ \{}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00028}00028\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00029}\mbox{\hyperlink{classFilm_a7715217ef62d00ed7069e19a2270658d}{00029}}\ \ \ \ \ \textcolor{keywordtype}{int}\ *\mbox{\hyperlink{classFilm_a7715217ef62d00ed7069e19a2270658d}{chapitres}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00030}\mbox{\hyperlink{classFilm_afce8b9d1a3ff343ed7d3645620d06456}{00030}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classFilm_afce8b9d1a3ff343ed7d3645620d06456}{nbChapitres}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00032}00032\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00033}00033\ \ \ \ \ \textcolor{comment}{//\ Protected\ constructors\ to\ force\ creation\ via\ MediaManager}}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00034}\mbox{\hyperlink{classFilm_af2835db2b0ef3a87aaa3222f4d9d1ae3}{00034}}\ \ \ \ \ \mbox{\hyperlink{classFilm_af2835db2b0ef3a87aaa3222f4d9d1ae3}{Film}}()\ :\ \mbox{\hyperlink{classVideo}{Video}}(),\ \mbox{\hyperlink{classFilm_a7715217ef62d00ed7069e19a2270658d}{chapitres}}(nullptr),\ \mbox{\hyperlink{classFilm_afce8b9d1a3ff343ed7d3645620d06456}{nbChapitres}}(0)\ \{\}}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00036}\mbox{\hyperlink{classFilm_a30104431315f670c57148730480fa8c9}{00036}}\ \ \ \ \ \mbox{\hyperlink{classFilm_a30104431315f670c57148730480fa8c9}{Film}}(\textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{classMultimediaObject_a94609b6077c9c4a908a892b78539c50b}{nom}},\ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{classMultimediaObject_a2fdb8df4c8bef5ca3c6155f88a75822a}{nomFichier}},\ \textcolor{keywordtype}{int}\ duree)\ :\ \mbox{\hyperlink{classVideo}{Video}}(\mbox{\hyperlink{classMultimediaObject_a94609b6077c9c4a908a892b78539c50b}{nom}},\ \mbox{\hyperlink{classMultimediaObject_a2fdb8df4c8bef5ca3c6155f88a75822a}{nomFichier}},\ duree),}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classFilm_a7715217ef62d00ed7069e19a2270658d}{chapitres}}(nullptr),}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classFilm_afce8b9d1a3ff343ed7d3645620d06456}{nbChapitres}}(0)}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00039}00039\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00040}00040\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00042}00042\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00043}\mbox{\hyperlink{classFilm_a490465154daeb29961fddb843a864eeb}{00043}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classFilm_a490465154daeb29961fddb843a864eeb}{\string~Film}}()}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00044}00044\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ \mbox{\hyperlink{classFilm_a7715217ef62d00ed7069e19a2270658d}{chapitres}};}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00046}00046\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00047}00047\ \ \ \ \ \textcolor{comment}{//\ Copie\ profonde}}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00048}\mbox{\hyperlink{classFilm_a68f781851622ec80878c9a6e7ccb925e}{00048}}\ \ \ \ \ \mbox{\hyperlink{classFilm_a68f781851622ec80878c9a6e7ccb925e}{Film}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classFilm}{Film}}\ \&from)\ :\ \mbox{\hyperlink{classVideo}{Video}}(from)}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00049}00049\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00050}00050\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classFilm_afce8b9d1a3ff343ed7d3645620d06456}{nbChapitres}}\ =\ from.\mbox{\hyperlink{classFilm_afce8b9d1a3ff343ed7d3645620d06456}{nbChapitres}};}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (from.\mbox{\hyperlink{classFilm_a7715217ef62d00ed7069e19a2270658d}{chapitres}}\ \&\&\ \mbox{\hyperlink{classFilm_afce8b9d1a3ff343ed7d3645620d06456}{nbChapitres}}\ >\ 0)}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00052}00052\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classFilm_a7715217ef62d00ed7069e19a2270658d}{chapitres}}\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{int}[\mbox{\hyperlink{classFilm_afce8b9d1a3ff343ed7d3645620d06456}{nbChapitres}}];}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classFilm_afce8b9d1a3ff343ed7d3645620d06456}{nbChapitres}};\ ++i)}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classFilm_a7715217ef62d00ed7069e19a2270658d}{chapitres}}[i]\ =\ from.\mbox{\hyperlink{classFilm_a7715217ef62d00ed7069e19a2270658d}{chapitres}}[i];}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00058}00058\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00060}00060\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classFilm_a7715217ef62d00ed7069e19a2270658d}{chapitres}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00062}00062\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00063}00063\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00065}00065\ \ \ \ \ \textcolor{comment}{//\ 3.\ Opérateur\ d'affectation\ :\ gère\ le\ nettoyage\ et\ la\ nouvelle\ copie}}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00066}\mbox{\hyperlink{classFilm_ac0b358393c6e1d293141c5c96cd9a3be}{00066}}\ \ \ \ \ \mbox{\hyperlink{classFilm}{Film}}\ \&\mbox{\hyperlink{classFilm_ac0b358393c6e1d293141c5c96cd9a3be}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classFilm}{Film}}\ \&from)}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00067}00067\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ !=\ \&from)}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00069}00069\ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Protection\ contre\ l'auto-\/affectation\ (f\ =\ f)}}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ Video::operator=(from);\ \textcolor{comment}{//\ Copie\ la\ partie\ Video}}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ \mbox{\hyperlink{classFilm_a7715217ef62d00ed7069e19a2270658d}{chapitres}};\ \textcolor{comment}{//\ Nettoyage\ de\ l'ancienne\ mémoire}}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classFilm_afce8b9d1a3ff343ed7d3645620d06456}{nbChapitres}}\ =\ from.\mbox{\hyperlink{classFilm_afce8b9d1a3ff343ed7d3645620d06456}{nbChapitres}};}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (from.\mbox{\hyperlink{classFilm_a7715217ef62d00ed7069e19a2270658d}{chapitres}}\ \&\&\ \mbox{\hyperlink{classFilm_afce8b9d1a3ff343ed7d3645620d06456}{nbChapitres}}\ >\ 0)}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classFilm_a7715217ef62d00ed7069e19a2270658d}{chapitres}}\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{int}[\mbox{\hyperlink{classFilm_afce8b9d1a3ff343ed7d3645620d06456}{nbChapitres}}];}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classFilm_afce8b9d1a3ff343ed7d3645620d06456}{nbChapitres}};\ ++i)}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classFilm_a7715217ef62d00ed7069e19a2270658d}{chapitres}}[i]\ =\ from.\mbox{\hyperlink{classFilm_a7715217ef62d00ed7069e19a2270658d}{chapitres}}[i];}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classFilm_a7715217ef62d00ed7069e19a2270658d}{chapitres}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00087}00087\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00088}00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00089}00089\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00091}00091\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ MODIFIEURS/ACCESSEURS\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00093}\mbox{\hyperlink{classFilm_a0cec79fce8bb7535f1a4dab5f6777a11}{00093}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFilm_a0cec79fce8bb7535f1a4dab5f6777a11}{setChapitres}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ *newChapitres,\ \textcolor{keywordtype}{int}\ newNbChapitres)}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00094}00094\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00095}00095\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ \mbox{\hyperlink{classFilm_a7715217ef62d00ed7069e19a2270658d}{chapitres}};\ \textcolor{comment}{//\ On\ libère\ l'ancien\ tableau}}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00096}00096\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classFilm_afce8b9d1a3ff343ed7d3645620d06456}{nbChapitres}}\ =\ newNbChapitres;}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00098}00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classFilm_afce8b9d1a3ff343ed7d3645620d06456}{nbChapitres}}\ >\ 0\ \&\&\ newChapitres\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00099}00099\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classFilm_a7715217ef62d00ed7069e19a2270658d}{chapitres}}\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{int}[\mbox{\hyperlink{classFilm_afce8b9d1a3ff343ed7d3645620d06456}{nbChapitres}}];}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classFilm_afce8b9d1a3ff343ed7d3645620d06456}{nbChapitres}};\ ++i)}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classFilm_a7715217ef62d00ed7069e19a2270658d}{chapitres}}[i]\ =\ newChapitres[i];}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00105}00105\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00106}00106\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00107}00107\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classFilm_a7715217ef62d00ed7069e19a2270658d}{chapitres}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classFilm_afce8b9d1a3ff343ed7d3645620d06456}{nbChapitres}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00110}00110\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00111}00111\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00113}\mbox{\hyperlink{classFilm_af3fc0bb9f2d26a58632808ce2eef4772}{00113}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classFilm_af3fc0bb9f2d26a58632808ce2eef4772}{getNbChapitres}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classFilm_afce8b9d1a3ff343ed7d3645620d06456}{nbChapitres}};\ \}}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00115}\mbox{\hyperlink{classFilm_a04d6e4c63a9c76bc68be7967b65677a6}{00115}}\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ *\mbox{\hyperlink{classFilm_a04d6e4c63a9c76bc68be7967b65677a6}{getChapitres}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classFilm_a7715217ef62d00ed7069e19a2270658d}{chapitres}};\ \}}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00117}00117\ \ \ \ \ \textcolor{comment}{//\ Affichage\ (redéfinition\ de\ affiche)}}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00118}\mbox{\hyperlink{classFilm_a2cbb1a5f605f4a420e0287d2ef2b498d}{00118}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFilm_a2cbb1a5f605f4a420e0287d2ef2b498d}{affiche}}(std::ostream\ \&s)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00119}00119\ \textcolor{keyword}{\ \ \ \ }\{\ \textcolor{comment}{//\ Override\ ???}}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00120}00120\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classVideo_a94cc41d943e5d6c8f999c32b649cb7ba}{Video::affiche}}(s);}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00121}00121\ \ \ \ \ \ \ \ \ s\ <<\ \textcolor{stringliteral}{"{}\ |\ Chapitres\ :\ "{}};\ \textcolor{comment}{//\ Affichage\ initial\ du\ titre}}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00122}00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classFilm_afce8b9d1a3ff343ed7d3645620d06456}{nbChapitres}}\ >\ 0)}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00123}00123\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classFilm_afce8b9d1a3ff343ed7d3645620d06456}{nbChapitres}};\ ++i)}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ s\ <<\ \mbox{\hyperlink{classFilm_a7715217ef62d00ed7069e19a2270658d}{chapitres}}[i]\ <<\ \textcolor{stringliteral}{"{}s"{}};\ \textcolor{comment}{//\ Ajout\ de\ la\ durée\ et\ de\ l'unité}}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Logique\ pour\ la\ virgule\ traînante}}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ <\ \mbox{\hyperlink{classFilm_afce8b9d1a3ff343ed7d3645620d06456}{nbChapitres}}\ -\/\ 1)}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ s\ <<\ \textcolor{stringliteral}{"{},\ "{}};}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00134}00134\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00135}00135\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00136}00136\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ s\ <<\ \textcolor{stringliteral}{"{}Aucun"{}};}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00138}00138\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00139}00139\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00140}00140\ }
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00141}\mbox{\hyperlink{classFilm_a8ff7b746f97f126496d2e184de001a14}{00141}}\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMediaManager}{MediaManager}};}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00142}00142\ \};}
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00143}00143\ }
+\DoxyCodeLine{\Hypertarget{Film_8h_source_l00144}00144\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FILM\_H}}
+
+\end{DoxyCode}

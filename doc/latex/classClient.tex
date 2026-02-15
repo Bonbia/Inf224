@@ -1,0 +1,267 @@
+\doxysection{Client Class Reference}
+\hypertarget{classClient}{}\label{classClient}\index{Client@{Client}}
+
+
+\doxylink{classClient}{Client} TCP pour communication avec serveur multimédia.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classClient_a163113b9c3fda23dcdc750db9278afbe}{Client}} (String host, int port)  throws Unknown\+Host\+Exception, IOException 
+\begin{DoxyCompactList}\small\item\em Constructeur -\/ établit la connexion avec le serveur. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classClient_ab26831c395da92b5893066f9ce7963a4}{send}} (String request)
+\begin{DoxyCompactList}\small\item\em Envoie une requête au serveur et reçoit la réponse. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classClient_ac9fec818083d641b633a8e4a75d981a7}{main}} (String argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Point d\textquotesingle{}entrée du programme client. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Package Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final String \mbox{\hyperlink{classClient_a302a618e988386463ceefd31bbfd4792}{DEFAULT\+\_\+\+HOST}} = "{}localhost"{}
+\begin{DoxyCompactList}\small\item\em Hôte par défaut pour la connexion (localhost) \end{DoxyCompactList}\item 
+static final int \mbox{\hyperlink{classClient_afd263578070034213b6042e18e90a5c4}{DEFAULT\+\_\+\+PORT}} = 3331
+\begin{DoxyCompactList}\small\item\em Port par défaut pour la connexion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSocket}{Socket}} \mbox{\hyperlink{classClient_ada8883642b4e572e515d7965d2ae60f2}{sock}}
+\begin{DoxyCompactList}\small\item\em \doxylink{classSocket}{Socket} de communication avec le serveur. \end{DoxyCompactList}\item 
+Buffered\+Reader \mbox{\hyperlink{classClient_a2444414fd925ffa72107d443d968c6f7}{input}}
+\begin{DoxyCompactList}\small\item\em Lecteur pour les données reçues du serveur. \end{DoxyCompactList}\item 
+Buffered\+Writer \mbox{\hyperlink{classClient_a887c058363e5433882a9c2532196b7e3}{output}}
+\begin{DoxyCompactList}\small\item\em Écrivain pour les données envoyées au serveur. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final long \mbox{\hyperlink{classClient_a726d54cbc7e555b2cba9cb7fb63ed6b4}{serial\+Version\+UID}} = 1L
+\begin{DoxyCompactList}\small\item\em ID de sérialisation pour la classe. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classClient}{Client} TCP pour communication avec serveur multimédia. 
+
+\begin{DoxyVerb}   Établit une connexion socket avec un serveur et gère l'envoi de
+   requêtes
+   texte ainsi que la réception de réponses. Supporte :
+   - Connection réseau à distance ou locale
+   - Envoi de requêtes texte
+   - Réception de réponses texte
+   - Gestion basique des erreurs
+\end{DoxyVerb}
+ \begin{DoxyNote}{Note}
+Le client bloque l\textquotesingle{}exécution si le serveur ne répond pas 
+
+Protocole \+: requêtes et réponses terminées par un saut de ligne 
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{Client_8java_source_l00030}{30}} of file \mbox{\hyperlink{Client_8java_source}{Client.\+java}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classClient_a163113b9c3fda23dcdc750db9278afbe}\label{classClient_a163113b9c3fda23dcdc750db9278afbe} 
+\index{Client@{Client}!Client@{Client}}
+\index{Client@{Client}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{Client()}{Client()}}
+{\footnotesize\ttfamily Client.\+Client (\begin{DoxyParamCaption}\item[{String}]{host,  }\item[{int}]{port }\end{DoxyParamCaption}) throws Unknown\+Host\+Exception, IOException\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructeur -\/ établit la connexion avec le serveur. 
+
+\begin{DoxyVerb}   Crée une connexion socket avec le serveur spécifié et initialise
+   les flux d'entrée/sortie pour la communication.
+\end{DoxyVerb}
+ 
+\begin{DoxyParams}{Parameters}
+{\em host} & Nom d\textquotesingle{}hôte ou adresse IP du serveur \\
+\hline
+{\em port} & Port sur lequel le serveur écoute\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Unknown\+Host\+Exception} & si l\textquotesingle{}hôte n\textquotesingle{}est pas trouvable \\
+\hline
+{\em IOException} & si la connexion échoue ou si les flux ne peuvent pas être ouverts \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{Client_8java_source_l00124}{124}} of file \mbox{\hyperlink{Client_8java_source}{Client.\+java}}.
+
+
+
+References \mbox{\hyperlink{Client_8java_source_l00054}{input}}, \mbox{\hyperlink{Client_8java_source_l00059}{output}}, \mbox{\hyperlink{Client_8java_source_l00049}{sock}}, and \mbox{\hyperlink{ccsocket_8cpp_source_l00048}{Socket.\+Socket()}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classClient_ac9fec818083d641b633a8e4a75d981a7}\label{classClient_ac9fec818083d641b633a8e4a75d981a7} 
+\index{Client@{Client}!main@{main}}
+\index{main@{main}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily static void Client.\+main (\begin{DoxyParamCaption}\item[{String}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Point d\textquotesingle{}entrée du programme client. 
+
+\begin{DoxyVerb}   Lit des requêtes depuis le terminal, les envoie au serveur,
+   reçoit et affiche les réponses.
+
+   Options de ligne de commande :
+   - argv[0] : hôte du serveur (par défaut: localhost)
+   - argv[1] : port du serveur (par défaut: 3331)
+\end{DoxyVerb}
+ 
+\begin{DoxyParams}{Parameters}
+{\em argv} & Arguments en ligne de commande \mbox{[}host\mbox{]} \mbox{[}port\mbox{]}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Le programme bloque si le serveur ne répond pas 
+
+Tapez les commandes et appuyez sur Entrée pour les envoyer 
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{Client_8java_source_l00076}{76}} of file \mbox{\hyperlink{Client_8java_source}{Client.\+java}}.
+
+
+
+References \mbox{\hyperlink{Client_8java_source_l00039}{DEFAULT\+\_\+\+HOST}}, \mbox{\hyperlink{Client_8java_source_l00044}{DEFAULT\+\_\+\+PORT}}, and \mbox{\hyperlink{Client_8java_source_l00159}{send()}}.
+
+\Hypertarget{classClient_ab26831c395da92b5893066f9ce7963a4}\label{classClient_ab26831c395da92b5893066f9ce7963a4} 
+\index{Client@{Client}!send@{send}}
+\index{send@{send}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{send()}{send()}}
+{\footnotesize\ttfamily String Client.\+send (\begin{DoxyParamCaption}\item[{String}]{request }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Envoie une requête au serveur et reçoit la réponse. 
+
+\begin{DoxyVerb}   Cette méthode envoie une requête texte au serveur et attend une
+   réponse.
+   Elle bloque l'exécution jusqu'à la réception de la réponse.
+\end{DoxyVerb}
+ 
+\begin{DoxyParams}{Parameters}
+{\em request} & La requête texte à envoyer au serveur\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+La réponse reçue du serveur, ou null en cas d\textquotesingle{}erreur
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Cette méthode bloque si le serveur ne répond pas 
+
+En cas d\textquotesingle{}erreur, null est retourné et un message d\textquotesingle{}erreur est affiché 
+
+Le protocole utilise des sauts de ligne comme séparateurs 
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{Client_8java_source_l00159}{159}} of file \mbox{\hyperlink{Client_8java_source}{Client.\+java}}.
+
+
+
+References \mbox{\hyperlink{Client_8java_source_l00054}{input}}, and \mbox{\hyperlink{Client_8java_source_l00059}{output}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classClient_a302a618e988386463ceefd31bbfd4792}\label{classClient_a302a618e988386463ceefd31bbfd4792} 
+\index{Client@{Client}!DEFAULT\_HOST@{DEFAULT\_HOST}}
+\index{DEFAULT\_HOST@{DEFAULT\_HOST}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_HOST}{DEFAULT\_HOST}}
+{\footnotesize\ttfamily final String Client.\+DEFAULT\+\_\+\+HOST = "{}localhost"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [package]}}
+
+
+
+Hôte par défaut pour la connexion (localhost) 
+
+
+
+Definition at line \mbox{\hyperlink{Client_8java_source_l00039}{39}} of file \mbox{\hyperlink{Client_8java_source}{Client.\+java}}.
+
+\Hypertarget{classClient_afd263578070034213b6042e18e90a5c4}\label{classClient_afd263578070034213b6042e18e90a5c4} 
+\index{Client@{Client}!DEFAULT\_PORT@{DEFAULT\_PORT}}
+\index{DEFAULT\_PORT@{DEFAULT\_PORT}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_PORT}{DEFAULT\_PORT}}
+{\footnotesize\ttfamily final int Client.\+DEFAULT\+\_\+\+PORT = 3331\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [package]}}
+
+
+
+Port par défaut pour la connexion. 
+
+
+
+Definition at line \mbox{\hyperlink{Client_8java_source_l00044}{44}} of file \mbox{\hyperlink{Client_8java_source}{Client.\+java}}.
+
+\Hypertarget{classClient_a2444414fd925ffa72107d443d968c6f7}\label{classClient_a2444414fd925ffa72107d443d968c6f7} 
+\index{Client@{Client}!input@{input}}
+\index{input@{input}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{input}{input}}
+{\footnotesize\ttfamily Buffered\+Reader Client.\+input\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Lecteur pour les données reçues du serveur. 
+
+
+
+Definition at line \mbox{\hyperlink{Client_8java_source_l00054}{54}} of file \mbox{\hyperlink{Client_8java_source}{Client.\+java}}.
+
+\Hypertarget{classClient_a887c058363e5433882a9c2532196b7e3}\label{classClient_a887c058363e5433882a9c2532196b7e3} 
+\index{Client@{Client}!output@{output}}
+\index{output@{output}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{output}{output}}
+{\footnotesize\ttfamily Buffered\+Writer Client.\+output\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Écrivain pour les données envoyées au serveur. 
+
+
+
+Definition at line \mbox{\hyperlink{Client_8java_source_l00059}{59}} of file \mbox{\hyperlink{Client_8java_source}{Client.\+java}}.
+
+\Hypertarget{classClient_a726d54cbc7e555b2cba9cb7fb63ed6b4}\label{classClient_a726d54cbc7e555b2cba9cb7fb63ed6b4} 
+\index{Client@{Client}!serialVersionUID@{serialVersionUID}}
+\index{serialVersionUID@{serialVersionUID}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{serialVersionUID}{serialVersionUID}}
+{\footnotesize\ttfamily final long Client.\+serial\+Version\+UID = 1L\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+ID de sérialisation pour la classe. 
+
+
+
+Definition at line \mbox{\hyperlink{Client_8java_source_l00034}{34}} of file \mbox{\hyperlink{Client_8java_source}{Client.\+java}}.
+
+\Hypertarget{classClient_ada8883642b4e572e515d7965d2ae60f2}\label{classClient_ada8883642b4e572e515d7965d2ae60f2} 
+\index{Client@{Client}!sock@{sock}}
+\index{sock@{sock}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{sock}{sock}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSocket}{Socket}} Client.\+sock\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{classSocket}{Socket} de communication avec le serveur. 
+
+
+
+Definition at line \mbox{\hyperlink{Client_8java_source_l00049}{49}} of file \mbox{\hyperlink{Client_8java_source}{Client.\+java}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Client_8java}{Client.\+java}}\end{DoxyCompactItemize}

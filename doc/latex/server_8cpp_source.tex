@@ -1,0 +1,68 @@
+\doxysection{server.\+cpp}
+\hypertarget{server_8cpp_source}{}\label{server_8cpp_source}\index{server.cpp@{server.cpp}}
+\mbox{\hyperlink{server_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00014}00014\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00015}00015\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00016}00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{tcpserver_8h}{tcpserver.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00017}00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{MediaManager_8h}{MediaManager.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00022}\mbox{\hyperlink{server_8cpp_a11717c934f77ad5167dac5d28562d85a}{00022}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{server_8cpp_a11717c934f77ad5167dac5d28562d85a}{PORT}}\ =\ 3331;}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00040}\mbox{\hyperlink{server_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{00040}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{client_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}\ *argv[])}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00041}00041\ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00046}00046\ \ \ \ \ \textcolor{keyword}{auto}\ myManager\ =\ std::make\_shared<MediaManager>();}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00047}00047\ \ \ \ \ myManager-\/>createPhoto(\textcolor{stringliteral}{"{}Photo1"{}},\ \textcolor{stringliteral}{"{}montsouris.jpg"{}},\ 48.8,\ 2.3);}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00048}00048\ \ \ \ \ myManager-\/>createVideo(\textcolor{stringliteral}{"{}Video1"{}},\ \textcolor{stringliteral}{"{}video.mp4"{}},\ 120);}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00059}00059\ \ \ \ \ \textcolor{keyword}{auto}\ *server\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classTCPServer}{TCPServer}}([\&](std::string\ \textcolor{keyword}{const}\ \&request,\ std::string\ \&response)}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Requête\ reçue:\ "{}}\ <<\ request\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ std::stringstream\ ss(request);}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ std::string\ command,\ name;}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ ss\ >>\ command\ >>\ name;\ \textcolor{comment}{//\ Découpe\ "{}SEARCH\ nom"{}\ ou\ "{}PLAY\ nom"{}}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ std::stringstream\ resStream;}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (command\ ==\ \textcolor{stringliteral}{"{}SEARCH"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ On\ utilise\ une\ stringstream\ pour\ capturer\ l'affichage}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ myManager-\/>displayObject(name,\ resStream);\ }
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ response\ =\ resStream.str();}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \}\ }
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (command\ ==\ \textcolor{stringliteral}{"{}PLAY"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ myManager-\/>playObject(name,\ resStream);}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ response\ =\ resStream.str();}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (command\ ==\ \textcolor{stringliteral}{"{}QUIT"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ response\ =\ \textcolor{stringliteral}{"{}Closing\ server..."{}};}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ response\ =\ \textcolor{stringliteral}{"{}Unknown\ command:\ "{}}\ +\ command;}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ std::replace(response.begin(),\ response.end(),\ \textcolor{charliteral}{'\(\backslash\)n'},\ \textcolor{charliteral}{'\ '});}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ std::replace(response.begin(),\ response.end(),\ \textcolor{charliteral}{'\(\backslash\)r'},\ \textcolor{charliteral}{'\ '});}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \});}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00117}00117\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Starting\ Server\ on\ port\ "{}}\ <<\ \mbox{\hyperlink{server_8cpp_a11717c934f77ad5167dac5d28562d85a}{PORT}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00118}00118\ \ \ \ \ \textcolor{keywordtype}{int}\ status\ =\ server-\/>\mbox{\hyperlink{classTCPServer_a1409041961e91f1dbc4933483b4c3b23}{run}}(\mbox{\hyperlink{server_8cpp_a11717c934f77ad5167dac5d28562d85a}{PORT}});}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00119}00119\ \ \ \ \ \textcolor{keywordflow}{if}\ (status\ <\ 0)}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00120}00120\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Could\ not\ start\ Server\ on\ port\ "{}}\ <<\ \mbox{\hyperlink{server_8cpp_a11717c934f77ad5167dac5d28562d85a}{PORT}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00123}00123\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00125}00125\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{server_8cpp_source_l00126}00126\ \}}
+
+\end{DoxyCode}

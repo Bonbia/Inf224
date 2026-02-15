@@ -1,0 +1,127 @@
+\doxysection{tcpserver.\+cpp}
+\hypertarget{tcpserver_8cpp_source}{}\label{tcpserver_8cpp_source}\index{tcpserver.cpp@{tcpserver.cpp}}
+\mbox{\hyperlink{tcpserver_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00001}00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00002}00002\ \textcolor{comment}{//\ \ tcpserver:\ TCP/IP\ INET\ Server.}}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00003}00003\ \textcolor{comment}{//\ \ (c)\ Eric\ Lecolinet\ -\/\ Telecom\ ParisTech\ -\/\ 2016.}}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00004}00004\ \textcolor{comment}{//\ \ http://www.telecom-\/paristech.fr/\string~elc}}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00005}00005\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <csignal>}}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <thread>}}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{tcpserver_8h}{tcpserver.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00011}00011\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00014}\mbox{\hyperlink{classSocketCnx}{00014}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSocketCnx}{SocketCnx}}\ \{}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00015}00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00016}00016\ \ \ \mbox{\hyperlink{classSocketCnx}{SocketCnx}}(\mbox{\hyperlink{classTCPServer}{TCPServer}}\&,\ \mbox{\hyperlink{classSocket}{Socket}}*);}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00017}00017\ \ \ \mbox{\hyperlink{classSocketCnx_aacd070cab0e3cf19cdaa4ec180b3b64c}{\string~SocketCnx}}();}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00019}00019\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSocketCnx_aa2ad22fb4fe4b78b3a9337e09475f10e}{processRequests}}();}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00021}\mbox{\hyperlink{classSocketCnx_ad46b42915ee50072a0307f0116403587}{00021}}\ \ \ \mbox{\hyperlink{classTCPServer}{TCPServer}}\&\ \mbox{\hyperlink{classSocketCnx_ad46b42915ee50072a0307f0116403587}{server\_}};}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00022}\mbox{\hyperlink{classSocketCnx_a51d23b906608701ef811a7d73f0de43e}{00022}}\ \ \ \mbox{\hyperlink{classSocket}{Socket}}*\ \mbox{\hyperlink{classSocketCnx_a51d23b906608701ef811a7d73f0de43e}{sock\_}};}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00023}\mbox{\hyperlink{classSocketCnx_af5f1e7aef17b14deb89f65d8c89eb619}{00023}}\ \ \ \mbox{\hyperlink{classSocketBuffer}{SocketBuffer}}*\ \mbox{\hyperlink{classSocketCnx_af5f1e7aef17b14deb89f65d8c89eb619}{sockbuf\_}};}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00024}\mbox{\hyperlink{classSocketCnx_a0b358d64acd070e4f54123bd7a011183}{00024}}\ \ \ std::thread\ \mbox{\hyperlink{classSocketCnx_a0b358d64acd070e4f54123bd7a011183}{thread\_}};}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00025}00025\ \};}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00028}\mbox{\hyperlink{classSocketCnx_acd004e809a99928860ffa94cbde99ae1}{00028}}\ \mbox{\hyperlink{classSocketCnx_acd004e809a99928860ffa94cbde99ae1}{SocketCnx::SocketCnx}}(\mbox{\hyperlink{classTCPServer}{TCPServer}}\&\ server,\ \mbox{\hyperlink{classSocket}{Socket}}*\ socket)\ :}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00029}00029\ server\_(server),}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00030}00030\ sock\_(socket),}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00031}00031\ sockbuf\_(new\ \mbox{\hyperlink{classSocketBuffer}{SocketBuffer}}(sock\_)),}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00032}00032\ thread\_(\ std::thread([this]\{\mbox{\hyperlink{classSocketCnx_aa2ad22fb4fe4b78b3a9337e09475f10e}{processRequests}}();\})\ )\ \{}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00033}00033\ \ \ \mbox{\hyperlink{classSocketCnx_a0b358d64acd070e4f54123bd7a011183}{thread\_}}.detach();}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00034}00034\ \}}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00037}\mbox{\hyperlink{classSocketCnx_aacd070cab0e3cf19cdaa4ec180b3b64c}{00037}}\ \mbox{\hyperlink{classSocketCnx_aacd070cab0e3cf19cdaa4ec180b3b64c}{SocketCnx::\string~SocketCnx}}()\ \{}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00038}00038\ \ \ \mbox{\hyperlink{classSocketCnx_a51d23b906608701ef811a7d73f0de43e}{sock\_}}-\/>\mbox{\hyperlink{classSocket_aef06605c6725958004116983f1a2051f}{close}}();}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00039}00039\ \ \ \textcolor{keyword}{delete}\ \mbox{\hyperlink{classSocketCnx_af5f1e7aef17b14deb89f65d8c89eb619}{sockbuf\_}};}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00040}00040\ \ \ \textcolor{keyword}{delete}\ \mbox{\hyperlink{classSocketCnx_a51d23b906608701ef811a7d73f0de43e}{sock\_}};}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00041}00041\ \}}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00044}00044\ \textcolor{comment}{//\ infinite\ loop\ that\ processes\ incoming\ requests\ on\ a\ TCPServer::Cnx\ connection.}}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00045}\mbox{\hyperlink{classSocketCnx_aa2ad22fb4fe4b78b3a9337e09475f10e}{00045}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSocketCnx_aa2ad22fb4fe4b78b3a9337e09475f10e}{SocketCnx::processRequests}}()\ \{}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00046}00046\ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00047}00047\ \ \ \ \ std::string\ request,\ response;}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00049}00049\ \ \ \ \ \textcolor{comment}{//\ read\ the\ incoming\ request\ sent\ by\ the\ client}}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00050}00050\ \ \ \ \ \textcolor{comment}{//\ SocketBuffer::readLine()\ lit\ jusqu'au\ premier\ délimiteur\ (qui\ est\ supprimé)}}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00051}00051\ \ \ \ \ \textcolor{keyword}{auto}\ received\ =\ \mbox{\hyperlink{classSocketCnx_af5f1e7aef17b14deb89f65d8c89eb619}{sockbuf\_}}-\/>\mbox{\hyperlink{classSocketBuffer_afa3a2f239eb56c2e4fd4fa465f7fb54d}{readLine}}(request);}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00053}00053\ \ \ \ \ \textcolor{keywordflow}{if}\ (received\ <\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00054}00054\ \ \ \ \ \ \ \mbox{\hyperlink{classSocketCnx_ad46b42915ee50072a0307f0116403587}{server\_}}.\mbox{\hyperlink{classTCPServer_a3dfcdb3bb20667b1d3cde93c84a4c024}{error}}(\textcolor{stringliteral}{"{}Read\ error"{}});}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00055}00055\ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00056}00056\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00058}00058\ \ \ \ \ \textcolor{keywordflow}{if}\ (received\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00059}00059\ \ \ \ \ \ \ \mbox{\hyperlink{classSocketCnx_ad46b42915ee50072a0307f0116403587}{server\_}}.\mbox{\hyperlink{classTCPServer_a3dfcdb3bb20667b1d3cde93c84a4c024}{error}}(\textcolor{stringliteral}{"{}Connection\ closed\ by\ client"{}});}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00060}00060\ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00061}00061\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00063}00063\ \ \ \ \ \textcolor{comment}{//\ processes\ the\ request}}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00064}00064\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classSocketCnx_ad46b42915ee50072a0307f0116403587}{server\_}}.\mbox{\hyperlink{classTCPServer_a09d0401db192e78acbc9468945ccc00c}{callback\_}})\ \{}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00065}00065\ \ \ \ \ \ \ response\ =\ \textcolor{stringliteral}{"{}OK"{}};}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00066}00066\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00067}00067\ \ \ \ \ \textcolor{comment}{//\ closes\ the\ connection\ with\ this\ client\ if\ the\ callback\ returns\ false}}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00068}00068\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classSocketCnx_ad46b42915ee50072a0307f0116403587}{server\_}}.\mbox{\hyperlink{classTCPServer_a09d0401db192e78acbc9468945ccc00c}{callback\_}}(request,\ response))\ \{}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00069}00069\ \ \ \ \ \ \ \mbox{\hyperlink{classSocketCnx_ad46b42915ee50072a0307f0116403587}{server\_}}.\mbox{\hyperlink{classTCPServer_a3dfcdb3bb20667b1d3cde93c84a4c024}{error}}(\textcolor{stringliteral}{"{}Closing\ connection\ with\ client"{}});}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00070}00070\ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00071}00071\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00073}00073\ \ \ \ \ \textcolor{comment}{//\ a\ response\ is\ always\ sent\ to\ the\ client\ (otherwise\ it\ might\ block)}}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00074}00074\ \ \ \ \ \textcolor{comment}{//\ writeLine()\ response\ folled\ by\ a\ \(\backslash\)n\ delimiter}}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00075}00075\ \ \ \ \ \textcolor{keyword}{auto}\ sent\ =\ \mbox{\hyperlink{classSocketCnx_af5f1e7aef17b14deb89f65d8c89eb619}{sockbuf\_}}-\/>\mbox{\hyperlink{classSocketBuffer_a96ba6ada0c8b57eacff2aa2e4e34c282}{writeLine}}(response);}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00077}00077\ \ \ \ \ \textcolor{keywordflow}{if}\ (sent\ <\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00078}00078\ \ \ \ \ \ \ \mbox{\hyperlink{classSocketCnx_ad46b42915ee50072a0307f0116403587}{server\_}}.\mbox{\hyperlink{classTCPServer_a3dfcdb3bb20667b1d3cde93c84a4c024}{error}}(\textcolor{stringliteral}{"{}Write\ error"{}});}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00079}00079\ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00080}00080\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00082}00082\ \ \ \ \ \textcolor{keywordflow}{if}\ (sent\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00083}00083\ \ \ \ \ \ \ \mbox{\hyperlink{classSocketCnx_ad46b42915ee50072a0307f0116403587}{server\_}}.\mbox{\hyperlink{classTCPServer_a3dfcdb3bb20667b1d3cde93c84a4c024}{error}}(\textcolor{stringliteral}{"{}Connection\ closed\ by\ client"{}});}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00084}00084\ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00085}00085\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00086}00086\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00088}00088\ \ \ \textcolor{comment}{//\ free\ resources\ and\ kills\ thread}}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00089}00089\ \ \ \textcolor{keyword}{delete}\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00090}00090\ \}}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00092}00092\ \textcolor{comment}{//\ -\/\ -\/\ -\/\ -\/\ -\/\ -\/\ -\/\ -\/\ -\/\ -\/\ -\/\ -\/\ -\/\ -\/\ -\/\ -\/\ -\/\ -\/\ -\/\ -\/\ -\/\ -\/\ -\/\ -\/\ -\/\ -\/\ -\/\ -\/\ -\/\ -\/\ -\/\ -\/\ -\/\ -\/\ -\/\ -\/\ -\/\ -\/\ -\/}}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00094}\mbox{\hyperlink{classTCPServer_aaed5a80480fd9d616c7773f58906c5e7}{00094}}\ \mbox{\hyperlink{classTCPServer_aaed5a80480fd9d616c7773f58906c5e7}{TCPServer::TCPServer}}(\mbox{\hyperlink{classTCPServer_a8107acb4acb46cebd3001013c30f4834}{Callback}}\ \textcolor{keyword}{const}\&\ callback)\ :}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00095}00095\ callback\_(callback)\ \{}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00096}00096\ \ \ \textcolor{comment}{//\ signal(SIGPIPE,\ SIG\_IGN);\ \ //\ ignore\ nasty\ SIGPIPEs}}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00097}00097\ \}}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00099}\mbox{\hyperlink{classTCPServer_abc497ac52355e53986a6a1bd1acb9581}{00099}}\ \mbox{\hyperlink{classTCPServer_abc497ac52355e53986a6a1bd1acb9581}{TCPServer::\string~TCPServer}}()\ \{\}}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00101}\mbox{\hyperlink{classTCPServer_a1409041961e91f1dbc4933483b4c3b23}{00101}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classTCPServer_a1409041961e91f1dbc4933483b4c3b23}{TCPServer::run}}(\textcolor{keywordtype}{int}\ port)\ \{}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00102}00102\ \ \ \textcolor{keywordtype}{int}\ status\ =\ \mbox{\hyperlink{classTCPServer_a3c61133d29aae2cb2b8a0d0b8b7dadaf}{servsock\_}}.\mbox{\hyperlink{classServerSocket_ad5281fe6c005bca007a9a758bd612481}{bind}}(port);\ \ \textcolor{comment}{//\ lier\ le\ ServerSocket\ a\ ce\ port}}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00104}00104\ \ \ \textcolor{keywordflow}{if}\ (status\ <\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00105}00105\ \ \ \ \ \mbox{\hyperlink{classTCPServer_a3dfcdb3bb20667b1d3cde93c84a4c024}{error}}(\textcolor{stringliteral}{"{}Can't\ bind\ on\ port:\ "{}}\ +\ to\_string(port));}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00106}00106\ \ \ \ \ \textcolor{keywordflow}{return}\ status;\ \ \ \textcolor{comment}{//\ returns\ negative\ value,\ see\ Socket::bind()}}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00107}00107\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00109}00109\ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00110}00110\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{auto}*\ socket\ =\ \mbox{\hyperlink{classTCPServer_a3c61133d29aae2cb2b8a0d0b8b7dadaf}{servsock\_}}.\mbox{\hyperlink{classServerSocket_accc3d56d42aa50a5f3c920cf0b26959b}{accept}}())\ \{}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00111}00111\ \ \ \ \ \ \ \textcolor{comment}{//\ lance\ la\ lecture\ des\ messages\ de\ ce\ socket\ dans\ un\ thread}}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00112}00112\ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classTCPServer_aff1ba1873083d214cbcb808b8091757a}{SocketCnx}}(*\textcolor{keyword}{this},\ socket);}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00113}00113\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00114}00114\ \ \ \ \ \textcolor{keywordflow}{else}\ \mbox{\hyperlink{classTCPServer_a3dfcdb3bb20667b1d3cde93c84a4c024}{error}}(\textcolor{stringliteral}{"{}input\ connection\ failed"{}});}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00115}00115\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00116}00116\ \ \ \textcolor{keywordflow}{return}\ 0;\ \ \textcolor{comment}{//\ means\ OK}}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00117}00117\ \}}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00120}\mbox{\hyperlink{classTCPServer_a3dfcdb3bb20667b1d3cde93c84a4c024}{00120}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTCPServer_a3dfcdb3bb20667b1d3cde93c84a4c024}{TCPServer::error}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ msg)\ \{}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00121}00121\ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}TCPServer:\ "{}}\ <<\ msg\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{tcpserver_8cpp_source_l00122}00122\ \}}
+
+\end{DoxyCode}

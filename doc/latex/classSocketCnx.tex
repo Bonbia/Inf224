@@ -1,0 +1,130 @@
+\doxysection{Socket\+Cnx Class Reference}
+\hypertarget{classSocketCnx}{}\label{classSocketCnx}\index{SocketCnx@{SocketCnx}}
+
+
+Connection with a given client. Each \doxylink{classSocketCnx}{Socket\+Cnx} uses a different thread.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSocketCnx_acd004e809a99928860ffa94cbde99ae1}{Socket\+Cnx}} (\mbox{\hyperlink{classTCPServer}{TCPServer}} \&, \mbox{\hyperlink{classSocket}{Socket}} \texorpdfstring{$\ast$}{*})
+\item 
+\mbox{\hyperlink{classSocketCnx_aacd070cab0e3cf19cdaa4ec180b3b64c}{\texorpdfstring{$\sim$}{\string~}\+Socket\+Cnx}} ()
+\item 
+void \mbox{\hyperlink{classSocketCnx_aa2ad22fb4fe4b78b3a9337e09475f10e}{process\+Requests}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTCPServer}{TCPServer}} \& \mbox{\hyperlink{classSocketCnx_ad46b42915ee50072a0307f0116403587}{server\+\_\+}}
+\item 
+\mbox{\hyperlink{classSocket}{Socket}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classSocketCnx_a51d23b906608701ef811a7d73f0de43e}{sock\+\_\+}}
+\item 
+\mbox{\hyperlink{classSocketBuffer}{Socket\+Buffer}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classSocketCnx_af5f1e7aef17b14deb89f65d8c89eb619}{sockbuf\+\_\+}}
+\item 
+std\+::thread \mbox{\hyperlink{classSocketCnx_a0b358d64acd070e4f54123bd7a011183}{thread\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Connection with a given client. Each \doxylink{classSocketCnx}{Socket\+Cnx} uses a different thread. 
+
+Definition at line \mbox{\hyperlink{tcpserver_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{tcpserver_8cpp_source}{tcpserver.\+cpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classSocketCnx_acd004e809a99928860ffa94cbde99ae1}\label{classSocketCnx_acd004e809a99928860ffa94cbde99ae1} 
+\index{SocketCnx@{SocketCnx}!SocketCnx@{SocketCnx}}
+\index{SocketCnx@{SocketCnx}!SocketCnx@{SocketCnx}}
+\doxysubsubsection{\texorpdfstring{SocketCnx()}{SocketCnx()}}
+{\footnotesize\ttfamily Socket\+Cnx\+::\+Socket\+Cnx (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTCPServer}{TCPServer}} \&}]{server,  }\item[{\mbox{\hyperlink{classSocket}{Socket}} \texorpdfstring{$\ast$}{*}}]{socket }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{tcpserver_8cpp_source_l00028}{28}} of file \mbox{\hyperlink{tcpserver_8cpp_source}{tcpserver.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{tcpserver_8cpp_source_l00045}{process\+Requests()}}.
+
+\Hypertarget{classSocketCnx_aacd070cab0e3cf19cdaa4ec180b3b64c}\label{classSocketCnx_aacd070cab0e3cf19cdaa4ec180b3b64c} 
+\index{SocketCnx@{SocketCnx}!````~SocketCnx@{\texorpdfstring{$\sim$}{\string~}SocketCnx}}
+\index{````~SocketCnx@{\texorpdfstring{$\sim$}{\string~}SocketCnx}!SocketCnx@{SocketCnx}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}SocketCnx()}{\string~SocketCnx()}}
+{\footnotesize\ttfamily Socket\+Cnx\+::\texorpdfstring{$\sim$}{\string~}\+Socket\+Cnx (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{tcpserver_8cpp_source_l00037}{37}} of file \mbox{\hyperlink{tcpserver_8cpp_source}{tcpserver.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{ccsocket_8cpp_source_l00134}{Socket\+::close()}}, \mbox{\hyperlink{tcpserver_8cpp_source_l00022}{sock\+\_\+}}, and \mbox{\hyperlink{tcpserver_8cpp_source_l00023}{sockbuf\+\_\+}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSocketCnx_aa2ad22fb4fe4b78b3a9337e09475f10e}\label{classSocketCnx_aa2ad22fb4fe4b78b3a9337e09475f10e} 
+\index{SocketCnx@{SocketCnx}!processRequests@{processRequests}}
+\index{processRequests@{processRequests}!SocketCnx@{SocketCnx}}
+\doxysubsubsection{\texorpdfstring{processRequests()}{processRequests()}}
+{\footnotesize\ttfamily void Socket\+Cnx\+::process\+Requests (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{tcpserver_8cpp_source_l00045}{45}} of file \mbox{\hyperlink{tcpserver_8cpp_source}{tcpserver.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{tcpserver_8h_source_l00050}{TCPServer\+::callback\+\_\+}}, \mbox{\hyperlink{tcpserver_8cpp_source_l00120}{TCPServer\+::error()}}, \mbox{\hyperlink{ccsocket_8cpp_source_l00342}{Socket\+Buffer\+::read\+Line()}}, \mbox{\hyperlink{tcpserver_8cpp_source_l00021}{server\+\_\+}}, \mbox{\hyperlink{tcpserver_8cpp_source_l00023}{sockbuf\+\_\+}}, and \mbox{\hyperlink{ccsocket_8cpp_source_l00408}{Socket\+Buffer\+::write\+Line()}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classSocketCnx_ad46b42915ee50072a0307f0116403587}\label{classSocketCnx_ad46b42915ee50072a0307f0116403587} 
+\index{SocketCnx@{SocketCnx}!server\_@{server\_}}
+\index{server\_@{server\_}!SocketCnx@{SocketCnx}}
+\doxysubsubsection{\texorpdfstring{server\_}{server\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTCPServer}{TCPServer}}\& Socket\+Cnx\+::server\+\_\+}
+
+
+
+Definition at line \mbox{\hyperlink{tcpserver_8cpp_source_l00021}{21}} of file \mbox{\hyperlink{tcpserver_8cpp_source}{tcpserver.\+cpp}}.
+
+\Hypertarget{classSocketCnx_a51d23b906608701ef811a7d73f0de43e}\label{classSocketCnx_a51d23b906608701ef811a7d73f0de43e} 
+\index{SocketCnx@{SocketCnx}!sock\_@{sock\_}}
+\index{sock\_@{sock\_}!SocketCnx@{SocketCnx}}
+\doxysubsubsection{\texorpdfstring{sock\_}{sock\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSocket}{Socket}}\texorpdfstring{$\ast$}{*} Socket\+Cnx\+::sock\+\_\+}
+
+
+
+Definition at line \mbox{\hyperlink{tcpserver_8cpp_source_l00022}{22}} of file \mbox{\hyperlink{tcpserver_8cpp_source}{tcpserver.\+cpp}}.
+
+\Hypertarget{classSocketCnx_af5f1e7aef17b14deb89f65d8c89eb619}\label{classSocketCnx_af5f1e7aef17b14deb89f65d8c89eb619} 
+\index{SocketCnx@{SocketCnx}!sockbuf\_@{sockbuf\_}}
+\index{sockbuf\_@{sockbuf\_}!SocketCnx@{SocketCnx}}
+\doxysubsubsection{\texorpdfstring{sockbuf\_}{sockbuf\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSocketBuffer}{Socket\+Buffer}}\texorpdfstring{$\ast$}{*} Socket\+Cnx\+::sockbuf\+\_\+}
+
+
+
+Definition at line \mbox{\hyperlink{tcpserver_8cpp_source_l00023}{23}} of file \mbox{\hyperlink{tcpserver_8cpp_source}{tcpserver.\+cpp}}.
+
+\Hypertarget{classSocketCnx_a0b358d64acd070e4f54123bd7a011183}\label{classSocketCnx_a0b358d64acd070e4f54123bd7a011183} 
+\index{SocketCnx@{SocketCnx}!thread\_@{thread\_}}
+\index{thread\_@{thread\_}!SocketCnx@{SocketCnx}}
+\doxysubsubsection{\texorpdfstring{thread\_}{thread\_}}
+{\footnotesize\ttfamily std\+::thread Socket\+Cnx\+::thread\+\_\+}
+
+
+
+Definition at line \mbox{\hyperlink{tcpserver_8cpp_source_l00024}{24}} of file \mbox{\hyperlink{tcpserver_8cpp_source}{tcpserver.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{tcpserver_8cpp}{tcpserver.\+cpp}}\end{DoxyCompactItemize}

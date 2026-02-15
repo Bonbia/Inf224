@@ -1,0 +1,175 @@
+\doxysection{Main\+Window.\+java}
+\hypertarget{MainWindow_8java_source}{}\label{MainWindow_8java_source}\index{MainWindow.java@{MainWindow.java}}
+\mbox{\hyperlink{MainWindow_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00013}00013\ \textcolor{keyword}{import}\ javax.swing.*;}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00014}00014\ \textcolor{keyword}{import}\ java.awt.*;}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00015}00015\ \textcolor{keyword}{import}\ java.awt.event.*;}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00016}00016\ \textcolor{keyword}{import}\ java.io.File;\ \textcolor{comment}{//\ Nécessaire\ pour\ manipuler\ le\ fichier\ sélectionné}}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00017}00017\ \textcolor{keyword}{import}\ javax.swing.filechooser.FileNameExtensionFilter;}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00030}\mbox{\hyperlink{classMainWindow}{00030}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMainWindow}{MainWindow}}\ \textcolor{keyword}{extends}\ JFrame\ \{}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00034}\mbox{\hyperlink{classMainWindow_ab4214356a8ff65cfe61d7a9d3f38ee89}{00034}}\ \ \ \ \ \textcolor{keyword}{private}\ JTextArea\ \mbox{\hyperlink{classMainWindow_ab4214356a8ff65cfe61d7a9d3f38ee89}{textArea}};}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00039}\mbox{\hyperlink{classMainWindow_a0d6da55a25e91aac3458ef8fa1d5732d}{00039}}\ \ \ \ \ \textcolor{keyword}{private}\ JTextField\ \mbox{\hyperlink{classMainWindow_a0d6da55a25e91aac3458ef8fa1d5732d}{textField}};}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00044}\mbox{\hyperlink{classMainWindow_a309f2d857f36994146aa51ffba981080}{00044}}\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{classClient}{Client}}\ \mbox{\hyperlink{classMainWindow_a309f2d857f36994146aa51ffba981080}{client}};}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00049}\mbox{\hyperlink{classMainWindow_aaed4f9115f060ded61ef9104d8d960a4}{00049}}\ \ \ \ \ \textcolor{keyword}{private}\ Action\ \mbox{\hyperlink{classMainWindow_aaed4f9115f060ded61ef9104d8d960a4}{searchAction}};}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00054}\mbox{\hyperlink{classMainWindow_aa2ca06db4f6592586d54ed1c6f5ae228}{00054}}\ \ \ \ \ \textcolor{keyword}{private}\ Action\ \mbox{\hyperlink{classMainWindow_aa2ca06db4f6592586d54ed1c6f5ae228}{playAction}};}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00059}\mbox{\hyperlink{classMainWindow_a28f046ece98bd7319a4d1db4aab8a5b3}{00059}}\ \ \ \ \ \textcolor{keyword}{private}\ Action\ \mbox{\hyperlink{classMainWindow_a28f046ece98bd7319a4d1db4aab8a5b3}{exitAction}};}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00064}\mbox{\hyperlink{classMainWindow_ac6ef2312c76c39f3dec2116418e192f3}{00064}}\ \ \ \ \ \textcolor{keyword}{private}\ Action\ \mbox{\hyperlink{classMainWindow_ac6ef2312c76c39f3dec2116418e192f3}{addFileAction}};}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00069}\mbox{\hyperlink{classMainWindow_a936c7ee36eccec924a62e22843bd1694}{00069}}\ \ \ \ \ \textcolor{keyword}{private}\ Action\ \mbox{\hyperlink{classMainWindow_a936c7ee36eccec924a62e22843bd1694}{quitAction}};}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00082}\mbox{\hyperlink{classMainWindow_af607d50e4d1b04d3c494661489283f45}{00082}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classMainWindow_af607d50e4d1b04d3c494661489283f45}{MainWindow}}()\ \{}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00083}00083\ \ \ \ \ \ \ \ \ System.setProperty(\textcolor{stringliteral}{"{}apple.laf.useScreenMenuBar"{}},\ \textcolor{stringliteral}{"{}true"{}});}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00084}00084\ \ \ \ \ \ \ \ \ ImageIcon\ img\ =\ \textcolor{keyword}{new}\ ImageIcon(\textcolor{stringliteral}{"{}Logo.jpg"{}});}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00086}00086\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Application\ de\ l'icône\ à\ la\ fenêtre}}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00087}00087\ \ \ \ \ \ \ \ \ this.setIconImage(img.getImage());}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00088}00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMainWindow_a309f2d857f36994146aa51ffba981080}{client}}\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classClient}{Client}}(\textcolor{stringliteral}{"{}localhost"{}},\ 3331);}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00090}00090\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (Exception\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ System.err.println(\textcolor{stringliteral}{"{}Erreur:\ Serveur\ C++\ introuvable\ !"{}});}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00092}00092\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00094}00094\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMainWindow_a8fe492d4d00252396d42ca5ca93dc938}{initializeActions}}();}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00096}00096\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMainWindow_ab4214356a8ff65cfe61d7a9d3f38ee89}{textArea}}\ =\ \textcolor{keyword}{new}\ JTextArea(15,\ 50);}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00097}00097\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMainWindow_ab4214356a8ff65cfe61d7a9d3f38ee89}{textArea}}.setEditable(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00098}00098\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMainWindow_a0d6da55a25e91aac3458ef8fa1d5732d}{textField}}\ =\ \textcolor{keyword}{new}\ JTextField(20);}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00100}00100\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Barre\ de\ Menus\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00101}00101\ \ \ \ \ \ \ \ \ JMenuBar\ menuBar\ =\ \textcolor{keyword}{new}\ JMenuBar();}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00102}00102\ \ \ \ \ \ \ \ \ JMenu\ menu\ =\ \textcolor{keyword}{new}\ JMenu(\textcolor{stringliteral}{"{}Fichier"{}});}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00103}00103\ \ \ \ \ \ \ \ \ menu.add(\textcolor{keyword}{new}\ JMenuItem(\mbox{\hyperlink{classMainWindow_ac6ef2312c76c39f3dec2116418e192f3}{addFileAction}}));\ \textcolor{comment}{//\ Ajout\ au\ menu}}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00104}00104\ \ \ \ \ \ \ \ \ menu.add(\textcolor{keyword}{new}\ JMenuItem(\mbox{\hyperlink{classMainWindow_aaed4f9115f060ded61ef9104d8d960a4}{searchAction}}));}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00105}00105\ \ \ \ \ \ \ \ \ menu.add(\textcolor{keyword}{new}\ JMenuItem(\mbox{\hyperlink{classMainWindow_aa2ca06db4f6592586d54ed1c6f5ae228}{playAction}}));}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00106}00106\ \ \ \ \ \ \ \ \ menu.addSeparator();}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00107}00107\ \ \ \ \ \ \ \ \ menu.add(\textcolor{keyword}{new}\ JMenuItem(\mbox{\hyperlink{classMainWindow_a28f046ece98bd7319a4d1db4aab8a5b3}{exitAction}}));}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00108}00108\ \ \ \ \ \ \ \ \ menuBar.add(menu);}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00109}00109\ \ \ \ \ \ \ \ \ setJMenuBar(menuBar);}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00110}00110\ \ \ \ \ \ \ \ \ menu.add(\textcolor{keyword}{new}\ JMenuItem(\mbox{\hyperlink{classMainWindow_a936c7ee36eccec924a62e22843bd1694}{quitAction}}));\ \textcolor{comment}{//\ Dans\ le\ JMenu}}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00111}00111\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Barre\ d'Outils\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00112}00112\ \ \ \ \ \ \ \ \ JToolBar\ toolBar\ =\ \textcolor{keyword}{new}\ JToolBar();}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00113}00113\ \ \ \ \ \ \ \ \ toolBar.add(\mbox{\hyperlink{classMainWindow_ac6ef2312c76c39f3dec2116418e192f3}{addFileAction}});\ \textcolor{comment}{//\ Ajout\ à\ la\ barre\ d'outils}}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00114}00114\ \ \ \ \ \ \ \ \ toolBar.add(\mbox{\hyperlink{classMainWindow_aaed4f9115f060ded61ef9104d8d960a4}{searchAction}});}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00115}00115\ \ \ \ \ \ \ \ \ toolBar.add(\mbox{\hyperlink{classMainWindow_aa2ca06db4f6592586d54ed1c6f5ae228}{playAction}});}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00116}00116\ \ \ \ \ \ \ \ \ toolBar.add(\mbox{\hyperlink{classMainWindow_a936c7ee36eccec924a62e22843bd1694}{quitAction}});\ \textcolor{comment}{//\ Ajout\ de\ quitAction\ à\ la\ barre\ d'outils}}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00117}00117\ \ \ \ \ \ \ \ \ add(toolBar,\ BorderLayout.NORTH);}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00119}00119\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Panneau\ de\ contrôle\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00120}00120\ \ \ \ \ \ \ \ \ JPanel\ panel\ =\ \textcolor{keyword}{new}\ JPanel();}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00121}00121\ \ \ \ \ \ \ \ \ panel.add(\textcolor{keyword}{new}\ JLabel(\textcolor{stringliteral}{"{}Nom:"{}}));}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00122}00122\ \ \ \ \ \ \ \ \ panel.add(\mbox{\hyperlink{classMainWindow_a0d6da55a25e91aac3458ef8fa1d5732d}{textField}});}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00123}00123\ \ \ \ \ \ \ \ \ panel.add(\textcolor{keyword}{new}\ JButton(\mbox{\hyperlink{classMainWindow_ac6ef2312c76c39f3dec2116418e192f3}{addFileAction}}));\ \textcolor{comment}{//\ Bouton\ dédié\ dans\ le\ panel}}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00124}00124\ \ \ \ \ \ \ \ \ panel.add(\textcolor{keyword}{new}\ JButton(\mbox{\hyperlink{classMainWindow_aaed4f9115f060ded61ef9104d8d960a4}{searchAction}}));}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00125}00125\ \ \ \ \ \ \ \ \ panel.add(\textcolor{keyword}{new}\ JButton(\mbox{\hyperlink{classMainWindow_aa2ca06db4f6592586d54ed1c6f5ae228}{playAction}}));}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00127}00127\ \ \ \ \ \ \ \ \ add(\textcolor{keyword}{new}\ JScrollPane(\mbox{\hyperlink{classMainWindow_ab4214356a8ff65cfe61d7a9d3f38ee89}{textArea}}),\ BorderLayout.CENTER);}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00128}00128\ \ \ \ \ \ \ \ \ add(panel,\ BorderLayout.SOUTH);}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00130}00130\ \ \ \ \ \ \ \ \ setTitle(\textcolor{stringliteral}{"{}Client\ Multimedia"{}});}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00131}00131\ \ \ \ \ \ \ \ \ setDefaultCloseOperation(EXIT\_ON\_CLOSE);}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00132}00132\ \ \ \ \ \ \ \ \ pack();}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00133}00133\ \ \ \ \ \ \ \ \ setVisible(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00134}00134\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00135}00135\ }
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00149}\mbox{\hyperlink{classMainWindow_a8fe492d4d00252396d42ca5ca93dc938}{00149}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMainWindow_a8fe492d4d00252396d42ca5ca93dc938}{initializeActions}}()\ \{}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00150}00150\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Action\ pour\ l'ajout\ de\ fichier\ avec\ filtres}}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00151}00151\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMainWindow_ac6ef2312c76c39f3dec2116418e192f3}{addFileAction}}\ =\ \textcolor{keyword}{new}\ AbstractAction(\textcolor{stringliteral}{"{}AJOUTER"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ actionPerformed(ActionEvent\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ desktopPath\ =\ System.getProperty(\textcolor{stringliteral}{"{}user.home"{}})\ +\ File.separator\ +\ \textcolor{stringliteral}{"{}Desktop"{}};}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ File\ desktopDir\ =\ \textcolor{keyword}{new}\ File(desktopPath);}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00156}00156\ }
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Vérification\ de\ sécurité}}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!desktopDir.exists()\ ||\ !desktopDir.canRead())\ \{}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Si\ le\ bureau\ est\ inaccessible,\ on\ se\ rabat\ sur\ le\ dossier\ "{}Home"{}\ de}}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ l'utilisateur}}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ desktopDir\ =\ \textcolor{keyword}{new}\ File(System.getProperty(\textcolor{stringliteral}{"{}user.home"{}}));}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMainWindow_ab4214356a8ff65cfe61d7a9d3f38ee89}{textArea}}.append(}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Note\ :\ Accès\ au\ Bureau\ refusé\ ou\ impossible.\ Redirection\ vers\ le\ dossier\ utilisateur.\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00165}00165\ }
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ JFileChooser\ chooser\ =\ \textcolor{keyword}{new}\ JFileChooser(desktopDir);}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ...\ (suite\ de\ votre\ configuration\ de\ filtres)}}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00168}00168\ }
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Configuration\ des\ filtres\ (comme\ précédemment)\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FileNameExtensionFilter\ imageFilter\ =\ \textcolor{keyword}{new}\ FileNameExtensionFilter(}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Images\ (JPG,\ PNG,\ GIF)"{}},\ \textcolor{stringliteral}{"{}jpg"{}},\ \textcolor{stringliteral}{"{}jpeg"{}},\ \textcolor{stringliteral}{"{}png"{}},\ \textcolor{stringliteral}{"{}gif"{}});}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FileNameExtensionFilter\ videoFilter\ =\ \textcolor{keyword}{new}\ FileNameExtensionFilter(}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Vidéos\ (MP4,\ AVI,\ MKV)"{}},\ \textcolor{stringliteral}{"{}mp4"{}},\ \textcolor{stringliteral}{"{}avi"{}},\ \textcolor{stringliteral}{"{}mkv"{}});}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00174}00174\ }
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ chooser.addChoosableFileFilter(imageFilter);}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ chooser.addChoosableFileFilter(videoFilter);}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ chooser.setAcceptAllFileFilterUsed(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ chooser.setFileFilter(videoFilter);}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00179}00179\ }
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 3.\ Affichage}}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ returnVal\ =\ chooser.showOpenDialog(\mbox{\hyperlink{classMainWindow}{MainWindow}}.this);}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00182}00182\ }
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (returnVal\ ==\ JFileChooser.APPROVE\_OPTION)\ \{}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ File\ file\ =\ chooser.getSelectedFile();}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMainWindow_a0d6da55a25e91aac3458ef8fa1d5732d}{textField}}.setText(file.getName());}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMainWindow_ab4214356a8ff65cfe61d7a9d3f38ee89}{textArea}}.append(\textcolor{stringliteral}{"{}Fichier\ sélectionné\ :\ "{}}\ +\ file.getAbsolutePath()\ +\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00189}00189\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00190}00190\ }
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00191}00191\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMainWindow_a936c7ee36eccec924a62e22843bd1694}{quitAction}}\ =\ \textcolor{keyword}{new}\ AbstractAction(\textcolor{stringliteral}{"{}QUIT\ SERVEUR"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ actionPerformed(ActionEvent\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Envoyer\ la\ commande\ au\ serveur\ C++}}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMainWindow_a8ccd6cb2eb8580cfc0d0a0cf48308af8}{envoyerCommande}}(\textcolor{stringliteral}{"{}QUIT"{}});}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00196}00196\ }
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Laisser\ un\ petit\ délai\ pour\ que\ le\ message\ parte,\ puis\ fermer\ Java}}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Timer\ timer\ =\ \textcolor{keyword}{new}\ Timer(500,\ event\ -\/>\ System.exit(0));}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ timer.setRepeats(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ timer.start();}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00202}00202\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00203}00203\ }
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00204}00204\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMainWindow_aaed4f9115f060ded61ef9104d8d960a4}{searchAction}}\ =\ \textcolor{keyword}{new}\ AbstractAction(\textcolor{stringliteral}{"{}SEARCH"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ actionPerformed(ActionEvent\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ name\ =\ \mbox{\hyperlink{classMainWindow_a0d6da55a25e91aac3458ef8fa1d5732d}{textField}}.getText();}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMainWindow_a8ccd6cb2eb8580cfc0d0a0cf48308af8}{envoyerCommande}}(\textcolor{stringliteral}{"{}SEARCH\ "{}}\ +\ name);}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00210}00210\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00211}00211\ }
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00212}00212\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMainWindow_aa2ca06db4f6592586d54ed1c6f5ae228}{playAction}}\ =\ \textcolor{keyword}{new}\ AbstractAction(\textcolor{stringliteral}{"{}PLAY"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ actionPerformed(ActionEvent\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ name\ =\ \mbox{\hyperlink{classMainWindow_a0d6da55a25e91aac3458ef8fa1d5732d}{textField}}.getText();}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00216}00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMainWindow_a8ccd6cb2eb8580cfc0d0a0cf48308af8}{envoyerCommande}}(\textcolor{stringliteral}{"{}PLAY\ "{}}\ +\ name);}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00217}00217\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00218}00218\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00219}00219\ }
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00220}00220\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMainWindow_a28f046ece98bd7319a4d1db4aab8a5b3}{exitAction}}\ =\ \textcolor{keyword}{new}\ AbstractAction(\textcolor{stringliteral}{"{}Quitter"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00221}00221\ \ \ \ \ \ \ \ \ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00222}00222\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ actionPerformed(ActionEvent\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ System.exit(0);}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00224}00224\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00225}00225\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00226}00226\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00227}00227\ }
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00238}\mbox{\hyperlink{classMainWindow_a8ccd6cb2eb8580cfc0d0a0cf48308af8}{00238}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMainWindow_a8ccd6cb2eb8580cfc0d0a0cf48308af8}{envoyerCommande}}(String\ command)\ \{}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00239}00239\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classMainWindow_a309f2d857f36994146aa51ffba981080}{client}}\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00241}00241\ \ \ \ \ \ \ \ \ String\ response\ =\ \mbox{\hyperlink{classMainWindow_a309f2d857f36994146aa51ffba981080}{client}}.\mbox{\hyperlink{classClient_ab26831c395da92b5893066f9ce7963a4}{send}}(command);}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00242}00242\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMainWindow_ab4214356a8ff65cfe61d7a9d3f38ee89}{textArea}}.append(\textcolor{stringliteral}{"{}Envoi:\ "{}}\ +\ command\ +\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00243}00243\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMainWindow_ab4214356a8ff65cfe61d7a9d3f38ee89}{textArea}}.append(\textcolor{stringliteral}{"{}Réponse:\ "{}}\ +\ response\ +\ \textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00244}00244\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00245}00245\ }
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00255}\mbox{\hyperlink{classMainWindow_a4d78b197666e2d77663b2ae82844bb67}{00255}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMainWindow_a4d78b197666e2d77663b2ae82844bb67}{main}}(String[]\ args)\ \{}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00256}00256\ \ \ \ \ \ \ \ \ SwingUtilities.invokeLater(()\ -\/>\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classMainWindow_af607d50e4d1b04d3c494661489283f45}{MainWindow}}());}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00257}00257\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{MainWindow_8java_source_l00258}00258\ \}}
+
+\end{DoxyCode}

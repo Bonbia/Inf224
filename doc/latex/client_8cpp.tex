@@ -1,0 +1,62 @@
+\doxysection{client.\+cpp File Reference}
+\hypertarget{client_8cpp}{}\label{client_8cpp}\index{client.cpp@{client.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include "{}ccsocket.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{client_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Lit une requete depuis le Terminal, envoie cette requete au serveur, recupere sa reponse et l\textquotesingle{}affiche sur le Terminal. Noter que le programme bloque si le serveur ne repond pas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static const std\+::string \mbox{\hyperlink{client_8cpp_a31286b5babe41e1c44365f96f223780b}{HOST}} = "{}127.\+0.\+0.\+1"{}
+\item 
+static const int \mbox{\hyperlink{client_8cpp_a11717c934f77ad5167dac5d28562d85a}{PORT}} = 3331
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{client_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{client_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+\index{client.cpp@{client.cpp}!main@{main}}
+\index{main@{main}!client.cpp@{client.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Lit une requete depuis le Terminal, envoie cette requete au serveur, recupere sa reponse et l\textquotesingle{}affiche sur le Terminal. Noter que le programme bloque si le serveur ne repond pas. 
+
+
+
+Definition at line \mbox{\hyperlink{client_8cpp_source_l00020}{20}} of file \mbox{\hyperlink{client_8cpp_source}{client.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{ccsocket_8cpp_source_l00124}{Socket\+::connect()}}, \mbox{\hyperlink{ccsocket_8h_source_l00052}{Socket\+::\+Failed}}, \mbox{\hyperlink{client_8cpp_source_l00011}{HOST}}, \mbox{\hyperlink{client_8cpp_source_l00012}{PORT}}, \mbox{\hyperlink{ccsocket_8cpp_source_l00342}{Socket\+Buffer\+::read\+Line()}}, \mbox{\hyperlink{ccsocket_8h_source_l00052}{Socket\+::\+Unknown\+Host}}, and \mbox{\hyperlink{ccsocket_8cpp_source_l00408}{Socket\+Buffer\+::write\+Line()}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{client_8cpp_a31286b5babe41e1c44365f96f223780b}\label{client_8cpp_a31286b5babe41e1c44365f96f223780b} 
+\index{client.cpp@{client.cpp}!HOST@{HOST}}
+\index{HOST@{HOST}!client.cpp@{client.cpp}}
+\doxysubsubsection{\texorpdfstring{HOST}{HOST}}
+{\footnotesize\ttfamily const std\+::string HOST = "{}127.\+0.\+0.\+1"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{client_8cpp_source_l00011}{11}} of file \mbox{\hyperlink{client_8cpp_source}{client.\+cpp}}.
+
+\Hypertarget{client_8cpp_a11717c934f77ad5167dac5d28562d85a}\label{client_8cpp_a11717c934f77ad5167dac5d28562d85a} 
+\index{client.cpp@{client.cpp}!PORT@{PORT}}
+\index{PORT@{PORT}!client.cpp@{client.cpp}}
+\doxysubsubsection{\texorpdfstring{PORT}{PORT}}
+{\footnotesize\ttfamily const int PORT = 3331\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{client_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{client_8cpp_source}{client.\+cpp}}.
+

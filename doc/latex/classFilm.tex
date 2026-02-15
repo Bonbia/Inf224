@@ -1,0 +1,272 @@
+\doxysection{Film Class Reference}
+\hypertarget{classFilm}{}\label{classFilm}\index{Film@{Film}}
+
+
+Classe représentant un film avec chapitres.  
+
+
+
+
+{\ttfamily \#include $<$Film.\+h$>$}
+
+Inheritance diagram for Film\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classFilm}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classFilm_a490465154daeb29961fddb843a864eeb}{\texorpdfstring{$\sim$}{\string~}\+Film}} ()
+\item 
+\mbox{\hyperlink{classFilm_a68f781851622ec80878c9a6e7ccb925e}{Film}} (const \mbox{\hyperlink{classFilm}{Film}} \&from)
+\item 
+\mbox{\hyperlink{classFilm}{Film}} \& \mbox{\hyperlink{classFilm_ac0b358393c6e1d293141c5c96cd9a3be}{operator=}} (const \mbox{\hyperlink{classFilm}{Film}} \&from)
+\item 
+void \mbox{\hyperlink{classFilm_a0cec79fce8bb7535f1a4dab5f6777a11}{set\+Chapitres}} (const int \texorpdfstring{$\ast$}{*}new\+Chapitres, int new\+Nb\+Chapitres)
+\item 
+int \mbox{\hyperlink{classFilm_af3fc0bb9f2d26a58632808ce2eef4772}{get\+Nb\+Chapitres}} () const
+\item 
+const int \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classFilm_a04d6e4c63a9c76bc68be7967b65677a6}{get\+Chapitres}} () const
+\item 
+void \mbox{\hyperlink{classFilm_a2cbb1a5f605f4a420e0287d2ef2b498d}{affiche}} (std\+::ostream \&s) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classVideo}{Video}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVideo_ab67336c2c5b6227a9635bc7dcd6af543}{Video}} ()
+\begin{DoxyCompactList}\small\item\em Constructeur par défaut de \doxylink{classVideo}{Video}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVideo_aebf7e2a8fa2bbd79335b1cf35925d190}{\texorpdfstring{$\sim$}{\string~}\+Video}} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de \doxylink{classVideo}{Video}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classVideo_a504b8486ee1c54400793f5d50cbf6d09}{get\+Duree}} () const
+\begin{DoxyCompactList}\small\item\em Retourne la durée de la vidéo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVideo_ab9245713b9db1251f535d832c23b124b}{set\+Duree}} (double \mbox{\hyperlink{classVideo_a4e45b3e699c8f4b1aabd4b52bcdd6215}{Duree}})
+\begin{DoxyCompactList}\small\item\em Modifie la durée de la vidéo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVideo_a94cc41d943e5d6c8f999c32b649cb7ba}{affiche}} (std\+::ostream \&os) const
+\begin{DoxyCompactList}\small\item\em Affiche les informations complètes de la vidéo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVideo_a32e0ca290f73773d1a3356001b13e92e}{jouer}} (std\+::ostream \&out=std\+::cout) const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classMultimediaObject}{Multimedia\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMultimediaObject_a136f86f6b45b1e74b20a5d6cc36b36e8}{Multimedia\+Object}} ()
+\begin{DoxyCompactList}\small\item\em Constructeur par défaut de \doxylink{classMultimediaObject}{Multimedia\+Object}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMultimediaObject_a96057a963775e5b12b8b2ee366d8c087}{Multimedia\+Object}} (const std\+::string \&\mbox{\hyperlink{classMultimediaObject_a94609b6077c9c4a908a892b78539c50b}{nom}}, const std\+::string \&\mbox{\hyperlink{classMultimediaObject_a2fdb8df4c8bef5ca3c6155f88a75822a}{nom\+Fichier}})
+\begin{DoxyCompactList}\small\item\em Constructeur paramétré de \doxylink{classMultimediaObject}{Multimedia\+Object}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classMultimediaObject_a4b2aba750ff79dcd6ff5f4afe803bd0a}{get\+Nom}} () const
+\begin{DoxyCompactList}\small\item\em Retourne le nom de l\textquotesingle{}objet. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classMultimediaObject_a0026c6c54d3160becf762d60c6e58fa7}{get\+Nom\+Fichier}} () const
+\begin{DoxyCompactList}\small\item\em Retourne le chemin du fichier multimédia. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMultimediaObject_ac746ee5c763779a98a04b8abe30dd2d3}{set\+Nom}} (const std\+::string \mbox{\hyperlink{classMultimediaObject_a94609b6077c9c4a908a892b78539c50b}{nom}})
+\begin{DoxyCompactList}\small\item\em Modifie le nom de l\textquotesingle{}objet. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMultimediaObject_a52acf95a18530b1046e10a69eaa8db9d}{set\+Nom\+Fichier}} (const std\+::string \mbox{\hyperlink{classMultimediaObject_a2fdb8df4c8bef5ca3c6155f88a75822a}{nom\+Fichier}})
+\begin{DoxyCompactList}\small\item\em Modifie le chemin du fichier multimédia. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classMultimediaObject_ae7f09f13f345d904b1a690e98ef77ce8}{\texorpdfstring{$\sim$}{\string~}\+Multimedia\+Object}} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de \doxylink{classMultimediaObject}{Multimedia\+Object}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMultimediaObject_a3a0df7ef2b64cbaee8734378b7a77fd7}{affiche}} (std\+::ostream \&os) const
+\begin{DoxyCompactList}\small\item\em Affiche les informations de base de l\textquotesingle{}objet. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classFilm_af2835db2b0ef3a87aaa3222f4d9d1ae3}{Film}} ()
+\item 
+\mbox{\hyperlink{classFilm_a30104431315f670c57148730480fa8c9}{Film}} (const std\+::string \&\mbox{\hyperlink{classMultimediaObject_a94609b6077c9c4a908a892b78539c50b}{nom}}, const std\+::string \&\mbox{\hyperlink{classMultimediaObject_a2fdb8df4c8bef5ca3c6155f88a75822a}{nom\+Fichier}}, int duree)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classVideo}{Video}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVideo_ab5369df413c436e9d85415ef911ffa68}{Video}} (const std\+::string \&\mbox{\hyperlink{classMultimediaObject_a94609b6077c9c4a908a892b78539c50b}{nom}}, const std\+::string \&\mbox{\hyperlink{classMultimediaObject_a2fdb8df4c8bef5ca3c6155f88a75822a}{nom\+Fichier}}, int \mbox{\hyperlink{classVideo_a4e45b3e699c8f4b1aabd4b52bcdd6215}{Duree}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classFilm_a7715217ef62d00ed7069e19a2270658d}{chapitres}} = nullptr
+\item 
+int \mbox{\hyperlink{classFilm_afce8b9d1a3ff343ed7d3645620d06456}{nb\+Chapitres}} = 0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classFilm_a8ff7b746f97f126496d2e184de001a14}{Media\+Manager}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{classMultimediaObject}{Multimedia\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{classMultimediaObject_a4eb7a7cf920349797d8d7ec7dc0b76e3}{Multimedia\+Ptr}} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMultimediaObject}{Multimedia\+Object}} $>$
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe représentant un film avec chapitres. 
+
+Cette classe étend \doxylink{classVideo}{Video} et ajoute la gestion des chapitres. Chaque chapitre a sa propre durée et le film gère un tableau dynamique de ces durées. 
+
+Definition at line \mbox{\hyperlink{Film_8h_source_l00026}{26}} of file \mbox{\hyperlink{Film_8h_source}{Film.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classFilm_af2835db2b0ef3a87aaa3222f4d9d1ae3}\label{classFilm_af2835db2b0ef3a87aaa3222f4d9d1ae3} 
+\index{Film@{Film}!Film@{Film}}
+\index{Film@{Film}!Film@{Film}}
+\doxysubsubsection{\texorpdfstring{Film()}{Film()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Film\+::\+Film (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{Film_8h_source_l00034}{34}} of file \mbox{\hyperlink{Film_8h_source}{Film.\+h}}.
+
+\Hypertarget{classFilm_a30104431315f670c57148730480fa8c9}\label{classFilm_a30104431315f670c57148730480fa8c9} 
+\index{Film@{Film}!Film@{Film}}
+\index{Film@{Film}!Film@{Film}}
+\doxysubsubsection{\texorpdfstring{Film()}{Film()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Film\+::\+Film (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{nom,  }\item[{const std\+::string \&}]{nom\+Fichier,  }\item[{int}]{duree }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{Film_8h_source_l00036}{36}} of file \mbox{\hyperlink{Film_8h_source}{Film.\+h}}.
+
+\Hypertarget{classFilm_a490465154daeb29961fddb843a864eeb}\label{classFilm_a490465154daeb29961fddb843a864eeb} 
+\index{Film@{Film}!````~Film@{\texorpdfstring{$\sim$}{\string~}Film}}
+\index{````~Film@{\texorpdfstring{$\sim$}{\string~}Film}!Film@{Film}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Film()}{\string~Film()}}
+{\footnotesize\ttfamily virtual Film\+::\texorpdfstring{$\sim$}{\string~}\+Film (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{Film_8h_source_l00043}{43}} of file \mbox{\hyperlink{Film_8h_source}{Film.\+h}}.
+
+
+
+References \mbox{\hyperlink{Film_8h_source_l00029}{chapitres}}.
+
+\Hypertarget{classFilm_a68f781851622ec80878c9a6e7ccb925e}\label{classFilm_a68f781851622ec80878c9a6e7ccb925e} 
+\index{Film@{Film}!Film@{Film}}
+\index{Film@{Film}!Film@{Film}}
+\doxysubsubsection{\texorpdfstring{Film()}{Film()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Film\+::\+Film (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFilm}{Film}} \&}]{from }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Film_8h_source_l00048}{48}} of file \mbox{\hyperlink{Film_8h_source}{Film.\+h}}.
+
+
+
+References \mbox{\hyperlink{Film_8h_source_l00029}{chapitres}}, and \mbox{\hyperlink{Film_8h_source_l00030}{nb\+Chapitres}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classFilm_a2cbb1a5f605f4a420e0287d2ef2b498d}\label{classFilm_a2cbb1a5f605f4a420e0287d2ef2b498d} 
+\index{Film@{Film}!affiche@{affiche}}
+\index{affiche@{affiche}!Film@{Film}}
+\doxysubsubsection{\texorpdfstring{affiche()}{affiche()}}
+{\footnotesize\ttfamily void Film\+::affiche (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Film_8h_source_l00118}{118}} of file \mbox{\hyperlink{Film_8h_source}{Film.\+h}}.
+
+
+
+References \mbox{\hyperlink{Video_8cpp_source_l00042}{Video\+::affiche()}}, \mbox{\hyperlink{Film_8h_source_l00029}{chapitres}}, and \mbox{\hyperlink{Film_8h_source_l00030}{nb\+Chapitres}}.
+
+\Hypertarget{classFilm_a04d6e4c63a9c76bc68be7967b65677a6}\label{classFilm_a04d6e4c63a9c76bc68be7967b65677a6} 
+\index{Film@{Film}!getChapitres@{getChapitres}}
+\index{getChapitres@{getChapitres}!Film@{Film}}
+\doxysubsubsection{\texorpdfstring{getChapitres()}{getChapitres()}}
+{\footnotesize\ttfamily const int \texorpdfstring{$\ast$}{*} Film\+::get\+Chapitres (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Film_8h_source_l00115}{115}} of file \mbox{\hyperlink{Film_8h_source}{Film.\+h}}.
+
+
+
+References \mbox{\hyperlink{Film_8h_source_l00029}{chapitres}}.
+
+\Hypertarget{classFilm_af3fc0bb9f2d26a58632808ce2eef4772}\label{classFilm_af3fc0bb9f2d26a58632808ce2eef4772} 
+\index{Film@{Film}!getNbChapitres@{getNbChapitres}}
+\index{getNbChapitres@{getNbChapitres}!Film@{Film}}
+\doxysubsubsection{\texorpdfstring{getNbChapitres()}{getNbChapitres()}}
+{\footnotesize\ttfamily int Film\+::get\+Nb\+Chapitres (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Film_8h_source_l00113}{113}} of file \mbox{\hyperlink{Film_8h_source}{Film.\+h}}.
+
+
+
+References \mbox{\hyperlink{Film_8h_source_l00030}{nb\+Chapitres}}.
+
+\Hypertarget{classFilm_ac0b358393c6e1d293141c5c96cd9a3be}\label{classFilm_ac0b358393c6e1d293141c5c96cd9a3be} 
+\index{Film@{Film}!operator=@{operator=}}
+\index{operator=@{operator=}!Film@{Film}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classFilm}{Film}} \& Film\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFilm}{Film}} \&}]{from }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Film_8h_source_l00066}{66}} of file \mbox{\hyperlink{Film_8h_source}{Film.\+h}}.
+
+
+
+References \mbox{\hyperlink{Film_8h_source_l00029}{chapitres}}, and \mbox{\hyperlink{Film_8h_source_l00030}{nb\+Chapitres}}.
+
+\Hypertarget{classFilm_a0cec79fce8bb7535f1a4dab5f6777a11}\label{classFilm_a0cec79fce8bb7535f1a4dab5f6777a11} 
+\index{Film@{Film}!setChapitres@{setChapitres}}
+\index{setChapitres@{setChapitres}!Film@{Film}}
+\doxysubsubsection{\texorpdfstring{setChapitres()}{setChapitres()}}
+{\footnotesize\ttfamily void Film\+::set\+Chapitres (\begin{DoxyParamCaption}\item[{const int \texorpdfstring{$\ast$}{*}}]{new\+Chapitres,  }\item[{int}]{new\+Nb\+Chapitres }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Film_8h_source_l00093}{93}} of file \mbox{\hyperlink{Film_8h_source}{Film.\+h}}.
+
+
+
+References \mbox{\hyperlink{Film_8h_source_l00029}{chapitres}}, and \mbox{\hyperlink{Film_8h_source_l00030}{nb\+Chapitres}}.
+
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classFilm_a8ff7b746f97f126496d2e184de001a14}\label{classFilm_a8ff7b746f97f126496d2e184de001a14} 
+\index{Film@{Film}!MediaManager@{MediaManager}}
+\index{MediaManager@{MediaManager}!Film@{Film}}
+\doxysubsubsection{\texorpdfstring{MediaManager}{MediaManager}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{classMediaManager}{Media\+Manager}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \mbox{\hyperlink{Film_8h_source_l00141}{141}} of file \mbox{\hyperlink{Film_8h_source}{Film.\+h}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classFilm_a7715217ef62d00ed7069e19a2270658d}\label{classFilm_a7715217ef62d00ed7069e19a2270658d} 
+\index{Film@{Film}!chapitres@{chapitres}}
+\index{chapitres@{chapitres}!Film@{Film}}
+\doxysubsubsection{\texorpdfstring{chapitres}{chapitres}}
+{\footnotesize\ttfamily int\texorpdfstring{$\ast$}{*} Film\+::chapitres = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{Film_8h_source_l00029}{29}} of file \mbox{\hyperlink{Film_8h_source}{Film.\+h}}.
+
+\Hypertarget{classFilm_afce8b9d1a3ff343ed7d3645620d06456}\label{classFilm_afce8b9d1a3ff343ed7d3645620d06456} 
+\index{Film@{Film}!nbChapitres@{nbChapitres}}
+\index{nbChapitres@{nbChapitres}!Film@{Film}}
+\doxysubsubsection{\texorpdfstring{nbChapitres}{nbChapitres}}
+{\footnotesize\ttfamily int Film\+::nb\+Chapitres = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{Film_8h_source_l00030}{30}} of file \mbox{\hyperlink{Film_8h_source}{Film.\+h}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Film_8h}{Film.\+h}}\end{DoxyCompactItemize}

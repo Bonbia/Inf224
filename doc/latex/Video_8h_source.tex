@@ -1,0 +1,47 @@
+\doxysection{Video.\+h}
+\hypertarget{Video_8h_source}{}\label{Video_8h_source}\index{Video.h@{Video.h}}
+\mbox{\hyperlink{Video_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Video_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ VIDEO\_H}}
+\DoxyCodeLine{\Hypertarget{Video_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ VIDEO\_H}}
+\DoxyCodeLine{\Hypertarget{Video_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{Video_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{MultimediaObject_8h}{MultimediaObject.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Video_8h_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{Video_8h_source_l00006}00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMediaManager}{MediaManager}};\ \textcolor{comment}{//\ forward\ declaration}}
+\DoxyCodeLine{\Hypertarget{Video_8h_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{Video_8h_source_l00008}\mbox{\hyperlink{classVideo}{00008}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classVideo}{Video}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classMultimediaObject}{MultimediaObject}}}
+\DoxyCodeLine{\Hypertarget{Video_8h_source_l00009}00009\ \{}
+\DoxyCodeLine{\Hypertarget{Video_8h_source_l00010}00010\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{Video_8h_source_l00011}\mbox{\hyperlink{classVideo_a4e45b3e699c8f4b1aabd4b52bcdd6215}{00011}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classVideo_a4e45b3e699c8f4b1aabd4b52bcdd6215}{Duree}};}
+\DoxyCodeLine{\Hypertarget{Video_8h_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{Video_8h_source_l00013}00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Video_8h_source_l00014}00014\ \ \ \ \ \textcolor{comment}{//\ Constructeurs}}
+\DoxyCodeLine{\Hypertarget{Video_8h_source_l00015}00015\ \ \ \ \ \mbox{\hyperlink{classVideo_ab67336c2c5b6227a9635bc7dcd6af543}{Video}}();}
+\DoxyCodeLine{\Hypertarget{Video_8h_source_l00016}00016\ \ \ \ \ \mbox{\hyperlink{classVideo_aebf7e2a8fa2bbd79335b1cf35925d190}{\string~Video}}();}
+\DoxyCodeLine{\Hypertarget{Video_8h_source_l00017}00017\ \ \ \ \ \textcolor{comment}{//\ Getters}}
+\DoxyCodeLine{\Hypertarget{Video_8h_source_l00018}00018\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classVideo_a504b8486ee1c54400793f5d50cbf6d09}{getDuree}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{Video_8h_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{Video_8h_source_l00020}00020\ \ \ \ \ \textcolor{comment}{//\ Setters}}
+\DoxyCodeLine{\Hypertarget{Video_8h_source_l00021}00021\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classVideo_ab9245713b9db1251f535d832c23b124b}{setDuree}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{classVideo_a4e45b3e699c8f4b1aabd4b52bcdd6215}{Duree}});}
+\DoxyCodeLine{\Hypertarget{Video_8h_source_l00022}00022\ \ \ \ \ \textcolor{comment}{//\ Destructeur}}
+\DoxyCodeLine{\Hypertarget{Video_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{Video_8h_source_l00024}00024\ \ \ \ \ \textcolor{comment}{//\ Affichage}}
+\DoxyCodeLine{\Hypertarget{Video_8h_source_l00025}00025\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classVideo_a94cc41d943e5d6c8f999c32b649cb7ba}{affiche}}(std::ostream\ \&os)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{Video_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{Video_8h_source_l00027}00027\ \ \ \ \ \textcolor{comment}{//\ Play}}
+\DoxyCodeLine{\Hypertarget{Video_8h_source_l00028}\mbox{\hyperlink{classVideo_a32e0ca290f73773d1a3356001b13e92e}{00028}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classVideo_a32e0ca290f73773d1a3356001b13e92e}{jouer}}(std::ostream\ \&out\ =\ std::cout)\textcolor{keyword}{\ const\ override}}
+\DoxyCodeLine{\Hypertarget{Video_8h_source_l00029}00029\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{Video_8h_source_l00030}00030\ \ \ \ \ out\ <<\ \textcolor{stringliteral}{"{}Playing\ video:\ "{}}\ <<\ \mbox{\hyperlink{classMultimediaObject_a0026c6c54d3160becf762d60c6e58fa7}{getNomFichier}}()\ <<\ \textcolor{stringliteral}{"{}\ (Duration:\ "{}}\ <<\ \mbox{\hyperlink{classVideo_a4e45b3e699c8f4b1aabd4b52bcdd6215}{Duree}}\ <<\ \textcolor{stringliteral}{"{}s)"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{Video_8h_source_l00031}00031\ \ \ \ \ std::string\ commande\ =\ \textcolor{stringliteral}{"{}mpv"{}}\ \ +\ \mbox{\hyperlink{classMultimediaObject_a0026c6c54d3160becf762d60c6e58fa7}{getNomFichier}}()+\textcolor{stringliteral}{"{}\ \&"{}};}
+\DoxyCodeLine{\Hypertarget{Video_8h_source_l00032}00032\ \ \ \ \ system(commande.data());}
+\DoxyCodeLine{\Hypertarget{Video_8h_source_l00033}00033\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Video_8h_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{Video_8h_source_l00035}00035\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{Video_8h_source_l00036}\mbox{\hyperlink{classVideo_ab5369df413c436e9d85415ef911ffa68}{00036}}\ \ \ \ \ \mbox{\hyperlink{classVideo_ab5369df413c436e9d85415ef911ffa68}{Video}}(\textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{classMultimediaObject_a94609b6077c9c4a908a892b78539c50b}{nom}},\ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{classMultimediaObject_a2fdb8df4c8bef5ca3c6155f88a75822a}{nomFichier}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classVideo_a4e45b3e699c8f4b1aabd4b52bcdd6215}{Duree}})\ :\ \mbox{\hyperlink{classMultimediaObject}{MultimediaObject}}(\mbox{\hyperlink{classMultimediaObject_a94609b6077c9c4a908a892b78539c50b}{nom}},\ \mbox{\hyperlink{classMultimediaObject_a2fdb8df4c8bef5ca3c6155f88a75822a}{nomFichier}}),\ \mbox{\hyperlink{classVideo_a4e45b3e699c8f4b1aabd4b52bcdd6215}{Duree}}(\mbox{\hyperlink{classVideo_a4e45b3e699c8f4b1aabd4b52bcdd6215}{Duree}})\ \{\}}
+\DoxyCodeLine{\Hypertarget{Video_8h_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{Video_8h_source_l00038}\mbox{\hyperlink{classVideo_a8ff7b746f97f126496d2e184de001a14}{00038}}\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMediaManager}{MediaManager}};}
+\DoxyCodeLine{\Hypertarget{Video_8h_source_l00039}00039\ \};}
+\DoxyCodeLine{\Hypertarget{Video_8h_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{Video_8h_source_l00041}00041\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VIDEO\_H}}
+
+\end{DoxyCode}

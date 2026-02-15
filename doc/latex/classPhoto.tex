@@ -1,0 +1,297 @@
+\doxysection{Photo Class Reference}
+\hypertarget{classPhoto}{}\label{classPhoto}\index{Photo@{Photo}}
+
+
+{\ttfamily \#include $<$Photo.\+h$>$}
+
+Inheritance diagram for Photo\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classPhoto}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPhoto_a10ef03ede9235052eb9f7d5e950f85d3}{Photo}} ()
+\begin{DoxyCompactList}\small\item\em Constructeur par défaut de \doxylink{classPhoto}{Photo}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPhoto_adc366234be6226600360c7cbba8e7fcf}{\texorpdfstring{$\sim$}{\string~}\+Photo}} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de \doxylink{classPhoto}{Photo}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classPhoto_abf3e0bbc8dbe20b79aab846eedfee74d}{get\+Latitude}} () const
+\begin{DoxyCompactList}\small\item\em Retourne la latitude de la photo. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classPhoto_af784f282da3cfab4a5e4c45b4da3b3f8}{get\+Longitude}} () const
+\begin{DoxyCompactList}\small\item\em Retourne la longitude de la photo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPhoto_a94319fce6b17eef205d25a15b44f3439}{set\+Latitude}} (double \mbox{\hyperlink{classPhoto_acf8fbc131299fe8c01b6e627cb8f62ff}{latitude}})
+\begin{DoxyCompactList}\small\item\em Modifie la latitude. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPhoto_a110586b178177c87da549b6de6d85fb5}{set\+Longitude}} (double \mbox{\hyperlink{classPhoto_a90e917281bad3bb15d526d01ba88aa73}{longitude}})
+\begin{DoxyCompactList}\small\item\em Modifie la longitude. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPhoto_a019b556836ecaeac9b8b1098c772fbe2}{affiche}} (std\+::ostream \&os) const
+\begin{DoxyCompactList}\small\item\em Affiche les informations complètes de la photo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPhoto_ad4de8462db34d0293251a2beaa513e25}{jouer}} (std\+::ostream \&out=std\+::cout) const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classMultimediaObject}{Multimedia\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMultimediaObject_a136f86f6b45b1e74b20a5d6cc36b36e8}{Multimedia\+Object}} ()
+\begin{DoxyCompactList}\small\item\em Constructeur par défaut de \doxylink{classMultimediaObject}{Multimedia\+Object}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMultimediaObject_a96057a963775e5b12b8b2ee366d8c087}{Multimedia\+Object}} (const std\+::string \&\mbox{\hyperlink{classMultimediaObject_a94609b6077c9c4a908a892b78539c50b}{nom}}, const std\+::string \&\mbox{\hyperlink{classMultimediaObject_a2fdb8df4c8bef5ca3c6155f88a75822a}{nom\+Fichier}})
+\begin{DoxyCompactList}\small\item\em Constructeur paramétré de \doxylink{classMultimediaObject}{Multimedia\+Object}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classMultimediaObject_a4b2aba750ff79dcd6ff5f4afe803bd0a}{get\+Nom}} () const
+\begin{DoxyCompactList}\small\item\em Retourne le nom de l\textquotesingle{}objet. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classMultimediaObject_a0026c6c54d3160becf762d60c6e58fa7}{get\+Nom\+Fichier}} () const
+\begin{DoxyCompactList}\small\item\em Retourne le chemin du fichier multimédia. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMultimediaObject_ac746ee5c763779a98a04b8abe30dd2d3}{set\+Nom}} (const std\+::string \mbox{\hyperlink{classMultimediaObject_a94609b6077c9c4a908a892b78539c50b}{nom}})
+\begin{DoxyCompactList}\small\item\em Modifie le nom de l\textquotesingle{}objet. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMultimediaObject_a52acf95a18530b1046e10a69eaa8db9d}{set\+Nom\+Fichier}} (const std\+::string \mbox{\hyperlink{classMultimediaObject_a2fdb8df4c8bef5ca3c6155f88a75822a}{nom\+Fichier}})
+\begin{DoxyCompactList}\small\item\em Modifie le chemin du fichier multimédia. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classMultimediaObject_ae7f09f13f345d904b1a690e98ef77ce8}{\texorpdfstring{$\sim$}{\string~}\+Multimedia\+Object}} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de \doxylink{classMultimediaObject}{Multimedia\+Object}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMultimediaObject_a3a0df7ef2b64cbaee8734378b7a77fd7}{affiche}} (std\+::ostream \&os) const
+\begin{DoxyCompactList}\small\item\em Affiche les informations de base de l\textquotesingle{}objet. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPhoto_a910aa2faf9438a75c1198292b390b3ba}{Photo}} (const std\+::string \&\mbox{\hyperlink{classMultimediaObject_a94609b6077c9c4a908a892b78539c50b}{nom}}, const std\+::string \&\mbox{\hyperlink{classMultimediaObject_a2fdb8df4c8bef5ca3c6155f88a75822a}{nom\+Fichier}}, double lat, double lon)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classPhoto_acf8fbc131299fe8c01b6e627cb8f62ff}{latitude}}
+\item 
+double \mbox{\hyperlink{classPhoto_a90e917281bad3bb15d526d01ba88aa73}{longitude}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classPhoto_a8ff7b746f97f126496d2e184de001a14}{Media\+Manager}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{classMultimediaObject}{Multimedia\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{classMultimediaObject_a4eb7a7cf920349797d8d7ec7dc0b76e3}{Multimedia\+Ptr}} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMultimediaObject}{Multimedia\+Object}} $>$
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{Photo_8h_source_l00007}{7}} of file \mbox{\hyperlink{Photo_8h_source}{Photo.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classPhoto_a10ef03ede9235052eb9f7d5e950f85d3}\label{classPhoto_a10ef03ede9235052eb9f7d5e950f85d3} 
+\index{Photo@{Photo}!Photo@{Photo}}
+\index{Photo@{Photo}!Photo@{Photo}}
+\doxysubsubsection{\texorpdfstring{Photo()}{Photo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Photo\+::\+Photo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructeur par défaut de \doxylink{classPhoto}{Photo}. 
+
+Initialise une photo avec des coordonnées null (0.\+0, 0.\+0) 
+
+Definition at line \mbox{\hyperlink{Photo_8cpp_source_l00017}{17}} of file \mbox{\hyperlink{Photo_8cpp_source}{Photo.\+cpp}}.
+
+\Hypertarget{classPhoto_adc366234be6226600360c7cbba8e7fcf}\label{classPhoto_adc366234be6226600360c7cbba8e7fcf} 
+\index{Photo@{Photo}!````~Photo@{\texorpdfstring{$\sim$}{\string~}Photo}}
+\index{````~Photo@{\texorpdfstring{$\sim$}{\string~}Photo}!Photo@{Photo}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Photo()}{\string~Photo()}}
+{\footnotesize\ttfamily Photo\+::\texorpdfstring{$\sim$}{\string~}\+Photo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructeur de \doxylink{classPhoto}{Photo}. 
+
+
+
+Definition at line \mbox{\hyperlink{Photo_8cpp_source_l00022}{22}} of file \mbox{\hyperlink{Photo_8cpp_source}{Photo.\+cpp}}.
+
+\Hypertarget{classPhoto_a910aa2faf9438a75c1198292b390b3ba}\label{classPhoto_a910aa2faf9438a75c1198292b390b3ba} 
+\index{Photo@{Photo}!Photo@{Photo}}
+\index{Photo@{Photo}!Photo@{Photo}}
+\doxysubsubsection{\texorpdfstring{Photo()}{Photo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Photo\+::\+Photo (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{nom,  }\item[{const std\+::string \&}]{nom\+Fichier,  }\item[{double}]{lat,  }\item[{double}]{lon }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{Photo_8h_source_l00038}{38}} of file \mbox{\hyperlink{Photo_8h_source}{Photo.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPhoto_a019b556836ecaeac9b8b1098c772fbe2}\label{classPhoto_a019b556836ecaeac9b8b1098c772fbe2} 
+\index{Photo@{Photo}!affiche@{affiche}}
+\index{affiche@{affiche}!Photo@{Photo}}
+\doxysubsubsection{\texorpdfstring{affiche()}{affiche()}}
+{\footnotesize\ttfamily void Photo\+::affiche (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption}) const}
+
+
+
+Affiche les informations complètes de la photo. 
+
+Affiche le nom, le fichier et les coordonnées GPS
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & Flux de sortie où afficher les informations \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Photo_8cpp_source_l00055}{55}} of file \mbox{\hyperlink{Photo_8cpp_source}{Photo.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{MultimediaObject_8cpp_source_l00082}{Multimedia\+Object\+::affiche()}}, \mbox{\hyperlink{Photo_8h_source_l00010}{latitude}}, and \mbox{\hyperlink{Photo_8h_source_l00011}{longitude}}.
+
+\Hypertarget{classPhoto_abf3e0bbc8dbe20b79aab846eedfee74d}\label{classPhoto_abf3e0bbc8dbe20b79aab846eedfee74d} 
+\index{Photo@{Photo}!getLatitude@{getLatitude}}
+\index{getLatitude@{getLatitude}!Photo@{Photo}}
+\doxysubsubsection{\texorpdfstring{getLatitude()}{getLatitude()}}
+{\footnotesize\ttfamily double Photo\+::get\+Latitude (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retourne la latitude de la photo. 
+
+\begin{DoxyReturn}{Returns}
+La latitude en degrés 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Photo_8cpp_source_l00028}{28}} of file \mbox{\hyperlink{Photo_8cpp_source}{Photo.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{Photo_8h_source_l00010}{latitude}}.
+
+\Hypertarget{classPhoto_af784f282da3cfab4a5e4c45b4da3b3f8}\label{classPhoto_af784f282da3cfab4a5e4c45b4da3b3f8} 
+\index{Photo@{Photo}!getLongitude@{getLongitude}}
+\index{getLongitude@{getLongitude}!Photo@{Photo}}
+\doxysubsubsection{\texorpdfstring{getLongitude()}{getLongitude()}}
+{\footnotesize\ttfamily double Photo\+::get\+Longitude (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retourne la longitude de la photo. 
+
+\begin{DoxyReturn}{Returns}
+La longitude en degrés 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Photo_8cpp_source_l00034}{34}} of file \mbox{\hyperlink{Photo_8cpp_source}{Photo.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{Photo_8h_source_l00011}{longitude}}.
+
+\Hypertarget{classPhoto_ad4de8462db34d0293251a2beaa513e25}\label{classPhoto_ad4de8462db34d0293251a2beaa513e25} 
+\index{Photo@{Photo}!jouer@{jouer}}
+\index{jouer@{jouer}!Photo@{Photo}}
+\doxysubsubsection{\texorpdfstring{jouer()}{jouer()}}
+{\footnotesize\ttfamily void Photo\+::jouer (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out = {\ttfamily std\+:\+:cout} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classMultimediaObject_aa5f27d85f4e1620f50a57f54c73e90b0}{Multimedia\+Object}}.
+
+
+
+Definition at line \mbox{\hyperlink{Photo_8h_source_l00029}{29}} of file \mbox{\hyperlink{Photo_8h_source}{Photo.\+h}}.
+
+
+
+References \mbox{\hyperlink{MultimediaObject_8cpp_source_l00050}{Multimedia\+Object\+::get\+Nom\+Fichier()}}.
+
+\Hypertarget{classPhoto_a94319fce6b17eef205d25a15b44f3439}\label{classPhoto_a94319fce6b17eef205d25a15b44f3439} 
+\index{Photo@{Photo}!setLatitude@{setLatitude}}
+\index{setLatitude@{setLatitude}!Photo@{Photo}}
+\doxysubsubsection{\texorpdfstring{setLatitude()}{setLatitude()}}
+{\footnotesize\ttfamily void Photo\+::set\+Latitude (\begin{DoxyParamCaption}\item[{double}]{lat }\end{DoxyParamCaption})}
+
+
+
+Modifie la latitude. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lat} & Nouvelle latitude en degrés \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Photo_8cpp_source_l00040}{40}} of file \mbox{\hyperlink{Photo_8cpp_source}{Photo.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{Photo_8h_source_l00010}{latitude}}.
+
+\Hypertarget{classPhoto_a110586b178177c87da549b6de6d85fb5}\label{classPhoto_a110586b178177c87da549b6de6d85fb5} 
+\index{Photo@{Photo}!setLongitude@{setLongitude}}
+\index{setLongitude@{setLongitude}!Photo@{Photo}}
+\doxysubsubsection{\texorpdfstring{setLongitude()}{setLongitude()}}
+{\footnotesize\ttfamily void Photo\+::set\+Longitude (\begin{DoxyParamCaption}\item[{double}]{lon }\end{DoxyParamCaption})}
+
+
+
+Modifie la longitude. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lon} & Nouvelle longitude en degrés \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Photo_8cpp_source_l00046}{46}} of file \mbox{\hyperlink{Photo_8cpp_source}{Photo.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{Photo_8h_source_l00011}{longitude}}.
+
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classPhoto_a8ff7b746f97f126496d2e184de001a14}\label{classPhoto_a8ff7b746f97f126496d2e184de001a14} 
+\index{Photo@{Photo}!MediaManager@{MediaManager}}
+\index{MediaManager@{MediaManager}!Photo@{Photo}}
+\doxysubsubsection{\texorpdfstring{MediaManager}{MediaManager}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{classMediaManager}{Media\+Manager}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \mbox{\hyperlink{Photo_8h_source_l00040}{40}} of file \mbox{\hyperlink{Photo_8h_source}{Photo.\+h}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classPhoto_acf8fbc131299fe8c01b6e627cb8f62ff}\label{classPhoto_acf8fbc131299fe8c01b6e627cb8f62ff} 
+\index{Photo@{Photo}!latitude@{latitude}}
+\index{latitude@{latitude}!Photo@{Photo}}
+\doxysubsubsection{\texorpdfstring{latitude}{latitude}}
+{\footnotesize\ttfamily double Photo\+::latitude\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{Photo_8h_source_l00010}{10}} of file \mbox{\hyperlink{Photo_8h_source}{Photo.\+h}}.
+
+\Hypertarget{classPhoto_a90e917281bad3bb15d526d01ba88aa73}\label{classPhoto_a90e917281bad3bb15d526d01ba88aa73} 
+\index{Photo@{Photo}!longitude@{longitude}}
+\index{longitude@{longitude}!Photo@{Photo}}
+\doxysubsubsection{\texorpdfstring{longitude}{longitude}}
+{\footnotesize\ttfamily double Photo\+::longitude\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{Photo_8h_source_l00011}{11}} of file \mbox{\hyperlink{Photo_8h_source}{Photo.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Photo_8h}{Photo.\+h}}\item 
+\mbox{\hyperlink{Photo_8cpp}{Photo.\+cpp}}\end{DoxyCompactItemize}

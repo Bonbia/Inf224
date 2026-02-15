@@ -1,3 +1,13 @@
+/**
+ * @file Film.h
+ * @brief Classe Film pour gérer les films avec chapitres
+ * @author Telecom Paristech
+ * @date 2018-2024
+ *
+ * Définit la classe Film qui hérite de Video et ajoute la gestion
+ * des chapitres avec leur durée individuelle.
+ */
+
 #ifndef FILM_H
 #define FILM_H
 
@@ -5,6 +15,14 @@
 #include <memory>
 class MediaManager; // forward declaration
 
+/**
+ * @class Film
+ * @brief Classe représentant un film avec chapitres
+ *
+ * Cette classe étend Video et ajoute la gestion des chapitres.
+ * Chaque chapitre a sa propre durée et le film gère
+ * un tableau dynamique de ces durées.
+ */
 class Film : public Video
 {
 private:

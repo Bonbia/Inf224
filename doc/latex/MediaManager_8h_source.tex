@@ -1,0 +1,47 @@
+\doxysection{Media\+Manager.\+h}
+\hypertarget{MediaManager_8h_source}{}\label{MediaManager_8h_source}\index{MediaManager.h@{MediaManager.h}}
+\mbox{\hyperlink{MediaManager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{MediaManager_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ MEDIAMANAGER\_H}}
+\DoxyCodeLine{\Hypertarget{MediaManager_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ MEDIAMANAGER\_H}}
+\DoxyCodeLine{\Hypertarget{MediaManager_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{MediaManager_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{\Hypertarget{MediaManager_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{MediaManager_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{\Hypertarget{MediaManager_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{MediaManager_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{MediaManager_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{MultimediaObject_8h}{MultimediaObject.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{MediaManager_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Photo_8h}{Photo.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{MediaManager_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Video_8h}{Video.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{MediaManager_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Film_8h}{Film.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{MediaManager_8h_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Groupe_8h}{Groupe.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{MediaManager_8h_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{MediaManager_8h_source_l00015}\mbox{\hyperlink{classMediaManager}{00015}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMediaManager}{MediaManager}}}
+\DoxyCodeLine{\Hypertarget{MediaManager_8h_source_l00016}00016\ \{}
+\DoxyCodeLine{\Hypertarget{MediaManager_8h_source_l00017}00017\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{MediaManager_8h_source_l00018}\mbox{\hyperlink{classMediaManager_ab66ebd5ee82a5cb5d8f95b452dd50784}{00018}}\ \ \ \ \ std::map<std::string,\ MultimediaPtr>\ \mbox{\hyperlink{classMediaManager_ab66ebd5ee82a5cb5d8f95b452dd50784}{objects}};}
+\DoxyCodeLine{\Hypertarget{MediaManager_8h_source_l00019}\mbox{\hyperlink{classMediaManager_a82ae706e98a9302640fdac80fa32f11e}{00019}}\ \ \ \ \ std::map<std::string,\ GroupePtr>\ \mbox{\hyperlink{classMediaManager_a82ae706e98a9302640fdac80fa32f11e}{groups}};}
+\DoxyCodeLine{\Hypertarget{MediaManager_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{MediaManager_8h_source_l00021}00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{MediaManager_8h_source_l00022}\mbox{\hyperlink{classMediaManager_ab59ce4c54ec6f121c8da13ddec6af871}{00022}}\ \ \ \ \ \mbox{\hyperlink{classMediaManager_ab59ce4c54ec6f121c8da13ddec6af871}{MediaManager}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{MediaManager_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{MediaManager_8h_source_l00024}00024\ \ \ \ \ \textcolor{comment}{//\ Creation\ methods}}
+\DoxyCodeLine{\Hypertarget{MediaManager_8h_source_l00025}00025\ \ \ \ \ std::shared\_ptr<Photo>\ \mbox{\hyperlink{classMediaManager_aa811d1dcdb3f3281473855373345d31d}{createPhoto}}(\textcolor{keyword}{const}\ std::string\ \&name,\ \textcolor{keyword}{const}\ std::string\ \&filename,\ \textcolor{keywordtype}{double}\ lat,\ \textcolor{keywordtype}{double}\ lon);}
+\DoxyCodeLine{\Hypertarget{MediaManager_8h_source_l00026}00026\ \ \ \ \ std::shared\_ptr<Video>\ \mbox{\hyperlink{classMediaManager_accb1e7944df7c8c9d9313ce56d8a19d6}{createVideo}}(\textcolor{keyword}{const}\ std::string\ \&name,\ \textcolor{keyword}{const}\ std::string\ \&filename,\ \textcolor{keywordtype}{int}\ duree);}
+\DoxyCodeLine{\Hypertarget{MediaManager_8h_source_l00027}00027\ \ \ \ \ std::shared\_ptr<Film>\ \mbox{\hyperlink{classMediaManager_a4f028c578e0b9efb5e38358df7a9183f}{createFilm}}(\textcolor{keyword}{const}\ std::string\ \&name,\ \textcolor{keyword}{const}\ std::string\ \&filename,\ \textcolor{keywordtype}{int}\ duree);}
+\DoxyCodeLine{\Hypertarget{MediaManager_8h_source_l00028}00028\ \ \ \ \ \mbox{\hyperlink{Groupe_8h_a570df85c2ec597dcf8b31fa7b944985b}{GroupePtr}}\ \mbox{\hyperlink{classMediaManager_a10d5c606f5a7c992be16137fa767e9ab}{createGroupe}}(\textcolor{keyword}{const}\ std::string\ \&name);}
+\DoxyCodeLine{\Hypertarget{MediaManager_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{MediaManager_8h_source_l00030}00030\ \ \ \ \ \textcolor{comment}{//\ Lookup\ /\ display}}
+\DoxyCodeLine{\Hypertarget{MediaManager_8h_source_l00031}00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMediaManager_a2a0d16b80eee4b9a3a03f1b845708fa2}{displayObject}}(\textcolor{keyword}{const}\ std::string\ \&name,\ std::ostream\ \&out\ =\ std::cout)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{MediaManager_8h_source_l00032}00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMediaManager_adfa4817edf3e9120cbe695f93ed3ecec}{displayGroupe}}(\textcolor{keyword}{const}\ std::string\ \&name,\ std::ostream\ \&out\ =\ std::cout)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{MediaManager_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{MediaManager_8h_source_l00034}00034\ \ \ \ \ \textcolor{comment}{//\ Play}}
+\DoxyCodeLine{\Hypertarget{MediaManager_8h_source_l00035}00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMediaManager_affbee6604cf01659267f6bf5c778f2d9}{playObject}}(\textcolor{keyword}{const}\ std::string\ \&name,\ std::ostream\ \&out\ =\ std::cout)\ \textcolor{keyword}{const};\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{MediaManager_8h_source_l00036}00036\ \ \ \ \ \textcolor{comment}{//\ Remove}}
+\DoxyCodeLine{\Hypertarget{MediaManager_8h_source_l00037}00037\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classMediaManager_afed25ba813ce426bcf270fd440798a9e}{removeObject}}(\textcolor{keyword}{const}\ std::string\ \&name);}
+\DoxyCodeLine{\Hypertarget{MediaManager_8h_source_l00038}00038\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classMediaManager_a74ba75b2c88464d74770a4b78fdf49e1}{removeGroupe}}(\textcolor{keyword}{const}\ std::string\ \&name);}
+\DoxyCodeLine{\Hypertarget{MediaManager_8h_source_l00039}00039\ \};}
+\DoxyCodeLine{\Hypertarget{MediaManager_8h_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{MediaManager_8h_source_l00041}00041\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MEDIAMANAGER\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,301 @@
+\doxysection{Main\+Window Class Reference}
+\hypertarget{classMainWindow}{}\label{classMainWindow}\index{MainWindow@{MainWindow}}
+
+
+Fenêtre principale du client multimédia avec interface Swing.  
+
+
+Inheritance diagram for Main\+Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classMainWindow}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMainWindow_af607d50e4d1b04d3c494661489283f45}{Main\+Window}} ()
+\begin{DoxyCompactList}\small\item\em Constructeur -\/ initialise et affiche la fenêtre principale. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classMainWindow_a4d78b197666e2d77663b2ae82844bb67}{main}} (String\mbox{[}$\,$\mbox{]} args)
+\begin{DoxyCompactList}\small\item\em Point d\textquotesingle{}entrée de l\textquotesingle{}application. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classMainWindow_a8fe492d4d00252396d42ca5ca93dc938}{initialize\+Actions}} ()
+\begin{DoxyCompactList}\small\item\em Initialise toutes les actions de l\textquotesingle{}interface. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMainWindow_a8ccd6cb2eb8580cfc0d0a0cf48308af8}{envoyer\+Commande}} (String command)
+\begin{DoxyCompactList}\small\item\em Envoie une commande au serveur et affiche le résultat. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+JText\+Area \mbox{\hyperlink{classMainWindow_ab4214356a8ff65cfe61d7a9d3f38ee89}{text\+Area}}
+\begin{DoxyCompactList}\small\item\em Zone de texte pour afficher les résultats et messages. \end{DoxyCompactList}\item 
+JText\+Field \mbox{\hyperlink{classMainWindow_a0d6da55a25e91aac3458ef8fa1d5732d}{text\+Field}}
+\begin{DoxyCompactList}\small\item\em Champ de texte pour entrer le nom d\textquotesingle{}un objet multimédia. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classClient}{Client}} \mbox{\hyperlink{classMainWindow_a309f2d857f36994146aa51ffba981080}{client}}
+\begin{DoxyCompactList}\small\item\em Cliente TCP connectée au serveur multimédia. \end{DoxyCompactList}\item 
+Action \mbox{\hyperlink{classMainWindow_aaed4f9115f060ded61ef9104d8d960a4}{search\+Action}}
+\begin{DoxyCompactList}\small\item\em Action pour rechercher un objet multimédia par nom. \end{DoxyCompactList}\item 
+Action \mbox{\hyperlink{classMainWindow_aa2ca06db4f6592586d54ed1c6f5ae228}{play\+Action}}
+\begin{DoxyCompactList}\small\item\em Action pour lire/jouer un objet multimédia. \end{DoxyCompactList}\item 
+Action \mbox{\hyperlink{classMainWindow_a28f046ece98bd7319a4d1db4aab8a5b3}{exit\+Action}}
+\begin{DoxyCompactList}\small\item\em Action pour quitter l\textquotesingle{}application. \end{DoxyCompactList}\item 
+Action \mbox{\hyperlink{classMainWindow_ac6ef2312c76c39f3dec2116418e192f3}{add\+File\+Action}}
+\begin{DoxyCompactList}\small\item\em Action pour ajouter un nouveau fichier multimédia. \end{DoxyCompactList}\item 
+Action \mbox{\hyperlink{classMainWindow_a936c7ee36eccec924a62e22843bd1694}{quit\+Action}}
+\begin{DoxyCompactList}\small\item\em Action pour envoyer la commande QUIT au serveur. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Fenêtre principale du client multimédia avec interface Swing. 
+
+\begin{DoxyVerb}   Crée une interface graphique complète incluant :
+   - Menu fichier avec options de gestion
+   - Barre d'outils avec boutons d'action
+   - Zone de texte pour afficher les résultats et messages
+   - Panneau de contrôle pour l'entrée utilisateur
+   - Palette de sélection de fichiers pour ajouter des médias
+\end{DoxyVerb}
+ 
+
+Definition at line \mbox{\hyperlink{MainWindow_8java_source_l00030}{30}} of file \mbox{\hyperlink{MainWindow_8java_source}{Main\+Window.\+java}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classMainWindow_af607d50e4d1b04d3c494661489283f45}\label{classMainWindow_af607d50e4d1b04d3c494661489283f45} 
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{MainWindow()}{MainWindow()}}
+{\footnotesize\ttfamily Main\+Window.\+Main\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructeur -\/ initialise et affiche la fenêtre principale. 
+
+\begin{DoxyVerb}   Configure :
+   - L'apparence (L&F)
+   - La connexion au serveur
+   - Les actions et leurs raccourcis
+   - L'interface utilisateur (menus, barre d'outils, panneaux)
+
+   Affiche également un message d'erreur si le serveur est indisponible
+\end{DoxyVerb}
+ 
+
+Definition at line \mbox{\hyperlink{MainWindow_8java_source_l00082}{82}} of file \mbox{\hyperlink{MainWindow_8java_source}{Main\+Window.\+java}}.
+
+
+
+References \mbox{\hyperlink{MainWindow_8java_source_l00064}{add\+File\+Action}}, \mbox{\hyperlink{MainWindow_8java_source_l00044}{client}}, \mbox{\hyperlink{MainWindow_8java_source_l00059}{exit\+Action}}, \mbox{\hyperlink{MainWindow_8java_source_l00149}{initialize\+Actions()}}, \mbox{\hyperlink{MainWindow_8java_source_l00054}{play\+Action}}, \mbox{\hyperlink{MainWindow_8java_source_l00069}{quit\+Action}}, \mbox{\hyperlink{MainWindow_8java_source_l00049}{search\+Action}}, \mbox{\hyperlink{MainWindow_8java_source_l00034}{text\+Area}}, and \mbox{\hyperlink{MainWindow_8java_source_l00039}{text\+Field}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classMainWindow_a8ccd6cb2eb8580cfc0d0a0cf48308af8}\label{classMainWindow_a8ccd6cb2eb8580cfc0d0a0cf48308af8} 
+\index{MainWindow@{MainWindow}!envoyerCommande@{envoyerCommande}}
+\index{envoyerCommande@{envoyerCommande}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{envoyerCommande()}{envoyerCommande()}}
+{\footnotesize\ttfamily void Main\+Window.\+envoyer\+Commande (\begin{DoxyParamCaption}\item[{String}]{command }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Envoie une commande au serveur et affiche le résultat. 
+
+\begin{DoxyVerb}   Envoie une commande texte au serveur via le client TCP,
+   puis affiche la commande et la réponse dans la zone de texte.
+\end{DoxyVerb}
+ 
+\begin{DoxyParams}{Parameters}
+{\em command} & La commande à envoyer au serveur\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Peut être utilisée pour toute commande reconnue par le serveur 
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{MainWindow_8java_source_l00238}{238}} of file \mbox{\hyperlink{MainWindow_8java_source}{Main\+Window.\+java}}.
+
+
+
+References \mbox{\hyperlink{MainWindow_8java_source_l00044}{client}}, \mbox{\hyperlink{Client_8java_source_l00159}{Client.\+send()}}, and \mbox{\hyperlink{MainWindow_8java_source_l00034}{text\+Area}}.
+
+\Hypertarget{classMainWindow_a8fe492d4d00252396d42ca5ca93dc938}\label{classMainWindow_a8fe492d4d00252396d42ca5ca93dc938} 
+\index{MainWindow@{MainWindow}!initializeActions@{initializeActions}}
+\index{initializeActions@{initializeActions}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{initializeActions()}{initializeActions()}}
+{\footnotesize\ttfamily void Main\+Window.\+initialize\+Actions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Initialise toutes les actions de l\textquotesingle{}interface. 
+
+\begin{DoxyVerb}   Crée et configure les actions pour :
+   - Ajouter un fichier multimédias avec sélecteur de fichiers
+   - Rechercher un objet par son nom
+   - Lire/jouer un objet multimédia
+   - Quitter l'application
+   - Arrêtrer le serveur
+\end{DoxyVerb}
+ \begin{DoxyNote}{Note}
+Chaque action est liée à un bouton/menu et déclenche une logique spécifique 
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{MainWindow_8java_source_l00149}{149}} of file \mbox{\hyperlink{MainWindow_8java_source}{Main\+Window.\+java}}.
+
+
+
+References \mbox{\hyperlink{MainWindow_8java_source_l00064}{add\+File\+Action}}, \mbox{\hyperlink{MainWindow_8java_source_l00238}{envoyer\+Commande()}}, \mbox{\hyperlink{MainWindow_8java_source_l00059}{exit\+Action}}, \mbox{\hyperlink{MainWindow_8java_source_l00054}{play\+Action}}, \mbox{\hyperlink{MainWindow_8java_source_l00069}{quit\+Action}}, \mbox{\hyperlink{MainWindow_8java_source_l00049}{search\+Action}}, \mbox{\hyperlink{MainWindow_8java_source_l00034}{text\+Area}}, and \mbox{\hyperlink{MainWindow_8java_source_l00039}{text\+Field}}.
+
+\Hypertarget{classMainWindow_a4d78b197666e2d77663b2ae82844bb67}\label{classMainWindow_a4d78b197666e2d77663b2ae82844bb67} 
+\index{MainWindow@{MainWindow}!main@{main}}
+\index{main@{main}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily static void Main\+Window.\+main (\begin{DoxyParamCaption}\item[{String\mbox{[}$\,$\mbox{]}}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Point d\textquotesingle{}entrée de l\textquotesingle{}application. 
+
+\begin{DoxyVerb}   Lance l'interface graphique sur le thread de distribution des
+   événements Swing (EDT)
+   pour assurer la sécurité des threads.
+\end{DoxyVerb}
+ 
+\begin{DoxyParams}{Parameters}
+{\em args} & Argument non utilisé \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{MainWindow_8java_source_l00255}{255}} of file \mbox{\hyperlink{MainWindow_8java_source}{Main\+Window.\+java}}.
+
+
+
+References \mbox{\hyperlink{MainWindow_8java_source_l00082}{Main\+Window()}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classMainWindow_ac6ef2312c76c39f3dec2116418e192f3}\label{classMainWindow_ac6ef2312c76c39f3dec2116418e192f3} 
+\index{MainWindow@{MainWindow}!addFileAction@{addFileAction}}
+\index{addFileAction@{addFileAction}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{addFileAction}{addFileAction}}
+{\footnotesize\ttfamily Action Main\+Window.\+add\+File\+Action\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Action pour ajouter un nouveau fichier multimédia. 
+
+
+
+Definition at line \mbox{\hyperlink{MainWindow_8java_source_l00064}{64}} of file \mbox{\hyperlink{MainWindow_8java_source}{Main\+Window.\+java}}.
+
+\Hypertarget{classMainWindow_a309f2d857f36994146aa51ffba981080}\label{classMainWindow_a309f2d857f36994146aa51ffba981080} 
+\index{MainWindow@{MainWindow}!client@{client}}
+\index{client@{client}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{client}{client}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classClient}{Client}} Main\+Window.\+client\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Cliente TCP connectée au serveur multimédia. 
+
+
+
+Definition at line \mbox{\hyperlink{MainWindow_8java_source_l00044}{44}} of file \mbox{\hyperlink{MainWindow_8java_source}{Main\+Window.\+java}}.
+
+\Hypertarget{classMainWindow_a28f046ece98bd7319a4d1db4aab8a5b3}\label{classMainWindow_a28f046ece98bd7319a4d1db4aab8a5b3} 
+\index{MainWindow@{MainWindow}!exitAction@{exitAction}}
+\index{exitAction@{exitAction}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{exitAction}{exitAction}}
+{\footnotesize\ttfamily Action Main\+Window.\+exit\+Action\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Action pour quitter l\textquotesingle{}application. 
+
+
+
+Definition at line \mbox{\hyperlink{MainWindow_8java_source_l00059}{59}} of file \mbox{\hyperlink{MainWindow_8java_source}{Main\+Window.\+java}}.
+
+\Hypertarget{classMainWindow_aa2ca06db4f6592586d54ed1c6f5ae228}\label{classMainWindow_aa2ca06db4f6592586d54ed1c6f5ae228} 
+\index{MainWindow@{MainWindow}!playAction@{playAction}}
+\index{playAction@{playAction}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{playAction}{playAction}}
+{\footnotesize\ttfamily Action Main\+Window.\+play\+Action\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Action pour lire/jouer un objet multimédia. 
+
+
+
+Definition at line \mbox{\hyperlink{MainWindow_8java_source_l00054}{54}} of file \mbox{\hyperlink{MainWindow_8java_source}{Main\+Window.\+java}}.
+
+\Hypertarget{classMainWindow_a936c7ee36eccec924a62e22843bd1694}\label{classMainWindow_a936c7ee36eccec924a62e22843bd1694} 
+\index{MainWindow@{MainWindow}!quitAction@{quitAction}}
+\index{quitAction@{quitAction}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{quitAction}{quitAction}}
+{\footnotesize\ttfamily Action Main\+Window.\+quit\+Action\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Action pour envoyer la commande QUIT au serveur. 
+
+
+
+Definition at line \mbox{\hyperlink{MainWindow_8java_source_l00069}{69}} of file \mbox{\hyperlink{MainWindow_8java_source}{Main\+Window.\+java}}.
+
+\Hypertarget{classMainWindow_aaed4f9115f060ded61ef9104d8d960a4}\label{classMainWindow_aaed4f9115f060ded61ef9104d8d960a4} 
+\index{MainWindow@{MainWindow}!searchAction@{searchAction}}
+\index{searchAction@{searchAction}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{searchAction}{searchAction}}
+{\footnotesize\ttfamily Action Main\+Window.\+search\+Action\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Action pour rechercher un objet multimédia par nom. 
+
+
+
+Definition at line \mbox{\hyperlink{MainWindow_8java_source_l00049}{49}} of file \mbox{\hyperlink{MainWindow_8java_source}{Main\+Window.\+java}}.
+
+\Hypertarget{classMainWindow_ab4214356a8ff65cfe61d7a9d3f38ee89}\label{classMainWindow_ab4214356a8ff65cfe61d7a9d3f38ee89} 
+\index{MainWindow@{MainWindow}!textArea@{textArea}}
+\index{textArea@{textArea}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{textArea}{textArea}}
+{\footnotesize\ttfamily JText\+Area Main\+Window.\+text\+Area\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Zone de texte pour afficher les résultats et messages. 
+
+
+
+Definition at line \mbox{\hyperlink{MainWindow_8java_source_l00034}{34}} of file \mbox{\hyperlink{MainWindow_8java_source}{Main\+Window.\+java}}.
+
+\Hypertarget{classMainWindow_a0d6da55a25e91aac3458ef8fa1d5732d}\label{classMainWindow_a0d6da55a25e91aac3458ef8fa1d5732d} 
+\index{MainWindow@{MainWindow}!textField@{textField}}
+\index{textField@{textField}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{textField}{textField}}
+{\footnotesize\ttfamily JText\+Field Main\+Window.\+text\+Field\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Champ de texte pour entrer le nom d\textquotesingle{}un objet multimédia. 
+
+
+
+Definition at line \mbox{\hyperlink{MainWindow_8java_source_l00039}{39}} of file \mbox{\hyperlink{MainWindow_8java_source}{Main\+Window.\+java}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{MainWindow_8java}{Main\+Window.\+java}}\end{DoxyCompactItemize}

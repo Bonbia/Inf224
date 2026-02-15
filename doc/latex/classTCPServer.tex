@@ -1,0 +1,197 @@
+\doxysection{TCPServer Class Reference}
+\hypertarget{classTCPServer}{}\label{classTCPServer}\index{TCPServer@{TCPServer}}
+
+
+TCP/\+IP IPv4 server. Supports TCP/\+IP AF\+\_\+\+INET IPv4 connections with multiple clients. One thread is used per client.  
+
+
+
+
+{\ttfamily \#include $<$tcpserver.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{classTCPServer_a8107acb4acb46cebd3001013c30f4834}{Callback}} = std\+::function$<$ bool(std\+::string const  \&request, std\+::string \&response) $>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTCPServer_aaed5a80480fd9d616c7773f58906c5e7}{TCPServer}} (\mbox{\hyperlink{classTCPServer_a8107acb4acb46cebd3001013c30f4834}{Callback}} const \&callback)
+\begin{DoxyCompactList}\small\item\em initializes the server. The callback function will be called each time the server receives a request from a client. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classTCPServer_abc497ac52355e53986a6a1bd1acb9581}{\texorpdfstring{$\sim$}{\string~}\+TCPServer}} ()
+\item 
+virtual int \mbox{\hyperlink{classTCPServer_a1409041961e91f1dbc4933483b4c3b23}{run}} (int port)
+\begin{DoxyCompactList}\small\item\em Starts the server. Binds an internal \doxylink{classServerSocket}{Server\+Socket} to {\itshape port} then starts an infinite loop that processes connection requests from clients. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTCPServer_a92a79bdd5f489dbeaea65b03b4e7a630}{TCPServer}} (\mbox{\hyperlink{classTCPServer}{TCPServer}} const \&)=delete
+\item 
+\mbox{\hyperlink{classTCPServer}{TCPServer}} \& \mbox{\hyperlink{classTCPServer_a8412bfde545abe3234ddc2bfaef88600}{operator=}} (\mbox{\hyperlink{classTCPServer}{TCPServer}} const \&)=delete
+\item 
+void \mbox{\hyperlink{classTCPServer_a3dfcdb3bb20667b1d3cde93c84a4c024}{error}} (std\+::string const \&msg)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classServerSocket}{Server\+Socket}} \mbox{\hyperlink{classTCPServer_a3c61133d29aae2cb2b8a0d0b8b7dadaf}{servsock\+\_\+}}
+\item 
+\mbox{\hyperlink{classTCPServer_a8107acb4acb46cebd3001013c30f4834}{Callback}} \mbox{\hyperlink{classTCPServer_a09d0401db192e78acbc9468945ccc00c}{callback\+\_\+}} \{\}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classTCPServer_a94abdeb80587f39a869fde6f24522a78}{TCPLock}}
+\item 
+class \mbox{\hyperlink{classTCPServer_aff1ba1873083d214cbcb808b8091757a}{Socket\+Cnx}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+TCP/\+IP IPv4 server. Supports TCP/\+IP AF\+\_\+\+INET IPv4 connections with multiple clients. One thread is used per client. 
+
+Definition at line \mbox{\hyperlink{tcpserver_8h_source_l00019}{19}} of file \mbox{\hyperlink{tcpserver_8h_source}{tcpserver.\+h}}.
+
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{classTCPServer_a8107acb4acb46cebd3001013c30f4834}\label{classTCPServer_a8107acb4acb46cebd3001013c30f4834} 
+\index{TCPServer@{TCPServer}!Callback@{Callback}}
+\index{Callback@{Callback}!TCPServer@{TCPServer}}
+\doxysubsubsection{\texorpdfstring{Callback}{Callback}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classTCPServer_a8107acb4acb46cebd3001013c30f4834}{TCPServer\+::\+Callback}} =  std\+::function$<$ bool(std\+::string const\& request, std\+::string\& response) $>$}
+
+
+
+Definition at line \mbox{\hyperlink{tcpserver_8h_source_l00022}{22}} of file \mbox{\hyperlink{tcpserver_8h_source}{tcpserver.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classTCPServer_aaed5a80480fd9d616c7773f58906c5e7}\label{classTCPServer_aaed5a80480fd9d616c7773f58906c5e7} 
+\index{TCPServer@{TCPServer}!TCPServer@{TCPServer}}
+\index{TCPServer@{TCPServer}!TCPServer@{TCPServer}}
+\doxysubsubsection{\texorpdfstring{TCPServer()}{TCPServer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily TCPServer\+::\+TCPServer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTCPServer_a8107acb4acb46cebd3001013c30f4834}{Callback}} const \&}]{callback }\end{DoxyParamCaption})}
+
+
+
+initializes the server. The callback function will be called each time the server receives a request from a client. 
+
+
+\begin{DoxyItemize}
+\item {\itshape request} contains the data sent by the client
+\item {\itshape response} will be sent to the client as a response The connection with the client is closed if the callback returns false. 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{tcpserver_8cpp_source_l00094}{94}} of file \mbox{\hyperlink{tcpserver_8cpp_source}{tcpserver.\+cpp}}.
+
+\Hypertarget{classTCPServer_abc497ac52355e53986a6a1bd1acb9581}\label{classTCPServer_abc497ac52355e53986a6a1bd1acb9581} 
+\index{TCPServer@{TCPServer}!````~TCPServer@{\texorpdfstring{$\sim$}{\string~}TCPServer}}
+\index{````~TCPServer@{\texorpdfstring{$\sim$}{\string~}TCPServer}!TCPServer@{TCPServer}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}TCPServer()}{\string~TCPServer()}}
+{\footnotesize\ttfamily TCPServer\+::\texorpdfstring{$\sim$}{\string~}\+TCPServer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{tcpserver_8cpp_source_l00099}{99}} of file \mbox{\hyperlink{tcpserver_8cpp_source}{tcpserver.\+cpp}}.
+
+\Hypertarget{classTCPServer_a92a79bdd5f489dbeaea65b03b4e7a630}\label{classTCPServer_a92a79bdd5f489dbeaea65b03b4e7a630} 
+\index{TCPServer@{TCPServer}!TCPServer@{TCPServer}}
+\index{TCPServer@{TCPServer}!TCPServer@{TCPServer}}
+\doxysubsubsection{\texorpdfstring{TCPServer()}{TCPServer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily TCPServer\+::\+TCPServer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTCPServer}{TCPServer}} const \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classTCPServer_a3dfcdb3bb20667b1d3cde93c84a4c024}\label{classTCPServer_a3dfcdb3bb20667b1d3cde93c84a4c024} 
+\index{TCPServer@{TCPServer}!error@{error}}
+\index{error@{error}!TCPServer@{TCPServer}}
+\doxysubsubsection{\texorpdfstring{error()}{error()}}
+{\footnotesize\ttfamily void TCPServer\+::error (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{tcpserver_8cpp_source_l00120}{120}} of file \mbox{\hyperlink{tcpserver_8cpp_source}{tcpserver.\+cpp}}.
+
+\Hypertarget{classTCPServer_a8412bfde545abe3234ddc2bfaef88600}\label{classTCPServer_a8412bfde545abe3234ddc2bfaef88600} 
+\index{TCPServer@{TCPServer}!operator=@{operator=}}
+\index{operator=@{operator=}!TCPServer@{TCPServer}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTCPServer}{TCPServer}} \& TCPServer\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTCPServer}{TCPServer}} const \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+\Hypertarget{classTCPServer_a1409041961e91f1dbc4933483b4c3b23}\label{classTCPServer_a1409041961e91f1dbc4933483b4c3b23} 
+\index{TCPServer@{TCPServer}!run@{run}}
+\index{run@{run}!TCPServer@{TCPServer}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily int TCPServer\+::run (\begin{DoxyParamCaption}\item[{int}]{port }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Starts the server. Binds an internal \doxylink{classServerSocket}{Server\+Socket} to {\itshape port} then starts an infinite loop that processes connection requests from clients. 
+
+\begin{DoxyReturn}{Returns}
+0 on normal termination, or a negative value if the \doxylink{classServerSocket}{Server\+Socket} could not be bound (value is then one of \doxylink{classSocket_a9f68308228badcdd299cd83e62e36976}{Socket\+::\+Errors}). 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{tcpserver_8cpp_source_l00101}{101}} of file \mbox{\hyperlink{tcpserver_8cpp_source}{tcpserver.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{ccsocket_8cpp_source_l00249}{Server\+Socket\+::accept()}}, \mbox{\hyperlink{ccsocket_8cpp_source_l00211}{Server\+Socket\+::bind()}}, \mbox{\hyperlink{tcpserver_8cpp_source_l00120}{error()}}, \mbox{\hyperlink{tcpserver_8h_source_l00049}{servsock\+\_\+}}, and \mbox{\hyperlink{tcpserver_8h_source_l00043}{Socket\+Cnx}}.
+
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classTCPServer_aff1ba1873083d214cbcb808b8091757a}\label{classTCPServer_aff1ba1873083d214cbcb808b8091757a} 
+\index{TCPServer@{TCPServer}!SocketCnx@{SocketCnx}}
+\index{SocketCnx@{SocketCnx}!TCPServer@{TCPServer}}
+\doxysubsubsection{\texorpdfstring{SocketCnx}{SocketCnx}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{classSocketCnx}{Socket\+Cnx}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \mbox{\hyperlink{tcpserver_8h_source_l00043}{43}} of file \mbox{\hyperlink{tcpserver_8h_source}{tcpserver.\+h}}.
+
+\Hypertarget{classTCPServer_a94abdeb80587f39a869fde6f24522a78}\label{classTCPServer_a94abdeb80587f39a869fde6f24522a78} 
+\index{TCPServer@{TCPServer}!TCPLock@{TCPLock}}
+\index{TCPLock@{TCPLock}!TCPServer@{TCPServer}}
+\doxysubsubsection{\texorpdfstring{TCPLock}{TCPLock}}
+{\footnotesize\ttfamily friend class TCPLock\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \mbox{\hyperlink{tcpserver_8h_source_l00042}{42}} of file \mbox{\hyperlink{tcpserver_8h_source}{tcpserver.\+h}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classTCPServer_a09d0401db192e78acbc9468945ccc00c}\label{classTCPServer_a09d0401db192e78acbc9468945ccc00c} 
+\index{TCPServer@{TCPServer}!callback\_@{callback\_}}
+\index{callback\_@{callback\_}!TCPServer@{TCPServer}}
+\doxysubsubsection{\texorpdfstring{callback\_}{callback\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTCPServer_a8107acb4acb46cebd3001013c30f4834}{Callback}} TCPServer\+::callback\+\_\+ \{\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{tcpserver_8h_source_l00050}{50}} of file \mbox{\hyperlink{tcpserver_8h_source}{tcpserver.\+h}}.
+
+\Hypertarget{classTCPServer_a3c61133d29aae2cb2b8a0d0b8b7dadaf}\label{classTCPServer_a3c61133d29aae2cb2b8a0d0b8b7dadaf} 
+\index{TCPServer@{TCPServer}!servsock\_@{servsock\_}}
+\index{servsock\_@{servsock\_}!TCPServer@{TCPServer}}
+\doxysubsubsection{\texorpdfstring{servsock\_}{servsock\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classServerSocket}{Server\+Socket}} TCPServer\+::servsock\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{tcpserver_8h_source_l00049}{49}} of file \mbox{\hyperlink{tcpserver_8h_source}{tcpserver.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{tcpserver_8h}{tcpserver.\+h}}\item 
+\mbox{\hyperlink{tcpserver_8cpp}{tcpserver.\+cpp}}\end{DoxyCompactItemize}

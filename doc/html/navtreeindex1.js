@@ -1,0 +1,26 @@
+var NAVTREEINDEX1 =
+{
+"globals_type.html":[1,1,3],
+"globals_vars.html":[1,1,2],
+"hierarchy.html":[0,2],
+"index.html":[],
+"main_8cpp.html":[1,0,0,5],
+"main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4":[1,0,0,5,0],
+"main_8cpp_source.html":[1,0,0,5],
+"pages.html":[],
+"server_8cpp.html":[1,0,0,12],
+"server_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97":[1,0,0,12,0],
+"server_8cpp.html#a11717c934f77ad5167dac5d28562d85a":[1,0,0,12,1],
+"server_8cpp_source.html":[1,0,0,12],
+"structInputBuffer.html":[0,0,3],
+"structInputBuffer.html#a2f05121c4fb8571845cc22d083c6da46":[0,0,3,2],
+"structInputBuffer.html#a52ba71c71b9b955b8369fc5217e3c4b6":[0,0,3,4],
+"structInputBuffer.html#a9409ec8e4581caa99dcac1af963349b5":[0,0,3,0],
+"structInputBuffer.html#acbb3a083318ff4e73a67646dd0b8996e":[0,0,3,1],
+"structInputBuffer.html#ad94b06e792363709c990e9aa78c500ec":[0,0,3,5],
+"structInputBuffer.html#aee7a717b6cf023deabe9910410e6cfb6":[0,0,3,3],
+"tcpserver_8cpp.html":[1,0,0,13],
+"tcpserver_8cpp_source.html":[1,0,0,13],
+"tcpserver_8h.html":[1,0,0,14],
+"tcpserver_8h_source.html":[1,0,0,14]
+};

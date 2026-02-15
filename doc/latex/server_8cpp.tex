@@ -1,0 +1,120 @@
+\doxysection{server.\+cpp File Reference}
+\hypertarget{server_8cpp}{}\label{server_8cpp}\index{server.cpp@{server.cpp}}
+
+
+Serveur TCP pour la gestion des requêtes multimédias.  
+
+
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include "{}tcpserver.\+h"{}}\newline
+{\ttfamily \#include "{}Media\+Manager.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{server_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Point d\textquotesingle{}entrée du serveur. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{server_8cpp_a11717c934f77ad5167dac5d28562d85a}{PORT}} = 3331
+\begin{DoxyCompactList}\small\item\em Port d\textquotesingle{}écoute du serveur. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Serveur TCP pour la gestion des requêtes multimédias. 
+
+\begin{DoxyAuthor}{Author}
+Eric Lecolinet -\/ Telecom Paris\+Tech 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2016-\/2024
+\end{DoxyDate}
+Serveur C++ qui écoute les requêtes des clients et les traite à l\textquotesingle{}aide du gestionnaire multimédia. Supporte les commandes SEARCH, PLAY et QUIT. 
+
+Definition in file \mbox{\hyperlink{server_8cpp_source}{server.\+cpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{server_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\label{server_8cpp_a0ddf1224851353fc92bfbff6f499fa97} 
+\index{server.cpp@{server.cpp}!main@{main}}
+\index{main@{main}!server.cpp@{server.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char \texorpdfstring{$\ast$}{*}}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Point d\textquotesingle{}entrée du serveur. 
+
+Crée un gestionnaire multimédia, initialise des objets de test, puis démarre le serveur TCP pour écouter les requêtes des clients.
+
+Commandes supportées \+:
+\begin{DoxyItemize}
+\item SEARCH $<$nom$>$ \+: affiche les informations d\textquotesingle{}un objet
+\item PLAY $<$nom$>$ \+: joue un objet multimédia
+\item QUIT \+: arriv an ferme le serveur
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & Nombre d\textquotesingle{}arguments en ligne de commande (non utilisé) \\
+\hline
+{\em argv} & Arguments en ligne de commande (non utilisés)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 en cas de succès, 1 en cas d\textquotesingle{}erreur au démarrage 
+\end{DoxyReturn}
+Création du gestionnaire multimédia avec des objets de test
+
+Création et démarrage du serveur TCP
+
+La fonction lambda traite chaque requête reçue \+:
+\begin{DoxyItemize}
+\item Analyse la commande et son paramètre
+\item Appelle la méthode appropriée du gestionnaire
+\item Capture la sortie dans un stringstream
+\item Retourne true pour garder la connexion ouverte, false pour la fermer
+\end{DoxyItemize}
+
+Diagnostic \+: affiche chaque requête reçue
+
+Analyse de la commande Format \+: "{}\+COMMANDE paramètre"{} Exemple \+: "{}\+SEARCH Photo1"{}, "{}\+PLAY Video1"{}
+
+Traitement des commandes SEARCH et PLAY
+
+Retourner false ferme la connexion et arrête le serveur
+
+Nettoyage de la réponse \+: éliminer les caractères spéciaux qui pourraient briser le protocole texte
+
+Garder la connexion ouverte pour d\textquotesingle{}autres requêtes
+
+Démarrage du serveur
+
+Definition at line \mbox{\hyperlink{server_8cpp_source_l00040}{40}} of file \mbox{\hyperlink{server_8cpp_source}{server.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{server_8cpp_source_l00022}{PORT}}, and \mbox{\hyperlink{tcpserver_8cpp_source_l00101}{TCPServer\+::run()}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{server_8cpp_a11717c934f77ad5167dac5d28562d85a}\label{server_8cpp_a11717c934f77ad5167dac5d28562d85a} 
+\index{server.cpp@{server.cpp}!PORT@{PORT}}
+\index{PORT@{PORT}!server.cpp@{server.cpp}}
+\doxysubsubsection{\texorpdfstring{PORT}{PORT}}
+{\footnotesize\ttfamily const int PORT = 3331}
+
+
+
+Port d\textquotesingle{}écoute du serveur. 
+
+
+
+Definition at line \mbox{\hyperlink{server_8cpp_source_l00022}{22}} of file \mbox{\hyperlink{server_8cpp_source}{server.\+cpp}}.
+

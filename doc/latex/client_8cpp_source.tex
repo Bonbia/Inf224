@@ -1,0 +1,69 @@
+\doxysection{client.\+cpp}
+\hypertarget{client_8cpp_source}{}\label{client_8cpp_source}\index{client.cpp@{client.cpp}}
+\mbox{\hyperlink{client_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00001}00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00002}00002\ \textcolor{comment}{//\ Client\ C++\ pour\ communiquer\ avec\ un\ serveur\ TCP}}
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00003}00003\ \textcolor{comment}{//\ eric\ lecolinet\ -\/\ telecom\ paristech\ -\/\ 2016/2020}}
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00004}00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ccsocket_8h}{ccsocket.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00011}\mbox{\hyperlink{client_8cpp_a31286b5babe41e1c44365f96f223780b}{00011}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ std::string\ \mbox{\hyperlink{client_8cpp_a31286b5babe41e1c44365f96f223780b}{HOST}}\ =\ \textcolor{stringliteral}{"{}127.0.0.1"{}};}
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00012}\mbox{\hyperlink{client_8cpp_a11717c934f77ad5167dac5d28562d85a}{00012}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{client_8cpp_a11717c934f77ad5167dac5d28562d85a}{PORT}}\ =\ 3331;}
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00020}\mbox{\hyperlink{client_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00020}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{client_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()\ \{}
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00021}00021\ \ \ \mbox{\hyperlink{classSocket}{Socket}}\ sock;}
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00022}00022\ \ \ \mbox{\hyperlink{classSocketBuffer}{SocketBuffer}}\ sockbuf(sock);}
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00024}00024\ \ \ \textcolor{keywordtype}{int}\ status\ =\ sock.\mbox{\hyperlink{classSocket_a772419bd74c4fe4987d190506a64ff87}{connect}}(\mbox{\hyperlink{client_8cpp_a31286b5babe41e1c44365f96f223780b}{HOST}},\ \mbox{\hyperlink{client_8cpp_a11717c934f77ad5167dac5d28562d85a}{PORT}});}
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00026}00026\ \ \ \textcolor{keywordflow}{if}\ (status\ <\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00027}00027\ \ \ \ \ \textcolor{keywordflow}{switch}\ (status)\ \{}
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00028}00028\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classSocket_a9f68308228badcdd299cd83e62e36976a86c20a6b52053a1f39f5d31b28b9e7cb}{Socket::Failed}}:}
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Client:\ Couldn't\ reach\ host\ "{}}\ <<\ \mbox{\hyperlink{client_8cpp_a31286b5babe41e1c44365f96f223780b}{HOST}}\ <<\ \textcolor{stringliteral}{"{}:"{}}\ <<\ \mbox{\hyperlink{client_8cpp_a11717c934f77ad5167dac5d28562d85a}{PORT}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00031}00031\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{classSocket_a9f68308228badcdd299cd83e62e36976ab8eb7f6e1d237e242921ef128c01491c}{Socket::UnknownHost}}:}
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Client:\ Couldn't\ find\ host\ "{}}\ <<\ \mbox{\hyperlink{client_8cpp_a31286b5babe41e1c44365f96f223780b}{HOST}}\ <<\ \textcolor{stringliteral}{"{}:"{}}\ <<\ \mbox{\hyperlink{client_8cpp_a11717c934f77ad5167dac5d28562d85a}{PORT}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00034}00034\ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Client:\ Couldn't\ connect\ host\ "{}}\ <<\ \mbox{\hyperlink{client_8cpp_a31286b5babe41e1c44365f96f223780b}{HOST}}\ <<\ \textcolor{stringliteral}{"{}:"{}}\ <<\ \mbox{\hyperlink{client_8cpp_a11717c934f77ad5167dac5d28562d85a}{PORT}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00037}00037\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00038}00038\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00040}00040\ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Client\ connected\ to\ "{}}\ <<\ \mbox{\hyperlink{client_8cpp_a31286b5babe41e1c44365f96f223780b}{HOST}}\ <<\ \textcolor{stringliteral}{"{}:"{}}\ <<\ \mbox{\hyperlink{client_8cpp_a11717c934f77ad5167dac5d28562d85a}{PORT}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00042}00042\ \ \ \textcolor{keywordflow}{while}\ (std::cin)\ \{}
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00043}00043\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Request:\ "{}};}
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00044}00044\ \ \ \ \ std::string\ request,\ response;}
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00046}00046\ \ \ \ \ std::getline(std::cin,\ request);}
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00047}00047\ \ \ \ \ \textcolor{keywordflow}{if}\ (request\ ==\ \textcolor{stringliteral}{"{}quit"{}})\ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00049}00049\ \ \ \ \ \textcolor{comment}{//\ Envoyer\ la\ requete\ au\ serveur}}
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00050}00050\ \ \ \ \ \textcolor{keywordflow}{if}\ (sockbuf.\mbox{\hyperlink{classSocketBuffer_a96ba6ada0c8b57eacff2aa2e4e34c282}{writeLine}}(request)\ <\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00051}00051\ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Client:\ Couldn't\ send\ message"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00052}00052\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 2;}
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00053}00053\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00055}00055\ \ \ \ \ \textcolor{comment}{//\ Recuperer\ le\ resultat\ envoye\ par\ le\ serveur}}
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00056}00056\ \ \ \ \ \textcolor{keywordflow}{if}\ (sockbuf.\mbox{\hyperlink{classSocketBuffer_afa3a2f239eb56c2e4fd4fa465f7fb54d}{readLine}}(response)\ <\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00057}00057\ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Client:\ Couldn't\ receive\ message"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00058}00058\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 2;}
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00059}00059\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00061}00061\ \ \ \ \ \textcolor{comment}{//\ Le\ serveur\ remplace\ les\ '\(\backslash\)n'\ par\ des\ ';'\ car\ '\(\backslash\)n'\ sert\ a\ indiquer\ la}}
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00062}00062\ \ \ \ \ \textcolor{comment}{//\ fin\ d'un\ message\ entre\ le\ client\ et\ le\ serveur}}
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00063}00063\ \ \ \ \ \textcolor{comment}{//\ On\ fait\ ici\ la\ transformation\ inverse}}
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00064}00064\ \ \ \ \ std::replace(response.begin(),\ response.end(),\ \textcolor{charliteral}{';'},\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00066}00066\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Response:\ "{}}\ <<\ response\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00067}00067\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{client_8cpp_source_l00068}00068\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,210 @@
+\doxysection{Media\+Manager Class Reference}
+\hypertarget{classMediaManager}{}\label{classMediaManager}\index{MediaManager@{MediaManager}}
+
+
+{\ttfamily \#include $<$Media\+Manager.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMediaManager_ab59ce4c54ec6f121c8da13ddec6af871}{Media\+Manager}} ()=default
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classPhoto}{Photo}} $>$ \mbox{\hyperlink{classMediaManager_aa811d1dcdb3f3281473855373345d31d}{create\+Photo}} (const std\+::string \&name, const std\+::string \&filename, double lat, double lon)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classVideo}{Video}} $>$ \mbox{\hyperlink{classMediaManager_accb1e7944df7c8c9d9313ce56d8a19d6}{create\+Video}} (const std\+::string \&name, const std\+::string \&filename, int duree)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classFilm}{Film}} $>$ \mbox{\hyperlink{classMediaManager_a4f028c578e0b9efb5e38358df7a9183f}{create\+Film}} (const std\+::string \&name, const std\+::string \&filename, int duree)
+\item 
+\mbox{\hyperlink{Groupe_8h_a570df85c2ec597dcf8b31fa7b944985b}{Groupe\+Ptr}} \mbox{\hyperlink{classMediaManager_a10d5c606f5a7c992be16137fa767e9ab}{create\+Groupe}} (const std\+::string \&name)
+\item 
+void \mbox{\hyperlink{classMediaManager_a2a0d16b80eee4b9a3a03f1b845708fa2}{display\+Object}} (const std\+::string \&name, std\+::ostream \&out=std\+::cout) const
+\item 
+void \mbox{\hyperlink{classMediaManager_adfa4817edf3e9120cbe695f93ed3ecec}{display\+Groupe}} (const std\+::string \&name, std\+::ostream \&out=std\+::cout) const
+\item 
+void \mbox{\hyperlink{classMediaManager_affbee6604cf01659267f6bf5c778f2d9}{play\+Object}} (const std\+::string \&name, std\+::ostream \&out=std\+::cout) const
+\item 
+bool \mbox{\hyperlink{classMediaManager_afed25ba813ce426bcf270fd440798a9e}{remove\+Object}} (const std\+::string \&name)
+\item 
+bool \mbox{\hyperlink{classMediaManager_a74ba75b2c88464d74770a4b78fdf49e1}{remove\+Groupe}} (const std\+::string \&name)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{MultimediaObject_8h_ae2d609101f53ab0e50d992b6259a53c2}{Multimedia\+Ptr}} $>$ \mbox{\hyperlink{classMediaManager_ab66ebd5ee82a5cb5d8f95b452dd50784}{objects}}
+\item 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{Groupe_8h_a570df85c2ec597dcf8b31fa7b944985b}{Groupe\+Ptr}} $>$ \mbox{\hyperlink{classMediaManager_a82ae706e98a9302640fdac80fa32f11e}{groups}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{MediaManager_8h_source_l00015}{15}} of file \mbox{\hyperlink{MediaManager_8h_source}{Media\+Manager.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classMediaManager_ab59ce4c54ec6f121c8da13ddec6af871}\label{classMediaManager_ab59ce4c54ec6f121c8da13ddec6af871} 
+\index{MediaManager@{MediaManager}!MediaManager@{MediaManager}}
+\index{MediaManager@{MediaManager}!MediaManager@{MediaManager}}
+\doxysubsubsection{\texorpdfstring{MediaManager()}{MediaManager()}}
+{\footnotesize\ttfamily Media\+Manager\+::\+Media\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classMediaManager_a4f028c578e0b9efb5e38358df7a9183f}\label{classMediaManager_a4f028c578e0b9efb5e38358df7a9183f} 
+\index{MediaManager@{MediaManager}!createFilm@{createFilm}}
+\index{createFilm@{createFilm}!MediaManager@{MediaManager}}
+\doxysubsubsection{\texorpdfstring{createFilm()}{createFilm()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classFilm}{Film}} $>$ Media\+Manager\+::create\+Film (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const std\+::string \&}]{filename,  }\item[{int}]{duree }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{MediaManager_8cpp_source_l00020}{20}} of file \mbox{\hyperlink{MediaManager_8cpp_source}{Media\+Manager.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{MediaManager_8h_source_l00018}{objects}}.
+
+\Hypertarget{classMediaManager_a10d5c606f5a7c992be16137fa767e9ab}\label{classMediaManager_a10d5c606f5a7c992be16137fa767e9ab} 
+\index{MediaManager@{MediaManager}!createGroupe@{createGroupe}}
+\index{createGroupe@{createGroupe}!MediaManager@{MediaManager}}
+\doxysubsubsection{\texorpdfstring{createGroupe()}{createGroupe()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{Groupe_8h_a570df85c2ec597dcf8b31fa7b944985b}{Groupe\+Ptr}} Media\+Manager\+::create\+Groupe (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{MediaManager_8cpp_source_l00028}{28}} of file \mbox{\hyperlink{MediaManager_8cpp_source}{Media\+Manager.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{MediaManager_8h_source_l00019}{groups}}.
+
+\Hypertarget{classMediaManager_aa811d1dcdb3f3281473855373345d31d}\label{classMediaManager_aa811d1dcdb3f3281473855373345d31d} 
+\index{MediaManager@{MediaManager}!createPhoto@{createPhoto}}
+\index{createPhoto@{createPhoto}!MediaManager@{MediaManager}}
+\doxysubsubsection{\texorpdfstring{createPhoto()}{createPhoto()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classPhoto}{Photo}} $>$ Media\+Manager\+::create\+Photo (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const std\+::string \&}]{filename,  }\item[{double}]{lat,  }\item[{double}]{lon }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{MediaManager_8cpp_source_l00004}{4}} of file \mbox{\hyperlink{MediaManager_8cpp_source}{Media\+Manager.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{MediaManager_8h_source_l00018}{objects}}.
+
+\Hypertarget{classMediaManager_accb1e7944df7c8c9d9313ce56d8a19d6}\label{classMediaManager_accb1e7944df7c8c9d9313ce56d8a19d6} 
+\index{MediaManager@{MediaManager}!createVideo@{createVideo}}
+\index{createVideo@{createVideo}!MediaManager@{MediaManager}}
+\doxysubsubsection{\texorpdfstring{createVideo()}{createVideo()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classVideo}{Video}} $>$ Media\+Manager\+::create\+Video (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const std\+::string \&}]{filename,  }\item[{int}]{duree }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{MediaManager_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{MediaManager_8cpp_source}{Media\+Manager.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{MediaManager_8h_source_l00018}{objects}}.
+
+\Hypertarget{classMediaManager_adfa4817edf3e9120cbe695f93ed3ecec}\label{classMediaManager_adfa4817edf3e9120cbe695f93ed3ecec} 
+\index{MediaManager@{MediaManager}!displayGroupe@{displayGroupe}}
+\index{displayGroupe@{displayGroupe}!MediaManager@{MediaManager}}
+\doxysubsubsection{\texorpdfstring{displayGroupe()}{displayGroupe()}}
+{\footnotesize\ttfamily void Media\+Manager\+::display\+Groupe (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{std\+::ostream \&}]{out = {\ttfamily std\+:\+:cout} }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{MediaManager_8cpp_source_l00049}{49}} of file \mbox{\hyperlink{MediaManager_8cpp_source}{Media\+Manager.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{MediaManager_8h_source_l00019}{groups}}.
+
+\Hypertarget{classMediaManager_a2a0d16b80eee4b9a3a03f1b845708fa2}\label{classMediaManager_a2a0d16b80eee4b9a3a03f1b845708fa2} 
+\index{MediaManager@{MediaManager}!displayObject@{displayObject}}
+\index{displayObject@{displayObject}!MediaManager@{MediaManager}}
+\doxysubsubsection{\texorpdfstring{displayObject()}{displayObject()}}
+{\footnotesize\ttfamily void Media\+Manager\+::display\+Object (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{std\+::ostream \&}]{out = {\ttfamily std\+:\+:cout} }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{MediaManager_8cpp_source_l00036}{36}} of file \mbox{\hyperlink{MediaManager_8cpp_source}{Media\+Manager.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{MediaManager_8h_source_l00018}{objects}}.
+
+\Hypertarget{classMediaManager_affbee6604cf01659267f6bf5c778f2d9}\label{classMediaManager_affbee6604cf01659267f6bf5c778f2d9} 
+\index{MediaManager@{MediaManager}!playObject@{playObject}}
+\index{playObject@{playObject}!MediaManager@{MediaManager}}
+\doxysubsubsection{\texorpdfstring{playObject()}{playObject()}}
+{\footnotesize\ttfamily void Media\+Manager\+::play\+Object (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{std\+::ostream \&}]{out = {\ttfamily std\+:\+:cout} }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{MediaManager_8cpp_source_l00062}{62}} of file \mbox{\hyperlink{MediaManager_8cpp_source}{Media\+Manager.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{MediaManager_8h_source_l00018}{objects}}.
+
+\Hypertarget{classMediaManager_a74ba75b2c88464d74770a4b78fdf49e1}\label{classMediaManager_a74ba75b2c88464d74770a4b78fdf49e1} 
+\index{MediaManager@{MediaManager}!removeGroupe@{removeGroupe}}
+\index{removeGroupe@{removeGroupe}!MediaManager@{MediaManager}}
+\doxysubsubsection{\texorpdfstring{removeGroupe()}{removeGroupe()}}
+{\footnotesize\ttfamily bool Media\+Manager\+::remove\+Groupe (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{MediaManager_8cpp_source_l00084}{84}} of file \mbox{\hyperlink{MediaManager_8cpp_source}{Media\+Manager.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{MediaManager_8h_source_l00019}{groups}}.
+
+\Hypertarget{classMediaManager_afed25ba813ce426bcf270fd440798a9e}\label{classMediaManager_afed25ba813ce426bcf270fd440798a9e} 
+\index{MediaManager@{MediaManager}!removeObject@{removeObject}}
+\index{removeObject@{removeObject}!MediaManager@{MediaManager}}
+\doxysubsubsection{\texorpdfstring{removeObject()}{removeObject()}}
+{\footnotesize\ttfamily bool Media\+Manager\+::remove\+Object (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{MediaManager_8cpp_source_l00074}{74}} of file \mbox{\hyperlink{MediaManager_8cpp_source}{Media\+Manager.\+cpp}}.
+
+
+
+References \mbox{\hyperlink{MediaManager_8h_source_l00018}{objects}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classMediaManager_a82ae706e98a9302640fdac80fa32f11e}\label{classMediaManager_a82ae706e98a9302640fdac80fa32f11e} 
+\index{MediaManager@{MediaManager}!groups@{groups}}
+\index{groups@{groups}!MediaManager@{MediaManager}}
+\doxysubsubsection{\texorpdfstring{groups}{groups}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, \mbox{\hyperlink{Groupe_8h_a570df85c2ec597dcf8b31fa7b944985b}{Groupe\+Ptr}}$>$ Media\+Manager\+::groups\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{MediaManager_8h_source_l00019}{19}} of file \mbox{\hyperlink{MediaManager_8h_source}{Media\+Manager.\+h}}.
+
+\Hypertarget{classMediaManager_ab66ebd5ee82a5cb5d8f95b452dd50784}\label{classMediaManager_ab66ebd5ee82a5cb5d8f95b452dd50784} 
+\index{MediaManager@{MediaManager}!objects@{objects}}
+\index{objects@{objects}!MediaManager@{MediaManager}}
+\doxysubsubsection{\texorpdfstring{objects}{objects}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, \mbox{\hyperlink{MultimediaObject_8h_ae2d609101f53ab0e50d992b6259a53c2}{Multimedia\+Ptr}}$>$ Media\+Manager\+::objects\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{MediaManager_8h_source_l00018}{18}} of file \mbox{\hyperlink{MediaManager_8h_source}{Media\+Manager.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{MediaManager_8h}{Media\+Manager.\+h}}\item 
+\mbox{\hyperlink{MediaManager_8cpp}{Media\+Manager.\+cpp}}\end{DoxyCompactItemize}

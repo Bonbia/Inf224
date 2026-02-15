@@ -1,0 +1,43 @@
+\doxysection{main.\+cpp}
+\hypertarget{main_8cpp_source}{}\label{main_8cpp_source}\index{main.cpp@{main.cpp}}
+\mbox{\hyperlink{main_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00014}00014\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00015}00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Photo_8h}{Photo.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00016}00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Video_8h}{Video.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00017}00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{MediaManager_8h}{MediaManager.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00018}00018\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00019}00019\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00020}00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Groupe_8h}{Groupe.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00021}00021\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00022}00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{MultimediaObject_8h}{MultimediaObject.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00023}00023\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00040}\mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00040}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00041}00041\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00042}00042\ \ \ \ \ \mbox{\hyperlink{classMediaManager}{MediaManager}}\ manager;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00045}00045\ \ \ \ \ \textcolor{keyword}{auto}\ p1\ =\ manager.\mbox{\hyperlink{classMediaManager_aa811d1dcdb3f3281473855373345d31d}{createPhoto}}(\textcolor{stringliteral}{"{}Photo1"{}},\ \textcolor{stringliteral}{"{}montsouris.jpg"{}},\ 48.8,\ 2.3);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00048}00048\ \ \ \ \ \textcolor{keyword}{auto}\ v1\ =\ manager.\mbox{\hyperlink{classMediaManager_accb1e7944df7c8c9d9313ce56d8a19d6}{createVideo}}(\textcolor{stringliteral}{"{}Video1"{}},\ \textcolor{stringliteral}{"{}video.mp4"{}},\ 120);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00051}00051\ \ \ \ \ \textcolor{keyword}{auto}\ monGroupe\ =\ manager.\mbox{\hyperlink{classMediaManager_a10d5c606f5a7c992be16137fa767e9ab}{createGroupe}}(\textcolor{stringliteral}{"{}Mes\ Medias"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00054}00054\ \ \ \ \ monGroupe-\/>push\_back(p1);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00055}00055\ \ \ \ \ monGroupe-\/>push\_back(v1);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00057}00057\ \ \ \ \ \textcolor{comment}{//\ ===\ Affichage\ de\ test\ ===}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00058}00058\ \ \ \ \ manager.\mbox{\hyperlink{classMediaManager_a2a0d16b80eee4b9a3a03f1b845708fa2}{displayObject}}(\textcolor{stringliteral}{"{}Photo1"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00059}00059\ \ \ \ \ manager.\mbox{\hyperlink{classMediaManager_a2a0d16b80eee4b9a3a03f1b845708fa2}{displayObject}}(\textcolor{stringliteral}{"{}Video1"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00060}00060\ \ \ \ \ manager.\mbox{\hyperlink{classMediaManager_adfa4817edf3e9120cbe695f93ed3ecec}{displayGroupe}}(\textcolor{stringliteral}{"{}Mes\ Medias"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00062}00062\ \ \ \ \ \textcolor{comment}{//\ ===\ Lecture\ des\ objets\ ===}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00063}00063\ \ \ \ \ manager.\mbox{\hyperlink{classMediaManager_affbee6604cf01659267f6bf5c778f2d9}{playObject}}(\textcolor{stringliteral}{"{}Photo1"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00066}00066\ \ \ \ \ p1.reset();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00068}00068\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;\ \textcolor{comment}{//\ Les\ destructeurs\ vont\ s'appeler\ ici\ et\ afficher\ les\ messages}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00069}00069\ \}}
+
+\end{DoxyCode}
